@@ -6,7 +6,7 @@
     <title>TangSpark | Small Apps from Norway</title>
     <meta
       name="description"
-      content="TangSpark builds inspiring little apps from Norway that turn everyday boring tasks into enjoyable moments."
+      content="TangSpark builds inspiring little apps from Norway for moments when people need a spark, even offline."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,13 +14,21 @@
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Newsreader:opsz,wght@6..72,600;6..72,700&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body>
+  <body id="top">
     <div class="background-glow" aria-hidden="true"></div>
     <header class="site-header">
-      <p class="brand">TangSpark</p>
-      <a class="pill-link" href="#story">From Norway</a>
+      <a class="brand" href="#top" aria-label="TangSpark home">
+        <span class="brand-mark" aria-hidden="true">
+          <span class="brand-star"></span>
+        </span>
+        <span class="brand-text">TangSpark</span>
+      </a>
+      <a class="flag-link" href="#story" aria-label="From Norway">
+        <span class="flag-no" aria-hidden="true"></span>
+      </a>
     </header>
 
     <main>
@@ -28,10 +36,11 @@
         <p class="eyebrow">Built with love from Norway</p>
         <h1>Simple little apps that make everyday life feel lighter and a bit magical.</h1>
         <p class="lead">
-          TangSpark creates small, inspiring apps for the boring bits of life:
-          planning, tracking, remembering, and repeating. We are a young team
-          working across different IT domains in Europe, rooted in Norway and
-          connected with people in Sweden, the Netherlands, Belgium, and beyond.
+          TangSpark creates small, inspiring apps for moments when you need a
+          spark, like being offline on an airplane, waiting between meetings, or
+          sitting with a blank mind. We are a young team working across IT
+          domains in Europe, rooted in Norway and connected with people in
+          Sweden, the Netherlands, Belgium, and beyond.
         </p>
         <div class="hero-actions">
           <a

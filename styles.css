@@ -45,19 +45,68 @@ main,
 }
 
 .brand {
-  margin: 0;
-  font-weight: 800;
-  letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  text-decoration: none;
+  color: var(--text);
 }
 
-.pill-link {
-  color: var(--text);
-  text-decoration: none;
-  font-weight: 500;
+.brand-mark {
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(145deg, #0f5f8f, #6fb5da);
+  position: relative;
+  box-shadow: 0 8px 16px rgba(15, 95, 143, 0.24);
+}
+
+.brand-mark::before {
+  content: "";
+  position: absolute;
+  inset: 0.38rem;
+  border-radius: 0.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.76);
+}
+
+.brand-star {
+  position: absolute;
+  width: 0.55rem;
+  height: 0.55rem;
+  background: #fff8f0;
+  border-radius: 0.2rem;
+  right: 0.28rem;
+  top: 0.28rem;
+  transform: rotate(45deg);
+}
+
+.brand-text {
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  font-size: 1.07rem;
+}
+
+.flag-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.1rem;
+  border-radius: 0.55rem;
   border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: 0.5rem 0.95rem;
-  backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.flag-no {
+  display: block;
+  width: 1.9rem;
+  height: 1.35rem;
+  border-radius: 0.18rem;
+  box-shadow: inset 0 0 0 1px rgba(20, 34, 45, 0.14);
+  background:
+    linear-gradient(to right, transparent 0 30%, #ffffff 30% 42%, #1f4f86 42% 50%, #ffffff 50% 62%, transparent 62% 100%),
+    linear-gradient(to bottom, transparent 0 36%, #ffffff 36% 47%, #1f4f86 47% 55%, #ffffff 55% 66%, transparent 66% 100%),
+    #ba1f33;
 }
 
 .hero {
@@ -233,5 +282,9 @@ h1 {
 
   .hero {
     padding-top: 2rem;
+  }
+
+  .brand-text {
+    font-size: 1rem;
   }
 }
