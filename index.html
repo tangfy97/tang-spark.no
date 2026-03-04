@@ -30,9 +30,17 @@
 
       <nav class="site-nav" aria-label="Primary">
         <a class="nav-link" href="#top">Home</a>
-        <div class="nav-dropdown">
-          <button class="nav-link nav-trigger" type="button" aria-haspopup="true">Products</button>
-          <div class="dropdown-menu" role="menu" aria-label="Product links">
+        <div class="nav-dropdown" data-open="false">
+          <button
+            class="nav-link nav-trigger"
+            type="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-controls="product-menu"
+          >
+            Products
+          </button>
+          <div id="product-menu" class="dropdown-menu" role="menu" aria-label="Product links">
             <a role="menuitem" href="./echoknot.html">
               <span class="dropdown-title">Echoknot</span>
               <span class="dropdown-meta">Language memory app for iOS</span>
@@ -122,5 +130,71 @@
       </p>
       <a href="mailto:hello@tang-spark.no">hello@tang-spark.no</a>
     </footer>
+
+    <script>
+      (() => {
+        const navDropdown = document.querySelector(".nav-dropdown");
+        const trigger = navDropdown?.querySelector(".nav-trigger");
+        const menu = navDropdown?.querySelector(".dropdown-menu");
+        const supportsHover = window.matchMedia("(hover: hover)").matches;
+
+        if (!navDropdown || !trigger || !menu) {
+          return;
+        }
+
+        const setOpen = (isOpen) => {
+          navDropdown.dataset.open = String(isOpen);
+          trigger.setAttribute("aria-expanded", String(isOpen));
+        };
+
+        setOpen(false);
+
+        trigger.addEventListener("click", (event) => {
+          event.stopPropagation();
+          const isOpen = navDropdown.dataset.open === "true";
+          setOpen(!isOpen);
+        });
+
+        trigger.addEventListener("keydown", (event) => {
+          if (event.key === "ArrowDown") {
+            event.preventDefault();
+            setOpen(true);
+            menu.querySelector('[role="menuitem"]')?.focus();
+          }
+
+          if (event.key === "Escape") {
+            setOpen(false);
+            trigger.focus();
+          }
+        });
+
+        menu.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") {
+            event.preventDefault();
+            setOpen(false);
+            trigger.focus();
+          }
+        });
+
+        navDropdown.addEventListener("focusout", () => {
+          requestAnimationFrame(() => {
+            if (!navDropdown.contains(document.activeElement)) {
+              setOpen(false);
+            }
+          });
+        });
+
+        document.addEventListener("click", (event) => {
+          if (!navDropdown.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+
+        if (supportsHover) {
+          navDropdown.addEventListener("mouseenter", () => setOpen(true));
+          navDropdown.addEventListener("mouseleave", () => setOpen(false));
+        }
+      })();
+    </script>
   </body>
 </html>
