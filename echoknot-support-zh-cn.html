@@ -1,25 +1,25 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Echoknot Support | TangSpark</title>
+    <title>Echoknot 支持中心 | TangSpark</title>
     <meta
       name="description"
-      content="Technical support documentation for Echoknot iOS v1.1: setup, feature matrix, troubleshooting, privacy, pricing, and roadmap."
+      content="Echoknot iOS v1.1 技术支持文档：系统状态、功能矩阵、故障排查、隐私说明、价格与路线图。"
     />
-    <meta property="og:title" content="Echoknot Support | TangSpark" />
+    <meta property="og:title" content="Echoknot 支持中心 | TangSpark" />
     <meta
       property="og:description"
-      content="Technical support and troubleshooting guide for Echoknot iOS."
+      content="Echoknot iOS 技术支持与故障排查文档。"
     />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.tang-spark.no/echoknot-support.html" />
+    <meta property="og:url" content="https://www.tang-spark.no/echoknot-support-zh-cn.html" />
     <meta name="theme-color" content="#0b5f88" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
@@ -51,11 +51,11 @@
 
       body {
         margin: 0;
-        font-family: "Manrope", sans-serif;
+        font-family: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
         color: var(--ink);
         background: radial-gradient(circle at 8% 0%, #cfe0ea 0%, transparent 40%),
           radial-gradient(circle at 92% 4%, #e2ebf1 0%, transparent 38%), var(--bg);
-        line-height: 1.58;
+        line-height: 1.72;
       }
 
       a {
@@ -191,7 +191,7 @@
         padding: 7px 11px;
       }
 
-      .top-links a:hover {
+      .top-links > a:hover {
         border-color: #9eb3c2;
       }
 
@@ -287,7 +287,6 @@
         margin: 0 0 8px;
         font-size: 0.86rem;
         font-weight: 800;
-        font-family: "Manrope", sans-serif;
       }
 
       .side-box ul {
@@ -336,25 +335,19 @@
       h2,
       h3 {
         margin: 0 0 10px;
-      }
-
-      h1,
-      h2 {
-        font-family: "Newsreader", serif;
-        line-height: 1.12;
+        line-height: 1.35;
       }
 
       h1 {
-        font-size: clamp(1.75rem, 3.8vw, 2.7rem);
+        font-size: clamp(1.75rem, 3.8vw, 2.55rem);
       }
 
       h2 {
-        font-size: clamp(1.2rem, 3vw, 1.85rem);
+        font-size: clamp(1.2rem, 3vw, 1.78rem);
       }
 
       h3 {
         font-size: 1.02rem;
-        font-family: "Manrope", sans-serif;
         font-weight: 800;
       }
 
@@ -362,7 +355,7 @@
         margin: 0 0 10px;
         font-size: 0.79rem;
         font-weight: 800;
-        letter-spacing: 0.08em;
+        letter-spacing: 0.06em;
         text-transform: uppercase;
         color: #0c4e70;
       }
@@ -677,187 +670,184 @@
     </style>
   </head>
   <body>
-    <a class="skip-link" href="#main-content">Skip to content</a>
+    <a class="skip-link" href="#main-content">跳转到正文</a>
 
     <header class="topbar" role="banner">
       <div class="topbar-inner">
-        <a class="brand" href="./index.html" aria-label="TangSpark home">
+        <a class="brand" href="./index.html" aria-label="TangSpark 首页">
           <span class="brand-mark" aria-hidden="true">
             <span class="brand-star"></span>
           </span>
           <span class="brand-text">
             <strong>TangSpark</strong>
-            <span>Echoknot Software Support</span>
+            <span>Echoknot 技术支持</span>
           </span>
         </a>
 
-        <div class="header-meta" aria-label="Build metadata">
-          <span class="chip">Platform <strong>iOS</strong></span>
-          <span class="chip">Current Build <strong>1.1</strong></span>
-          <span class="chip">Storage <strong>Local-First</strong></span>
+        <div class="header-meta" aria-label="版本信息">
+          <span class="chip">平台 <strong>iOS</strong></span>
+          <span class="chip">当前版本 <strong>1.1</strong></span>
+          <span class="chip">数据模型 <strong>本地优先</strong></span>
         </div>
 
         <div class="top-links">
-          <a href="./echoknot.html">Product Page</a>
-          <a href="mailto:support@tang-spark.no">Contact Support</a>
-          <div class="lang-toggle" role="group" aria-label="Language switcher">
-            <a class="active" href="./echoknot-support.html" aria-current="page">EN</a>
-            <a href="./echoknot-support-zh-cn.html" lang="zh-CN">简体中文</a>
+          <a href="./echoknot-zh-cn.html">产品页</a>
+          <a href="mailto:support@tang-spark.no">联系支持</a>
+          <div class="lang-toggle" role="group" aria-label="语言切换">
+            <a href="./echoknot-support.html">EN</a>
+            <a class="active" href="./echoknot-support-zh-cn.html" aria-current="page">简体中文</a>
           </div>
         </div>
       </div>
     </header>
 
     <div class="page">
-      <aside class="sidebar" aria-label="Section navigation">
-        <p class="side-title">On This Page</p>
+      <aside class="sidebar" aria-label="分区导航">
+        <p class="side-title">页面目录</p>
         <nav class="side-nav">
-          <a href="#overview">Overview</a>
-          <a href="#status">System Status</a>
-          <a href="#compatibility">Compatibility</a>
-          <a href="#quick-start">Quick Start</a>
-          <a href="#feature-matrix">Feature Matrix</a>
-          <a href="#faq">FAQ</a>
-          <a href="#privacy">Privacy</a>
-          <a href="#troubleshooting">Troubleshooting</a>
-          <a href="#pricing-roadmap">Pricing &amp; Roadmap</a>
-          <a href="#contact">Contact</a>
-          <a href="#release-notes">Release Notes</a>
+          <a href="#overview">概览</a>
+          <a href="#status">系统状态</a>
+          <a href="#compatibility">兼容性</a>
+          <a href="#quick-start">快速开始</a>
+          <a href="#feature-matrix">功能矩阵</a>
+          <a href="#faq">常见问题</a>
+          <a href="#privacy">隐私政策</a>
+          <a href="#troubleshooting">故障排查</a>
+          <a href="#pricing-roadmap">价格与路线图</a>
+          <a href="#contact">联系支持</a>
+          <a href="#release-notes">版本说明</a>
         </nav>
 
-        <section class="side-box" aria-label="Support scope">
-          <h3>Support Scope</h3>
+        <section class="side-box" aria-label="支持范围">
+          <h3>支持范围</h3>
           <ul>
-            <li>Current maintained build: v1.1</li>
-            <li>No cloud sync or account system in current release</li>
-            <li>Primary support channel: support@tang-spark.no</li>
+            <li>当前维护版本：v1.1</li>
+            <li>当前版本不含云同步与账号体系</li>
+            <li>主要支持邮箱：support@tang-spark.no</li>
           </ul>
         </section>
       </aside>
 
       <main id="main-content" class="content">
-        <nav class="mobile-nav" aria-label="Quick navigation">
-          <a href="#overview">Overview</a>
-          <a href="#status">Status</a>
-          <a href="#compatibility">Compatibility</a>
-          <a href="#quick-start">Quick Start</a>
-          <a href="#feature-matrix">Features</a>
+        <nav class="mobile-nav" aria-label="快捷导航">
+          <a href="#overview">概览</a>
+          <a href="#status">状态</a>
+          <a href="#compatibility">兼容性</a>
+          <a href="#quick-start">快速开始</a>
+          <a href="#feature-matrix">功能</a>
           <a href="#faq">FAQ</a>
-          <a href="#privacy">Privacy</a>
-          <a href="#troubleshooting">Troubleshooting</a>
-          <a href="#pricing-roadmap">Roadmap</a>
-          <a href="#contact">Contact</a>
+          <a href="#privacy">隐私</a>
+          <a href="#troubleshooting">排查</a>
+          <a href="#pricing-roadmap">路线图</a>
+          <a href="#contact">联系</a>
         </nav>
 
         <section id="overview" class="section hero" aria-labelledby="hero-title">
           <p class="eyebrow">Echoknot for iOS</p>
-          <h1 id="hero-title">Technical support guide for version 1.1</h1>
+          <h1 id="hero-title">v1.1 技术支持文档</h1>
           <p class="lead">
-            This page documents the current production build and focuses on behavior that is live
-            in app: feature scope, troubleshooting logic, privacy handling, and roadmap notes.
+            本页面对应当前线上版本，聚焦“已上线能力”：功能范围、触发条件、故障排查、隐私处理方式和后续规划。
           </p>
           <div class="cta-row">
-            <a class="btn btn-primary" href="mailto:support@tang-spark.no">Open Support Ticket</a>
-            <a class="btn btn-secondary" href="./echoknot.html">Back to Product Intro</a>
+            <a class="btn btn-primary" href="mailto:support@tang-spark.no">提交支持工单</a>
+            <a class="btn btn-secondary" href="./echoknot-zh-cn.html">返回产品介绍</a>
           </div>
           <div class="hero-grid">
             <article class="meta-card">
-              <p><strong>Build:</strong> 1.1</p>
+              <p><strong>版本：</strong>1.1</p>
             </article>
             <article class="meta-card">
-              <p><strong>Release Type:</strong> Stable</p>
+              <p><strong>发布类型：</strong>稳定版</p>
             </article>
             <article class="meta-card">
-              <p><strong>Data Model:</strong> Local-first persistence</p>
+              <p><strong>存储模式：</strong>本地优先</p>
             </article>
           </div>
         </section>
 
         <section id="status" class="section" aria-labelledby="status-title">
-          <h2 id="status-title">System Status</h2>
+          <h2 id="status-title">系统状态</h2>
           <ul class="inline-list">
-            <li>Capture workflow: Operational</li>
-            <li>Echo generation: Operational (user-triggered)</li>
-            <li>JSON/PDF export: Operational</li>
-            <li>Cloud sync: Not enabled</li>
-            <li>User accounts: Not enabled</li>
+            <li>knot 记录流程：正常</li>
+            <li>Echo 生成：正常（仅用户主动触发）</li>
+            <li>JSON/PDF 导出：正常</li>
+            <li>云同步：未启用</li>
+            <li>用户账号：未启用</li>
           </ul>
-          <p class="meta">Status reflects the latest shipped iOS build documentation (v1.1).</p>
+          <p class="meta">状态说明基于最新已发布 iOS 构建版本（v1.1）。</p>
         </section>
 
         <section id="compatibility" class="section" aria-labelledby="compatibility-title">
-          <h2 id="compatibility-title">Compatibility</h2>
+          <h2 id="compatibility-title">兼容性说明</h2>
           <div class="grid-2">
             <article class="soft-card">
-              <h3>Supported environment</h3>
+              <h3>支持环境</h3>
               <p>
-                Echoknot is delivered as an iOS app. Device and OS availability follows the active
-                App Store distribution configuration for the current release.
+                Echoknot 目前作为 iOS 应用发布。具体设备与系统版本支持范围，遵循当前 App Store 的上线配置。
               </p>
             </article>
             <article class="soft-card">
-              <h3>Network dependency model</h3>
+              <h3>网络依赖模型</h3>
               <p>
-                Core data operations are local. AI-assisted actions require network access only when
-                you explicitly trigger generation.
+                核心数据读写走本地存储。仅在你主动触发 AI 能力时，才会发起网络请求。
               </p>
             </article>
           </div>
         </section>
 
         <section id="quick-start" class="section" aria-labelledby="quick-title">
-          <h2 id="quick-title">Quick Start</h2>
+          <h2 id="quick-title">快速开始</h2>
           <ol class="steps">
-            <li>Open Echoknot and set your learning language and level.</li>
-            <li>Use the plus action to create your first knot.</li>
-            <li>Add translation, optional usage sentence, and a memory anchor.</li>
-            <li>Open Echo chamber and select at least 3 knots in one language.</li>
-            <li>Generate a story, then save/favorite high-value echoes.</li>
-            <li>Use export (JSON/PDF) for backup or migration when needed.</li>
+            <li>首次打开后先设置学习语言和学习级别。</li>
+            <li>通过“+”创建第一个 knot。</li>
+            <li>填写释义、可选例句、记忆锚点等信息。</li>
+            <li>进入 Echo 区域，选择同一语言下至少 3 个 knot。</li>
+            <li>生成回声故事，收藏高价值内容用于反复复习。</li>
+            <li>需要备份时，可导出 JSON/PDF。</li>
           </ol>
         </section>
 
         <section id="feature-matrix" class="section" aria-labelledby="matrix-title">
-          <h2 id="matrix-title">Feature Matrix</h2>
+          <h2 id="matrix-title">功能矩阵</h2>
           <div class="table-wrap">
             <table>
               <thead>
                 <tr>
-                  <th>Module</th>
-                  <th>Availability</th>
-                  <th>Implementation Notes</th>
+                  <th>功能模块</th>
+                  <th>状态</th>
+                  <th>实现说明</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>Knot capture and edit</td>
-                  <td><span class="pill ok">Available</span></td>
-                  <td>Word, translation, usage, anchor, tags; edit and delete in knot details.</td>
+                  <td>knot 记录与编辑</td>
+                  <td><span class="pill ok">可用</span></td>
+                  <td>支持词条、释义、用法、锚点、标签；支持编辑与删除。</td>
                 </tr>
                 <tr>
-                  <td>Echo chamber generation</td>
-                  <td><span class="pill ok">Available</span></td>
-                  <td>Requires minimum 3 and maximum 8 selected knots from one language.</td>
+                  <td>Echo 回声生成</td>
+                  <td><span class="pill ok">可用</span></td>
+                  <td>需选择同语言 knot，最少 3 个，最多 8 个。</td>
                 </tr>
                 <tr>
-                  <td>Favorites and recents</td>
-                  <td><span class="pill ok">Available</span></td>
-                  <td>Favorites are capped at 5 in the current build.</td>
+                  <td>收藏与最近记录</td>
+                  <td><span class="pill ok">可用</span></td>
+                  <td>收藏上限为 5 条，可取消收藏后释放名额。</td>
                 </tr>
                 <tr>
-                  <td>Data export</td>
-                  <td><span class="pill ok">Available</span></td>
-                  <td>JSON and PDF export options available from Settings and Dashboard.</td>
+                  <td>数据导出</td>
+                  <td><span class="pill ok">可用</span></td>
+                  <td>支持 JSON 与 PDF 导出（设置页与仪表盘）。</td>
                 </tr>
                 <tr>
-                  <td>Cloud sync</td>
-                  <td><span class="pill plan">Planned</span></td>
-                  <td>Not in v1.1. Considered as optional extra functionality for future releases.</td>
+                  <td>云存储 / 云同步</td>
+                  <td><span class="pill plan">规划中</span></td>
+                  <td>v1.1 尚未提供，后续作为可选增强能力评估上线。</td>
                 </tr>
                 <tr>
-                  <td>User accounts</td>
-                  <td><span class="pill plan">Planned</span></td>
-                  <td>Not in v1.1. Considered as optional extra functionality for future releases.</td>
+                  <td>用户账号体系</td>
+                  <td><span class="pill plan">规划中</span></td>
+                  <td>v1.1 尚未提供，后续作为可选增强能力评估上线。</td>
                 </tr>
               </tbody>
             </table>
@@ -865,211 +855,194 @@
         </section>
 
         <section id="faq" class="section" aria-labelledby="faq-title">
-          <h2 id="faq-title">FAQ</h2>
+          <h2 id="faq-title">常见问题（FAQ）</h2>
 
           <details>
-            <summary>How do I edit or delete a knot?</summary>
+            <summary>如何编辑或删除 knot？</summary>
+            <p>在仪表盘打开某条 knot 后进入详情页，可执行编辑。删除入口位于详情页的危险操作区域。</p>
+          </details>
+
+          <details>
+            <summary>为什么我不能生成 Echo 故事？</summary>
             <p>
-              Open a knot from the dashboard list, then use the edit action in knot details.
-              Delete is available in knot details as a destructive action.
+              常见原因包括：选中的 knot 少于 3 条、混选了不同语言、配额已用尽，或网络/模型服务暂时不可用。
             </p>
           </details>
 
           <details>
-            <summary>Why cannot I generate an echo story?</summary>
-            <p>
-              Echo generation is disabled when fewer than 3 knots are selected, when selected knots
-              use mixed languages, when quota is exhausted, or when network/provider access fails.
-            </p>
+            <summary>收藏机制是怎样的？</summary>
+            <p>你可以把已保存的 Echo 标记为收藏。当前版本收藏上限为 5 条，取消后可继续收藏新内容。</p>
           </details>
 
           <details>
-            <summary>How do favorites work?</summary>
-            <p>You can favorite saved echoes. Favorites are capped at 5. Unfavorite an item to free space.</p>
+            <summary>在哪里导出 JSON 或 PDF？</summary>
+            <p>可在“设置”中的导出入口操作，也可在仪表盘 all-knots 区域通过导出菜单操作。</p>
           </details>
 
           <details>
-            <summary>Where can I export JSON or PDF?</summary>
-            <p>
-              Use Settings data export buttons, or open the Dashboard export menu in the all-knots
-              area. Both JSON and PDF formats are supported.
-            </p>
+            <summary>重置会删除哪些数据？</summary>
+            <p>重置会清空 knots、最近 Echo、收藏 Echo 和偏好设置，并恢复首启默认状态。</p>
           </details>
 
           <details>
-            <summary>What does reset remove?</summary>
-            <p>Reset deletes knots, recent echoes, favorite echoes, and preferences, then restores defaults.</p>
+            <summary>在哪里修改主题和语言？</summary>
+            <p>在“设置-外观”中可修改主题（浅色/深色/跟随系统）、应用语言和字体大小。</p>
           </details>
 
           <details>
-            <summary>Where do I change theme and language?</summary>
-            <p>In Settings, open Appearance to set theme (Light, Dark, System), app language, and text size.</p>
+            <summary>当前支持跨设备同步吗？</summary>
+            <p>v1.1 不支持。当前为本地优先架构。云存储和账号体系属于未来可选增强能力。</p>
           </details>
 
           <details>
-            <summary>Does Echoknot sync across devices?</summary>
-            <p>
-              Not in v1.1. The app is local-first in this release. Cloud storage and accounts are
-              future optional items and are not active now.
-            </p>
-          </details>
-
-          <details>
-            <summary>What data is sent when I use AI features?</summary>
-            <p>
-              Only the text required for the user-triggered action is sent to the configured AI
-              provider. There are no background AI requests by default.
-            </p>
+            <summary>使用 AI 功能时会发送哪些数据？</summary>
+            <p>仅会发送当前操作所需的最小文本内容。默认不会在后台自动发起 AI 请求。</p>
           </details>
         </section>
 
         <section id="privacy" class="section" aria-labelledby="privacy-title">
-          <h2 id="privacy-title">Echoknot App Privacy Policy (EU and US)</h2>
+          <h2 id="privacy-title">Echoknot 应用隐私政策（欧盟/英国/美国）</h2>
           <p>
             <strong>
-              Echoknot v1.1 is local-first. TangSpark does not collect, store, sell, or share personal
-              data or personally identifiable information (PII) on TangSpark servers through normal app use.
+              Echoknot v1.1 采用本地优先架构。TangSpark 在常规使用流程中，不在 TangSpark 服务器收集、存储、出售或共享个人数据及可识别个人信息（PII）。
             </strong>
           </p>
-          <p class="meta">Last updated: March 4, 2026</p>
+          <p class="meta">最近更新：2026 年 3 月 4 日</p>
 
-          <h3>What Echoknot stores</h3>
+          <h3>应用会存储什么</h3>
           <ul class="list">
-            <li>No account sign-up is required.</li>
-            <li>Knots, echoes, and preferences are stored on your device by default.</li>
-            <li>Always-on cloud sync is not enabled in v1.1.</li>
-            <li>Data export is available as JSON or PDF.</li>
+            <li>当前版本无需注册账号。</li>
+            <li>knot、Echo 与偏好设置默认保存在你的设备本地。</li>
+            <li>v1.1 不启用常驻云同步。</li>
+            <li>支持导出 JSON/PDF 作为备份或迁移。</li>
           </ul>
 
-          <h3>AI processing note</h3>
+          <h3>AI 处理说明</h3>
           <ul class="list">
-            <li>AI actions run only when you trigger them.</li>
-            <li>Only required text for that action is sent to the configured AI provider.</li>
-            <li>TangSpark does not use this flow to build personal identity profiles.</li>
+            <li>AI 仅在你主动触发时运行。</li>
+            <li>仅发送该操作所需最小文本到已配置的 AI 提供方。</li>
+            <li>TangSpark 不通过该流程构建个人画像。</li>
           </ul>
 
-          <h3>For users in EU, EEA, and UK</h3>
+          <h3>面向欧盟/欧洲经济区/英国用户</h3>
           <p>
-            Under GDPR and UK GDPR, users generally have rights such as access, correction, deletion,
-            restriction, portability, objection, and complaint rights. Because normal usage is local-first
-            and not centrally collected by TangSpark, many controls are available directly in-app via edit,
-            export, and reset actions.
+            根据 GDPR 与 UK GDPR，用户通常享有访问、更正、删除、限制处理、可携带、反对处理及投诉等权利。
+            因 Echoknot 常规数据默认本地存储、且非集中式采集，很多数据控制能力可直接通过应用内编辑、导出、重置完成。
           </p>
 
-          <h3>For users in the United States</h3>
+          <h3>面向美国用户</h3>
           <p>
-            US state privacy laws (including California) may grant rights to know, correct, delete, and
-            opt out of sale/share of personal information. Echoknot does not sell personal information
-            and is not designed for targeted advertising data sharing in normal app usage.
+            美国部分州（含加州）隐私法律通常提供知情、删除、更正以及拒绝出售/共享个人信息等权利。
+            Echoknot 在常规使用流程中不出售个人信息，也不以定向广告为目的共享应用数据。
           </p>
 
-          <h3>Privacy requests</h3>
+          <h3>隐私请求方式</h3>
           <p>
-            Contact <a href="mailto:support@tang-spark.no">support@tang-spark.no</a> and include
-            your region (EU/EEA/UK or US), device model, iOS version, and app version.
+            请发送邮件至 <a href="mailto:support@tang-spark.no">support@tang-spark.no</a>，并附上：
+            所在地区（欧盟/英国或美国）、设备型号、iOS 版本与 App 版本。
           </p>
         </section>
 
         <section id="troubleshooting" class="section" aria-labelledby="troubleshooting-title">
-          <h2 id="troubleshooting-title">Troubleshooting</h2>
+          <h2 id="troubleshooting-title">故障排查</h2>
           <div class="grid-2">
             <article class="soft-card">
-              <h3>AI unavailable</h3>
+              <h3>AI 不可用</h3>
               <ul class="list">
-                <li>Confirm internet access, then retry.</li>
-                <li>Check whether quota has been reached.</li>
-                <li>Try a smaller knot selection and regenerate.</li>
+                <li>先确认网络可用后重试。</li>
+                <li>检查配额是否已达上限。</li>
+                <li>减少 knot 数量后再次生成。</li>
               </ul>
             </article>
             <article class="soft-card">
-              <h3>Export failed</h3>
+              <h3>导出失败</h3>
               <ul class="list">
-                <li>Retry export in the same format.</li>
-                <li>Confirm iOS share sheet appears correctly.</li>
-                <li>Reopen the app and retry.</li>
+                <li>先用相同格式重试一次。</li>
+                <li>确认 iOS 分享面板正常弹出。</li>
+                <li>重启应用后再试。</li>
               </ul>
             </article>
             <article class="soft-card">
-              <h3>Echo button disabled</h3>
+              <h3>Echo 按钮不可点</h3>
               <ul class="list">
-                <li>Select at least 3 knots.</li>
-                <li>Use knots from one language only.</li>
-                <li>Verify quota is not paused.</li>
+                <li>至少选择 3 个 knot。</li>
+                <li>确保所选 knot 来自同一学习语言。</li>
+                <li>确认配额未被暂停或耗尽。</li>
               </ul>
             </article>
             <article class="soft-card">
-              <h3>Unexpected reset after reinstall</h3>
+              <h3>重装后数据不见了</h3>
               <ul class="list">
-                <li>Data is local to the device and app installation.</li>
-                <li>Use JSON/PDF export regularly if backup is needed.</li>
+                <li>当前版本数据以本地存储为主，随应用安装环境变化可能被清除。</li>
+                <li>建议定期导出 JSON/PDF 做备份。</li>
               </ul>
             </article>
           </div>
         </section>
 
         <section id="pricing-roadmap" class="section" aria-labelledby="pricing-title">
-          <h2 id="pricing-title">Pricing and Roadmap</h2>
+          <h2 id="pricing-title">价格与路线图</h2>
           <p class="notice">
-            Echoknot is free until <strong>April 30, 2026</strong>.
+            Echoknot 可免费使用至 <strong>2026 年 4 月 30 日</strong>。
           </p>
           <ul class="list">
-            <li>The current free period runs through April 30, 2026.</li>
-            <li>Any future paid change will be announced before rollout.</li>
+            <li>当前免费期截止到 2026 年 4 月 30 日。</li>
+            <li>若未来有付费策略调整，将在上线前提前公告。</li>
           </ul>
 
-          <h3>Future functionality notes</h3>
+          <h3>后续功能说明</h3>
           <ul class="list">
-            <li>Cloud storage is not available in v1.1.</li>
-            <li>User account system is not available in v1.1.</li>
-            <li>Both are planned as optional extra functionality in future releases.</li>
+            <li>云存储功能在 v1.1 中尚未提供。</li>
+            <li>用户账号体系在 v1.1 中尚未提供。</li>
+            <li>以上两项会作为后续“可选增强功能”进行规划与评估。</li>
           </ul>
         </section>
 
         <section id="contact" class="section" aria-labelledby="contact-title">
-          <h2 id="contact-title">Contact and Feedback</h2>
+          <h2 id="contact-title">联系与反馈</h2>
           <p>
-            Support email:
+            支持邮箱：
             <a href="mailto:support@tang-spark.no">support@tang-spark.no</a>
           </p>
-          <p>For faster triage, include the template below.</p>
+          <p>为加快定位问题，建议按下方模板提交。</p>
 
           <div class="bug-box">
-            <h3>Bug report template</h3>
-            <pre id="bug-template">Subject: Echoknot bug report
+            <h3>问题反馈模板</h3>
+            <pre id="bug-template">主题：Echoknot 问题反馈
 
-Device: [e.g., iPhone 14]
-iOS version: [e.g., iOS 18.3]
-App version: [1.1]
+设备型号：[例如 iPhone 14]
+iOS 版本：[例如 iOS 18.3]
+应用版本：[1.1]
 
-What happened:
-[Describe the issue]
+问题现象：
+[请描述实际发生了什么]
 
-Expected behavior:
-[What you expected]
+预期结果：
+[请描述你预期应该发生什么]
 
-Steps to reproduce:
+复现步骤：
 1.
 2.
 3.
 
-Screenshots/screen recording:
-[Attached / Not attached]</pre>
+截图/录屏：
+[已附 / 未附]</pre>
             <div class="copy-row">
-              <button type="button" id="copy-template">Copy template</button>
+              <button type="button" id="copy-template">复制模板</button>
               <span id="copy-status" class="status" aria-live="polite"></span>
             </div>
           </div>
         </section>
 
         <section id="release-notes" class="section" aria-labelledby="release-title">
-          <h2 id="release-title">Release Notes</h2>
+          <h2 id="release-title">版本说明</h2>
           <article class="soft-card">
-            <h3>Version 1.1 (current)</h3>
+            <h3>版本 1.1（当前）</h3>
             <ul class="list">
-              <li>Expanded settings: appearance, app language, text size, and learning level.</li>
-              <li>Echo workflow updates with favorites (max 5), saved lists, and delete actions.</li>
-              <li>JSON/PDF export from Settings and Dashboard plus full-data reset flow.</li>
-              <li>Local-first persistence with backup and recovery-safe save ordering.</li>
+              <li>设置项扩展：主题、应用语言、字体大小、学习级别。</li>
+              <li>Echo 流程增强：收藏（上限 5）、保存列表与删除操作。</li>
+              <li>设置页与仪表盘支持 JSON/PDF 导出，并提供完整重置流程。</li>
+              <li>本地优先持久化，包含备份与恢复安全顺序。</li>
             </ul>
           </article>
         </section>
@@ -1078,10 +1051,10 @@ Screenshots/screen recording:
 
     <footer>
       <div class="footer-inner">
-        <p>© 2026 TangSpark. Echoknot support documentation for iOS build 1.1.</p>
+        <p>© 2026 TangSpark。Echoknot iOS v1.1 技术支持文档。</p>
         <div class="footer-links">
-          <a href="./echoknot.html">Product</a>
-          <a href="mailto:support@tang-spark.no">Support Email</a>
+          <a href="./echoknot-zh-cn.html">产品页</a>
+          <a href="mailto:support@tang-spark.no">支持邮箱</a>
         </div>
       </div>
     </footer>
@@ -1099,7 +1072,7 @@ Screenshots/screen recording:
             const text = bugTemplate.textContent || "";
             try {
               await navigator.clipboard.writeText(text);
-              copyStatus.textContent = "Template copied.";
+              copyStatus.textContent = "模板已复制。";
             } catch (_) {
               const range = document.createRange();
               range.selectNodeContents(bugTemplate);
@@ -1108,7 +1081,7 @@ Screenshots/screen recording:
                 selection.removeAllRanges();
                 selection.addRange(range);
               }
-              copyStatus.textContent = "Select text manually and copy.";
+              copyStatus.textContent = "请手动选择文本后复制。";
             }
           });
         }
