@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Echoknot | TangSpark</title>
+    <meta
+      name="description"
+      content="Echoknot by TangSpark: a local-first iOS language app that ties words to real moments and turns them into echo stories."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Newsreader:opsz,wght@6..72,600;6..72,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <style>
+      :root {
+        --bg: #edf2f4;
+        --text: #15222b;
+        --muted: #4f5f6a;
+        --line: rgba(21, 34, 43, 0.14);
+        --blue: #0f5f8f;
+        --blue-deep: #0a466b;
+        --warm: #c86940;
+        --panel: rgba(255, 255, 255, 0.8);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--text);
+        font-family: "Manrope", sans-serif;
+        background: radial-gradient(circle at 10% 0%, #c9dbe6 0%, transparent 42%),
+          radial-gradient(circle at 90% 4%, #e4edf2 0%, transparent 44%),
+          linear-gradient(180deg, #edf2f4 0%, #e7edef 100%);
+      }
+
+      .page {
+        width: min(1100px, 92vw);
+        margin: 0 auto;
+      }
+
+      .topbar {
+        padding: 1.4rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.9rem;
+        flex-wrap: wrap;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.7rem;
+        text-decoration: none;
+        color: var(--text);
+      }
+
+      .brand-mark {
+        width: 2.1rem;
+        height: 2.1rem;
+        border-radius: 0.75rem;
+        background: linear-gradient(145deg, #0f5f8f, #6fb5da);
+        position: relative;
+        box-shadow: 0 8px 16px rgba(15, 95, 143, 0.25);
+      }
+
+      .brand-mark::before {
+        content: "";
+        position: absolute;
+        inset: 0.38rem;
+        border-radius: 0.5rem;
+        border: 2px solid rgba(255, 255, 255, 0.78);
+      }
+
+      .brand-star {
+        position: absolute;
+        width: 0.55rem;
+        height: 0.55rem;
+        background: #fff8f0;
+        border-radius: 0.2rem;
+        right: 0.28rem;
+        top: 0.28rem;
+        transform: rotate(45deg);
+      }
+
+      .brand-text {
+        font-weight: 800;
+        font-size: 1.06rem;
+      }
+
+      .top-links {
+        display: inline-flex;
+        gap: 0.55rem;
+        flex-wrap: wrap;
+      }
+
+      .top-links a {
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 600;
+        border-radius: 999px;
+        padding: 0.48rem 0.85rem;
+        border: 1px solid var(--line);
+        color: var(--text);
+        background: rgba(255, 255, 255, 0.68);
+      }
+
+      .top-links a:hover {
+        background: rgba(255, 255, 255, 0.88);
+      }
+
+      .hero {
+        padding: 2.2rem 0 2.8rem;
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 1.2rem;
+        align-items: center;
+      }
+
+      .eyebrow {
+        margin: 0;
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        opacity: 0.72;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Newsreader", serif;
+        margin: 0;
+        line-height: 1.08;
+      }
+
+      h1 {
+        margin-top: 0.8rem;
+        font-size: clamp(2rem, 5.2vw, 4.2rem);
+        max-width: 12.5ch;
+      }
+
+      .hero p {
+        line-height: 1.62;
+      }
+
+      .lead {
+        margin-top: 1rem;
+        font-size: clamp(1rem, 2.1vw, 1.2rem);
+        max-width: 52ch;
+      }
+
+      .cta-row {
+        margin-top: 1.4rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.7rem;
+      }
+
+      .btn {
+        text-decoration: none;
+        border-radius: 12px;
+        padding: 0.74rem 1.1rem;
+        border: 1px solid transparent;
+        font-weight: 700;
+        transition: transform 170ms ease, background-color 170ms ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .btn-primary {
+        color: #fff;
+        background: var(--blue);
+      }
+
+      .btn-primary:hover {
+        background: var(--blue-deep);
+      }
+
+      .btn-secondary {
+        color: var(--text);
+        background: rgba(255, 255, 255, 0.64);
+        border-color: var(--line);
+      }
+
+      .hero-visual {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 26px;
+        padding: 1rem;
+        min-height: 360px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-visual::before {
+        content: "";
+        position: absolute;
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        right: -70px;
+        top: -60px;
+        background: radial-gradient(circle at center, rgba(200, 105, 64, 0.22) 0%, transparent 74%);
+      }
+
+      .phone {
+        position: relative;
+        z-index: 1;
+        width: min(350px, 100%);
+        margin: 0 auto;
+        border-radius: 28px;
+        border: 1px solid rgba(21, 34, 43, 0.12);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(250, 252, 253, 0.9));
+        padding: 0.9rem;
+        box-shadow: 0 20px 35px rgba(20, 34, 45, 0.16);
+      }
+
+      .phone-head {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.78rem;
+        color: var(--muted);
+      }
+
+      .word-card {
+        margin-top: 0.8rem;
+        border-radius: 16px;
+        padding: 0.72rem;
+        border: 1px solid rgba(21, 34, 43, 0.12);
+        background: rgba(255, 255, 255, 0.85);
+      }
+
+      .word-card strong {
+        display: block;
+      }
+
+      .word-card small {
+        color: var(--muted);
+      }
+
+      .echo-chip {
+        margin-top: 0.65rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        padding: 0.4rem 0.64rem;
+        border-radius: 999px;
+        background: rgba(15, 95, 143, 0.12);
+        color: var(--blue-deep);
+        font-size: 0.78rem;
+        font-weight: 700;
+      }
+
+      .section {
+        margin: 0 0 1rem;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        background: var(--panel);
+        padding: 1.25rem;
+      }
+
+      .section h2 {
+        font-size: clamp(1.35rem, 3.2vw, 2.2rem);
+        margin-bottom: 0.8rem;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.7rem;
+      }
+
+      .item {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 0.9rem;
+      }
+
+      .item h3 {
+        font-size: 1.06rem;
+        margin-bottom: 0.38rem;
+      }
+
+      .item p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.54;
+      }
+
+      .steps {
+        margin: 0;
+        padding-left: 1.2rem;
+        display: grid;
+        gap: 0.55rem;
+        color: var(--muted);
+      }
+
+      .trust-list {
+        margin: 0;
+        padding-left: 1.2rem;
+        display: grid;
+        gap: 0.5rem;
+      }
+
+      .footer {
+        padding: 1rem 0 1.8rem;
+        display: flex;
+        gap: 0.7rem;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        color: var(--muted);
+        border-top: 1px solid var(--line);
+      }
+
+      .footer a {
+        color: var(--blue);
+        font-weight: 700;
+      }
+
+      @media (max-width: 980px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header class="topbar">
+        <a class="brand" href="./index.html" aria-label="TangSpark home">
+          <span class="brand-mark" aria-hidden="true">
+            <span class="brand-star"></span>
+          </span>
+          <span class="brand-text">TangSpark</span>
+        </a>
+        <div class="top-links">
+          <a href="./index.html">Home</a>
+          <a href="./echoknot-support.html">Support</a>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero" aria-labelledby="hero-title">
+          <div>
+            <p class="eyebrow">Product spotlight</p>
+            <h1 id="hero-title">Echoknot turns small language moments into stories you actually remember.</h1>
+            <p class="lead">
+              Echoknot is a local-first iOS app for context-driven language learning.
+              Capture words as knots from your real day, then weave selected knots into
+              short echo stories when you are ready to review.
+            </p>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="./echoknot-support.html">Open Support & Guide</a>
+              <a class="btn btn-secondary" href="mailto:hello@tang-spark.no">Talk to TangSpark</a>
+            </div>
+          </div>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="phone">
+              <div class="phone-head">
+                <span>Echoknot</span>
+                <span>Local-first</span>
+              </div>
+              <div class="word-card">
+                <strong>gezellig</strong>
+                <small>cozy, warm, social</small>
+              </div>
+              <div class="word-card">
+                <strong>uitwaaien</strong>
+                <small>to clear your mind with fresh air</small>
+              </div>
+              <div class="echo-chip">Echo chamber: 3 knots selected</div>
+              <div class="word-card">
+                <small>
+                  Story preview: "Na de vergadering gingen we even uitwaaien..."
+                </small>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="why-title">
+          <h2 id="why-title">Why people love it</h2>
+          <div class="grid">
+            <article class="item">
+              <h3>Memory-first</h3>
+              <p>Every knot is tied to a real anchor from your day, so recall feels natural, not mechanical.</p>
+            </article>
+            <article class="item">
+              <h3>Calm workflow</h3>
+              <p>Capture quickly, review in rhythm, and keep the interface focused and lightweight.</p>
+            </article>
+            <article class="item">
+              <h3>Creative review</h3>
+              <p>Echo stories reuse your selected words in context, giving your vocabulary real texture.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="flow-title">
+          <h2 id="flow-title">How it works</h2>
+          <ol class="steps">
+            <li>Choose your learning language and level.</li>
+            <li>Capture knots with word, translation, usage, and memory anchor.</li>
+            <li>Select at least 3 knots and create an echo story for review.</li>
+            <li>Keep favorite echoes, revisit recent ones, and export when needed.</li>
+          </ol>
+        </section>
+
+        <section class="section" aria-labelledby="trust-title">
+          <h2 id="trust-title">Designed for trust</h2>
+          <ul class="trust-list">
+            <li>No account is required for the current build.</li>
+            <li>Data is stored locally by default, with optional export as JSON or PDF.</li>
+            <li>AI actions only run when you trigger them explicitly.</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="./echoknot-support.html">Read Full Support Details</a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>© 2026 TangSpark. Built from Norway for modern language learners.</p>
+        <a href="mailto:support@tang-spark.no">support@tang-spark.no</a>
+      </footer>
+    </div>
+  </body>
+</html>

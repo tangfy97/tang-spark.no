@@ -19,6 +19,7 @@
   </head>
   <body id="top">
     <div class="background-glow" aria-hidden="true"></div>
+
     <header class="site-header">
       <a class="brand" href="#top" aria-label="TangSpark home">
         <span class="brand-mark" aria-hidden="true">
@@ -26,6 +27,20 @@
         </span>
         <span class="brand-text">TangSpark</span>
       </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a class="nav-link" href="#top">Home</a>
+        <div class="nav-dropdown">
+          <button class="nav-link nav-trigger" type="button" aria-haspopup="true">Products</button>
+          <div class="dropdown-menu" role="menu" aria-label="Product links">
+            <a role="menuitem" href="./echoknot.html">
+              <span class="dropdown-title">Echoknot</span>
+              <span class="dropdown-meta">Language memory app for iOS</span>
+            </a>
+          </div>
+        </div>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
     </header>
 
     <main>
@@ -45,7 +60,24 @@
             href="mailto:hello@tang-spark.no?subject=Let's%20build%20something%20with%20TangSpark"
             >Start Something</a
           >
+          <a class="button button-ghost" href="#products">Explore Products</a>
         </div>
+      </section>
+
+      <section id="products" class="product-spotlight" aria-labelledby="product-title">
+        <article class="product-card">
+          <p class="eyebrow">Product 01</p>
+          <h2 id="product-title">Echoknot</h2>
+          <p>
+            Echoknot helps language learners capture real words from real moments,
+            then revisit them through short AI-assisted echo stories. It is local-first,
+            calm by design, and built to make vocabulary stick in daily life.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="./echoknot.html">Open Echoknot</a>
+            <a class="button button-ghost" href="./echoknot-support.html">Support</a>
+          </div>
+        </article>
       </section>
 
       <section id="apps" class="cards">

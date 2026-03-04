@@ -3,6 +3,7 @@
   --text: #14222d;
   --accent: #0f5f8f;
   --accent-dark: #0a466b;
+  --accent-warm: #c86940;
   --card: rgba(255, 255, 255, 0.78);
   --border: rgba(20, 34, 45, 0.16);
 }
@@ -38,10 +39,12 @@ main,
 }
 
 .site-header {
-  padding: 1.6rem 0;
+  padding: 1.4rem 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .brand {
@@ -86,8 +89,96 @@ main,
   font-size: 1.07rem;
 }
 
+.site-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text);
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0.5rem 0.85rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background-color 160ms ease, border-color 160ms ease;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  border-color: var(--border);
+  background: rgba(255, 255, 255, 0.66);
+  outline: none;
+}
+
+.nav-trigger {
+  font: inherit;
+  cursor: pointer;
+  appearance: none;
+  background: transparent;
+}
+
+.nav-dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 0.45rem);
+  left: 0;
+  width: 255px;
+  padding: 0.45rem;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+  transition: opacity 160ms ease, transform 160ms ease;
+  box-shadow: 0 14px 30px rgba(20, 34, 45, 0.14);
+}
+
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown:focus-within .dropdown-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.dropdown-menu a {
+  display: block;
+  text-decoration: none;
+  color: var(--text);
+  border-radius: 12px;
+  padding: 0.65rem 0.75rem;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu a:focus-visible {
+  background: rgba(15, 95, 143, 0.1);
+  outline: none;
+}
+
+.dropdown-title {
+  display: block;
+  font-weight: 700;
+}
+
+.dropdown-meta {
+  display: block;
+  margin-top: 0.22rem;
+  font-size: 0.78rem;
+  color: #4f616e;
+}
+
 .hero {
-  padding: 4rem 0 2.8rem;
+  padding: 3.4rem 0 2.4rem;
   animation: rise 700ms ease-out both;
 }
 
@@ -120,7 +211,7 @@ h1 {
 }
 
 .hero-actions {
-  margin-top: 1.8rem;
+  margin-top: 1.5rem;
   display: flex;
   gap: 0.75rem;
   flex-wrap: wrap;
@@ -152,6 +243,40 @@ h1 {
   color: var(--text);
   border-color: var(--border);
   background: rgba(255, 255, 255, 0.55);
+}
+
+.product-spotlight {
+  margin: 0.6rem 0 2.2rem;
+}
+
+.product-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(244, 250, 252, 0.9));
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 1.4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-card::after {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  right: -80px;
+  bottom: -120px;
+  background: radial-gradient(circle at center, rgba(200, 105, 64, 0.16) 0%, transparent 70%);
+}
+
+.product-card h2 {
+  margin-top: 0.7rem;
+  font-size: clamp(1.6rem, 3.4vw, 2.5rem);
+}
+
+.product-card p {
+  max-width: 65ch;
+  line-height: 1.62;
 }
 
 .cards {
@@ -263,5 +388,22 @@ h1 {
 
   .brand-text {
     font-size: 1rem;
+  }
+
+  .site-header {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .dropdown-menu {
+    left: auto;
+    right: 0;
+    width: 220px;
+  }
+
+  .site-nav {
+    justify-content: center;
+    width: 100%;
   }
 }
