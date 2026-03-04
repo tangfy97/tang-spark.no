@@ -6,36 +6,39 @@
     <title>Echoknot Support | TangSpark</title>
     <meta
       name="description"
-      content="Official support page for Echoknot v1.1 by TangSpark. Features, quick start, troubleshooting, privacy, and contact information."
+      content="Technical support documentation for Echoknot iOS v1.1: setup, feature matrix, troubleshooting, privacy, pricing, and roadmap."
     />
     <meta property="og:title" content="Echoknot Support | TangSpark" />
     <meta
       property="og:description"
-      content="Code-accurate support and troubleshooting for Echoknot iOS v1.1."
+      content="Technical support and troubleshooting guide for Echoknot iOS."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.tang-spark.no/echoknot-support.html" />
-    <meta name="theme-color" content="#0f5f8f" />
+    <meta name="theme-color" content="#0b5f88" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Newsreader:opsz,wght@6..72,600;6..72,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,600&display=swap"
       rel="stylesheet"
     />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <style>
       :root {
-        --bg: #edf2f4;
-        --panel: rgba(255, 255, 255, 0.86);
-        --ink: #15222b;
-        --muted: #4f5f6a;
-        --line: rgba(21, 34, 43, 0.14);
-        --blue: #0f5f8f;
-        --blue-deep: #0a466b;
-        --warm: #c86940;
-        --warm-soft: rgba(200, 105, 64, 0.16);
-        --radius: 18px;
-        --max: 1080px;
+        --bg: #ebf1f4;
+        --surface: #ffffff;
+        --surface-soft: #f4f8fa;
+        --ink: #13212c;
+        --ink-muted: #4c5f6d;
+        --line: #d5dfe6;
+        --line-strong: #b9c9d5;
+        --accent: #0b5f88;
+        --accent-dark: #094967;
+        --good: #0f7a4c;
+        --warn: #94610f;
+        --radius: 14px;
+        --radius-sm: 10px;
+        --max: 1220px;
       }
 
       * {
@@ -50,25 +53,25 @@
         margin: 0;
         font-family: "Manrope", sans-serif;
         color: var(--ink);
-        background: radial-gradient(circle at 10% 0%, #c9dbe6 0%, transparent 42%),
-          radial-gradient(circle at 90% 4%, #e4edf2 0%, transparent 44%),
-          linear-gradient(180deg, #edf2f4 0%, #e7edef 100%);
+        background: radial-gradient(circle at 8% 0%, #cfe0ea 0%, transparent 40%),
+          radial-gradient(circle at 92% 4%, #e2ebf1 0%, transparent 38%), var(--bg);
         line-height: 1.58;
       }
 
       a {
-        color: var(--blue);
+        color: var(--accent);
       }
 
       .skip-link {
         position: absolute;
-        left: 12px;
-        top: -44px;
-        background: #fff;
+        top: -48px;
+        left: 10px;
+        z-index: 999;
+        background: #ffffff;
         color: var(--ink);
         padding: 8px 12px;
-        border-radius: 10px;
-        z-index: 1000;
+        border: 1px solid var(--line-strong);
+        border-radius: 8px;
       }
 
       .skip-link:focus {
@@ -79,35 +82,34 @@
         position: sticky;
         top: 0;
         z-index: 50;
-        backdrop-filter: blur(10px);
-        background: rgba(237, 242, 244, 0.9);
+        backdrop-filter: blur(8px);
+        background: rgba(235, 241, 244, 0.92);
         border-bottom: 1px solid var(--line);
       }
 
       .topbar-inner {
-        max-width: var(--max);
+        width: min(var(--max), 96vw);
         margin: 0 auto;
-        padding: 10px 14px;
+        padding: 10px 0;
         display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
         align-items: center;
         justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
       }
 
       .brand {
         display: inline-flex;
         align-items: center;
         gap: 0.7rem;
-        text-decoration: none;
         color: var(--ink);
-        font-weight: 800;
+        text-decoration: none;
       }
 
       .brand-mark {
         width: 1.9rem;
         height: 1.9rem;
-        border-radius: 0.68rem;
+        border-radius: 0.66rem;
         background: linear-gradient(145deg, #0f5f8f, #6fb5da);
         position: relative;
       }
@@ -116,177 +118,321 @@
         content: "";
         position: absolute;
         inset: 0.35rem;
-        border-radius: 0.45rem;
-        border: 2px solid rgba(255, 255, 255, 0.78);
+        border-radius: 0.42rem;
+        border: 2px solid rgba(255, 255, 255, 0.8);
       }
 
       .brand-star {
         position: absolute;
         width: 0.5rem;
         height: 0.5rem;
+        border-radius: 0.16rem;
         background: #fff8f0;
-        border-radius: 0.18rem;
-        right: 0.25rem;
-        top: 0.25rem;
+        right: 0.24rem;
+        top: 0.24rem;
         transform: rotate(45deg);
       }
 
-      .brand-text small {
-        display: block;
-        color: var(--muted);
-        font-weight: 600;
-        font-size: 0.76rem;
+      .brand-text {
+        display: grid;
+        gap: 2px;
       }
 
-      .nav-scroll {
-        display: flex;
-        flex: 1 1 100%;
-        gap: 6px;
-        overflow-x: auto;
-        padding-bottom: 2px;
-        scrollbar-width: thin;
+      .brand-text strong {
+        font-weight: 800;
+        line-height: 1;
       }
 
-      .nav-scroll a {
-        text-decoration: none;
-        white-space: nowrap;
-        font-size: 0.86rem;
-        padding: 7px 10px;
+      .brand-text span {
+        font-size: 0.78rem;
+        color: var(--ink-muted);
+        line-height: 1;
+      }
+
+      .header-meta {
+        display: inline-flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        padding: 5px 9px;
         border-radius: 999px;
-        border: 1px solid var(--line);
-        background: rgba(255, 255, 255, 0.76);
-        color: var(--ink);
+        font-size: 0.74rem;
+        font-weight: 700;
+        border: 1px solid var(--line-strong);
+        background: #ffffff;
+        color: #223543;
+      }
+
+      .chip strong {
+        font-weight: 800;
       }
 
       .top-links {
         display: inline-flex;
-        gap: 6px;
+        flex-wrap: wrap;
+        gap: 7px;
       }
 
       .top-links a {
         text-decoration: none;
-        white-space: nowrap;
-        font-size: 0.84rem;
-        padding: 7px 10px;
         border-radius: 999px;
-        border: 1px solid var(--line);
-        background: rgba(255, 255, 255, 0.76);
-        color: var(--ink);
+        border: 1px solid var(--line-strong);
+        background: #ffffff;
+        color: #1a2e3b;
+        font-size: 0.83rem;
+        font-weight: 700;
+        padding: 7px 11px;
       }
 
-      .container {
-        max-width: var(--max);
-        margin: 0 auto;
-        padding: 22px 16px 34px;
+      .top-links a:hover {
+        border-color: #9eb3c2;
       }
 
-      .hero-card {
-        background: var(--panel);
+      .page {
+        width: min(var(--max), 96vw);
+        margin: 18px auto 34px;
+        display: grid;
+        grid-template-columns: 265px minmax(0, 1fr);
+        gap: 18px;
+      }
+
+      .sidebar {
+        position: sticky;
+        top: 82px;
+        height: fit-content;
         border: 1px solid var(--line);
         border-radius: var(--radius);
-        padding: 20px;
+        background: rgba(255, 255, 255, 0.87);
+        padding: 14px;
+      }
+
+      .side-title {
+        margin: 0;
+        font-size: 0.8rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--ink-muted);
+        font-weight: 700;
+      }
+
+      .side-nav {
+        margin-top: 10px;
+        display: grid;
+        gap: 5px;
+      }
+
+      .side-nav a {
+        text-decoration: none;
+        color: #173040;
+        border: 1px solid transparent;
+        border-radius: 8px;
+        padding: 7px 9px;
+        font-size: 0.88rem;
+        font-weight: 600;
+      }
+
+      .side-nav a:hover {
+        border-color: var(--line);
+        background: #f7fafc;
+      }
+
+      .side-nav a.is-active {
+        border-color: #a8bdcb;
+        background: #edf5fa;
+        color: #0b4564;
+      }
+
+      .side-box {
+        margin-top: 12px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: #f8fbfd;
+        padding: 10px;
+      }
+
+      .side-box h3 {
+        margin: 0 0 8px;
+        font-size: 0.86rem;
+        font-weight: 800;
+        font-family: "Manrope", sans-serif;
+      }
+
+      .side-box ul {
+        margin: 0;
+        padding-left: 18px;
+        display: grid;
+        gap: 6px;
+        font-size: 0.82rem;
+        color: #2c4555;
+      }
+
+      .mobile-nav {
+        display: none;
+      }
+
+      .content {
+        display: grid;
+        gap: 14px;
+      }
+
+      .section {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: rgba(255, 255, 255, 0.9);
+        padding: 18px;
+        scroll-margin-top: 90px;
+      }
+
+      .hero {
         position: relative;
         overflow: hidden;
       }
 
-      .hero-card::after {
+      .hero::after {
         content: "";
         position: absolute;
-        width: 250px;
-        height: 250px;
-        border-radius: 50%;
-        right: -90px;
+        right: -95px;
         bottom: -120px;
-        background: radial-gradient(circle at center, var(--warm-soft) 0%, transparent 72%);
-      }
-
-      .eyebrow {
-        display: inline-block;
-        margin: 0 0 10px;
-        font-size: 0.78rem;
-        font-weight: 700;
-        letter-spacing: 0.09em;
-        color: var(--blue-deep);
-        text-transform: uppercase;
+        width: 230px;
+        height: 230px;
+        border-radius: 50%;
+        background: radial-gradient(circle at center, rgba(14, 96, 137, 0.18) 0%, transparent 68%);
       }
 
       h1,
       h2,
       h3 {
-        font-family: "Newsreader", serif;
-        line-height: 1.14;
         margin: 0 0 10px;
       }
 
+      h1,
+      h2 {
+        font-family: "Newsreader", serif;
+        line-height: 1.12;
+      }
+
       h1 {
-        font-size: clamp(1.8rem, 4.6vw, 2.9rem);
+        font-size: clamp(1.75rem, 3.8vw, 2.7rem);
       }
 
       h2 {
-        font-size: clamp(1.25rem, 3.4vw, 1.9rem);
+        font-size: clamp(1.2rem, 3vw, 1.85rem);
       }
 
       h3 {
-        font-size: 1.08rem;
+        font-size: 1.02rem;
+        font-family: "Manrope", sans-serif;
+        font-weight: 800;
       }
 
-      .subtitle {
+      .eyebrow {
+        margin: 0 0 10px;
+        font-size: 0.79rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #0c4e70;
+      }
+
+      .lead {
         margin: 0;
-        color: var(--muted);
-        max-width: 60ch;
+        color: var(--ink-muted);
+        max-width: 70ch;
       }
 
-      .cta-row {
-        margin-top: 16px;
-        display: flex;
-        flex-wrap: wrap;
+      .hero-grid {
+        margin-top: 12px;
+        display: grid;
         gap: 10px;
       }
 
+      .meta-card {
+        border: 1px solid var(--line);
+        border-radius: var(--radius-sm);
+        background: #f7fbfd;
+        padding: 11px;
+      }
+
+      .meta-card p {
+        margin: 0;
+        font-size: 0.88rem;
+      }
+
+      .cta-row {
+        margin-top: 14px;
+        display: flex;
+        gap: 9px;
+        flex-wrap: wrap;
+      }
+
       .btn {
+        text-decoration: none;
+        border: 1px solid transparent;
+        border-radius: 10px;
+        font-weight: 700;
+        padding: 10px 13px;
+        min-height: 42px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        text-decoration: none;
-        border-radius: 11px;
-        border: 1px solid transparent;
-        min-height: 42px;
-        padding: 10px 14px;
-        font-weight: 700;
       }
 
       .btn-primary {
-        background: var(--blue);
-        color: #fff;
+        background: var(--accent);
+        color: #ffffff;
       }
 
       .btn-primary:hover {
-        background: var(--blue-deep);
+        background: var(--accent-dark);
       }
 
       .btn-secondary {
-        background: #fff;
-        border-color: var(--line);
-        color: var(--ink);
+        background: #ffffff;
+        border-color: var(--line-strong);
+        color: #1b3240;
       }
 
-      .meta {
-        margin-top: 10px;
-        color: var(--muted);
-        font-size: 0.9rem;
+      .inline-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
       }
 
-      .section {
-        margin-top: 18px;
-        padding: 20px;
+      .inline-list li {
         border: 1px solid var(--line);
-        border-radius: var(--radius);
-        background: var(--panel);
-        scroll-margin-top: 86px;
+        border-radius: 999px;
+        background: var(--surface-soft);
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: #284255;
+        padding: 6px 10px;
       }
 
-      .section p {
-        margin-top: 0;
+      .grid-2 {
+        display: grid;
+        gap: 10px;
+      }
+
+      .soft-card {
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: #fbfdfe;
+        padding: 11px;
+      }
+
+      .soft-card p {
+        margin: 0;
+        color: #324959;
+        font-size: 0.9rem;
       }
 
       .list,
@@ -297,26 +443,59 @@
         gap: 8px;
       }
 
-      .feature-grid,
-      .troubleshoot-grid,
-      .release-grid {
-        display: grid;
-        gap: 10px;
+      .table-wrap {
+        overflow-x: auto;
       }
 
-      .feature-item,
-      .issue,
-      .release-card {
-        border: 1px solid var(--line);
-        border-radius: 12px;
-        padding: 12px;
-        background: rgba(255, 255, 255, 0.92);
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 680px;
+      }
+
+      th,
+      td {
+        border-bottom: 1px solid var(--line);
+        text-align: left;
+        padding: 10px 8px;
+        font-size: 0.9rem;
+        vertical-align: top;
+      }
+
+      th {
+        color: #274053;
+        font-size: 0.82rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .pill {
+        display: inline-flex;
+        border-radius: 999px;
+        border: 1px solid;
+        padding: 4px 8px;
+        font-size: 0.73rem;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .pill.ok {
+        color: var(--good);
+        border-color: rgba(15, 122, 76, 0.35);
+        background: rgba(15, 122, 76, 0.1);
+      }
+
+      .pill.plan {
+        color: var(--warn);
+        border-color: rgba(148, 97, 15, 0.3);
+        background: rgba(148, 97, 15, 0.12);
       }
 
       details {
         border: 1px solid var(--line);
-        background: rgba(255, 255, 255, 0.92);
-        border-radius: 12px;
+        border-radius: 10px;
+        background: #fbfdfe;
         padding: 10px 12px;
       }
 
@@ -329,11 +508,20 @@
         font-weight: 700;
       }
 
+      .notice {
+        border: 1px solid rgba(11, 95, 136, 0.26);
+        background: rgba(11, 95, 136, 0.08);
+        border-radius: 10px;
+        padding: 10px 12px;
+        font-weight: 600;
+        color: #134662;
+      }
+
       .bug-box {
         margin-top: 12px;
-        border: 1px dashed var(--line);
-        background: rgba(255, 255, 255, 0.92);
+        border: 1px dashed var(--line-strong);
         border-radius: 10px;
+        background: #fbfdfe;
         padding: 10px;
       }
 
@@ -353,8 +541,8 @@
       }
 
       .copy-row button {
-        border: 1px solid var(--line);
-        background: #fff;
+        border: 1px solid var(--line-strong);
+        background: #ffffff;
         border-radius: 10px;
         min-height: 40px;
         padding: 8px 12px;
@@ -364,22 +552,29 @@
 
       .status {
         font-size: 0.88rem;
-        color: var(--muted);
+        color: var(--ink-muted);
+      }
+
+      .meta {
+        color: var(--ink-muted);
+        font-size: 0.88rem;
+        margin: 4px 0 0;
       }
 
       footer {
         border-top: 1px solid var(--line);
-        margin-top: 24px;
-        padding: 18px 16px 30px;
-        color: var(--muted);
+        margin-top: 18px;
+        padding: 16px;
+        color: var(--ink-muted);
       }
 
       .footer-inner {
-        max-width: var(--max);
+        width: min(var(--max), 96vw);
         margin: 0 auto;
         display: flex;
-        gap: 10px;
+        gap: 12px;
         justify-content: space-between;
+        align-items: center;
         flex-wrap: wrap;
       }
 
@@ -387,6 +582,11 @@
         display: inline-flex;
         gap: 12px;
         flex-wrap: wrap;
+      }
+
+      .footer-links a {
+        color: var(--accent);
+        font-weight: 700;
       }
 
       .visually-hidden {
@@ -401,33 +601,50 @@
         border: 0;
       }
 
-      @media (min-width: 760px) {
-        .topbar-inner {
-          padding-inline: 18px;
-          flex-wrap: nowrap;
+      @media (min-width: 900px) {
+        .hero-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
         }
 
-        .container {
-          padding-inline: 20px;
-        }
-
-        .nav-scroll {
-          flex: 1 1 auto;
-        }
-
-        .feature-grid,
-        .troubleshoot-grid,
-        .release-grid {
+        .grid-2 {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
       }
 
-      @media (min-width: 980px) {
-        .hero-card {
-          display: grid;
-          grid-template-columns: 1.1fr 0.9fr;
-          gap: 20px;
-          align-items: center;
+      @media (max-width: 980px) {
+        .page {
+          grid-template-columns: 1fr;
+        }
+
+        .sidebar {
+          display: none;
+        }
+
+        .mobile-nav {
+          display: flex;
+          gap: 7px;
+          overflow-x: auto;
+          padding-bottom: 3px;
+          scrollbar-width: thin;
+          margin-bottom: 4px;
+        }
+
+        .mobile-nav a {
+          text-decoration: none;
+          white-space: nowrap;
+          border: 1px solid var(--line);
+          background: rgba(255, 255, 255, 0.9);
+          color: #1d3442;
+          border-radius: 999px;
+          padding: 7px 10px;
+          font-size: 0.82rem;
+          font-weight: 700;
+        }
+
+        .mobile-nav a.is-active {
+          border-color: #9eb5c5;
+          background: #eef6fb;
+          color: #0b4766;
         }
       }
     </style>
@@ -441,241 +658,353 @@
           <span class="brand-mark" aria-hidden="true">
             <span class="brand-star"></span>
           </span>
-          <span class="brand-text"
-            >TangSpark
-            <small>Echoknot Support</small>
+          <span class="brand-text">
+            <strong>TangSpark</strong>
+            <span>Echoknot Software Support</span>
           </span>
         </a>
 
-        <nav class="nav-scroll" aria-label="Section navigation">
-          <a href="#overview">Overview</a>
-          <a href="#features">Features</a>
-          <a href="#quick-start">Quick Start</a>
-          <a href="#support">Help Center</a>
-          <a href="#privacy">Privacy</a>
-          <a href="#troubleshooting">Troubleshooting</a>
-          <a href="#contact">Contact</a>
-          <a href="#release-notes">Release Notes</a>
-        </nav>
+        <div class="header-meta" aria-label="Build metadata">
+          <span class="chip">Platform <strong>iOS</strong></span>
+          <span class="chip">Current Build <strong>1.1</strong></span>
+          <span class="chip">Storage <strong>Local-First</strong></span>
+        </div>
 
         <div class="top-links">
           <a href="./echoknot.html">Product Page</a>
+          <a href="mailto:support@tang-spark.no">Contact Support</a>
         </div>
       </div>
     </header>
 
-    <main id="main-content" class="container">
-      <section id="overview" class="hero" aria-labelledby="hero-title">
-        <div class="hero-card">
-          <div>
-            <p class="eyebrow">Echoknot for iOS</p>
-            <h1 id="hero-title">Support and guide for version 1.1</h1>
-            <p class="subtitle">
-              This page is aligned with the shipped iOS codebase (`CFBundleShortVersionString 1.1`).
-              It covers the live feature set, troubleshooting, and data behavior.
-            </p>
-            <div class="cta-row">
-              <a class="btn btn-primary" href="mailto:support@tang-spark.no">Contact Support</a>
-              <a class="btn btn-secondary" href="./echoknot.html">Back to Product Intro</a>
-            </div>
-            <p class="meta">Current latest build: <strong>1.1</strong></p>
+    <div class="page">
+      <aside class="sidebar" aria-label="Section navigation">
+        <p class="side-title">On This Page</p>
+        <nav class="side-nav">
+          <a href="#overview">Overview</a>
+          <a href="#status">System Status</a>
+          <a href="#compatibility">Compatibility</a>
+          <a href="#quick-start">Quick Start</a>
+          <a href="#feature-matrix">Feature Matrix</a>
+          <a href="#faq">FAQ</a>
+          <a href="#privacy">Privacy</a>
+          <a href="#troubleshooting">Troubleshooting</a>
+          <a href="#pricing-roadmap">Pricing &amp; Roadmap</a>
+          <a href="#contact">Contact</a>
+          <a href="#release-notes">Release Notes</a>
+        </nav>
+
+        <section class="side-box" aria-label="Support scope">
+          <h3>Support Scope</h3>
+          <ul>
+            <li>Current maintained build: v1.1</li>
+            <li>No cloud sync or account system in current release</li>
+            <li>Primary support channel: support@tang-spark.no</li>
+          </ul>
+        </section>
+      </aside>
+
+      <main id="main-content" class="content">
+        <nav class="mobile-nav" aria-label="Quick navigation">
+          <a href="#overview">Overview</a>
+          <a href="#status">Status</a>
+          <a href="#compatibility">Compatibility</a>
+          <a href="#quick-start">Quick Start</a>
+          <a href="#feature-matrix">Features</a>
+          <a href="#faq">FAQ</a>
+          <a href="#privacy">Privacy</a>
+          <a href="#troubleshooting">Troubleshooting</a>
+          <a href="#pricing-roadmap">Roadmap</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <section id="overview" class="section hero" aria-labelledby="hero-title">
+          <p class="eyebrow">Echoknot for iOS</p>
+          <h1 id="hero-title">Technical support guide for version 1.1</h1>
+          <p class="lead">
+            This page documents the current production build and focuses on behavior that is live
+            in app: feature scope, troubleshooting logic, privacy handling, and roadmap notes.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="mailto:support@tang-spark.no">Open Support Ticket</a>
+            <a class="btn btn-secondary" href="./echoknot.html">Back to Product Intro</a>
           </div>
-
-          <div class="release-card" aria-label="At a glance">
-            <h3>At a glance</h3>
-            <ul class="list">
-              <li>Capture knots with word, translation, usage, memory anchor, and tags.</li>
-              <li>Generate echo stories from selected knots (minimum 3, maximum 8).</li>
-              <li>Save recent echoes and favorite echoes (up to 5 favorites).</li>
-              <li>Export knots and echoes as JSON or PDF from Settings and Dashboard.</li>
-              <li>Theme and language controls: Light, Dark, System; EN, zh-CN, zh-TW, System.</li>
-            </ul>
+          <div class="hero-grid">
+            <article class="meta-card">
+              <p><strong>Build:</strong> 1.1</p>
+            </article>
+            <article class="meta-card">
+              <p><strong>Release Type:</strong> Stable</p>
+            </article>
+            <article class="meta-card">
+              <p><strong>Data Model:</strong> Local-first persistence</p>
+            </article>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="features" class="section" aria-labelledby="features-title">
-        <h2 id="features-title">Features in v1.1</h2>
-        <div class="feature-grid">
-          <article class="feature-item">
-            <h3>Context-first knot capture</h3>
+        <section id="status" class="section" aria-labelledby="status-title">
+          <h2 id="status-title">System Status</h2>
+          <ul class="inline-list">
+            <li>Capture workflow: Operational</li>
+            <li>Echo generation: Operational (user-triggered)</li>
+            <li>JSON/PDF export: Operational</li>
+            <li>Cloud sync: Not enabled</li>
+            <li>User accounts: Not enabled</li>
+          </ul>
+          <p class="meta">Status reflects the latest shipped iOS build documentation (v1.1).</p>
+        </section>
+
+        <section id="compatibility" class="section" aria-labelledby="compatibility-title">
+          <h2 id="compatibility-title">Compatibility</h2>
+          <div class="grid-2">
+            <article class="soft-card">
+              <h3>Supported environment</h3>
+              <p>
+                Echoknot is delivered as an iOS app. Device and OS availability follows the active
+                App Store distribution configuration for the current release.
+              </p>
+            </article>
+            <article class="soft-card">
+              <h3>Network dependency model</h3>
+              <p>
+                Core data operations are local. AI-assisted actions require network access only when
+                you explicitly trigger generation.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section id="quick-start" class="section" aria-labelledby="quick-title">
+          <h2 id="quick-title">Quick Start</h2>
+          <ol class="steps">
+            <li>Open Echoknot and set your learning language and level.</li>
+            <li>Use the plus action to create your first knot.</li>
+            <li>Add translation, optional usage sentence, and a memory anchor.</li>
+            <li>Open Echo chamber and select at least 3 knots in one language.</li>
+            <li>Generate a story, then save/favorite high-value echoes.</li>
+            <li>Use export (JSON/PDF) for backup or migration when needed.</li>
+          </ol>
+        </section>
+
+        <section id="feature-matrix" class="section" aria-labelledby="matrix-title">
+          <h2 id="matrix-title">Feature Matrix</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Module</th>
+                  <th>Availability</th>
+                  <th>Implementation Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Knot capture and edit</td>
+                  <td><span class="pill ok">Available</span></td>
+                  <td>Word, translation, usage, anchor, tags; edit and delete in knot details.</td>
+                </tr>
+                <tr>
+                  <td>Echo chamber generation</td>
+                  <td><span class="pill ok">Available</span></td>
+                  <td>Requires minimum 3 and maximum 8 selected knots from one language.</td>
+                </tr>
+                <tr>
+                  <td>Favorites and recents</td>
+                  <td><span class="pill ok">Available</span></td>
+                  <td>Favorites are capped at 5 in the current build.</td>
+                </tr>
+                <tr>
+                  <td>Data export</td>
+                  <td><span class="pill ok">Available</span></td>
+                  <td>JSON and PDF export options available from Settings and Dashboard.</td>
+                </tr>
+                <tr>
+                  <td>Cloud sync</td>
+                  <td><span class="pill plan">Planned</span></td>
+                  <td>Not in v1.1. Considered as optional extra functionality for future releases.</td>
+                </tr>
+                <tr>
+                  <td>User accounts</td>
+                  <td><span class="pill plan">Planned</span></td>
+                  <td>Not in v1.1. Considered as optional extra functionality for future releases.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="faq" class="section" aria-labelledby="faq-title">
+          <h2 id="faq-title">FAQ</h2>
+
+          <details>
+            <summary>How do I edit or delete a knot?</summary>
             <p>
-              Save the word you heard, your translation, optional usage sentence,
-              memory anchor, and tags for recall.
+              Open a knot from the dashboard list, then use the edit action in knot details.
+              Delete is available in knot details as a destructive action.
             </p>
-          </article>
-          <article class="feature-item">
-            <h3>Echo chamber workflow</h3>
+          </details>
+
+          <details>
+            <summary>Why cannot I generate an echo story?</summary>
             <p>
-              Select knots in one language, generate a short story plus translation,
-              and keep recent echoes for reuse.
+              Echo generation is disabled when fewer than 3 knots are selected, when selected knots
+              use mixed languages, when quota is exhausted, or when network/provider access fails.
             </p>
-          </article>
-          <article class="feature-item">
-            <h3>Favorite echoes</h3>
+          </details>
+
+          <details>
+            <summary>How do favorites work?</summary>
+            <p>You can favorite saved echoes. Favorites are capped at 5. Unfavorite an item to free space.</p>
+          </details>
+
+          <details>
+            <summary>Where can I export JSON or PDF?</summary>
             <p>
-              Mark saved echoes as favorites for fast revisit. The current cap is 5 favorites.
+              Use Settings data export buttons, or open the Dashboard export menu in the all-knots
+              area. Both JSON and PDF formats are supported.
             </p>
-          </article>
-          <article class="feature-item">
-            <h3>Export and reset tools</h3>
+          </details>
+
+          <details>
+            <summary>What does reset remove?</summary>
+            <p>Reset deletes knots, recent echoes, favorite echoes, and preferences, then restores defaults.</p>
+          </details>
+
+          <details>
+            <summary>Where do I change theme and language?</summary>
+            <p>In Settings, open Appearance to set theme (Light, Dark, System), app language, and text size.</p>
+          </details>
+
+          <details>
+            <summary>Does Echoknot sync across devices?</summary>
             <p>
-              Export data as structured JSON or readable PDF. You can also delete all data
-              and reset to first-run state.
+              Not in v1.1. The app is local-first in this release. Cloud storage and accounts are
+              future optional items and are not active now.
             </p>
-          </article>
-          <article class="feature-item">
-            <h3>Display and language settings</h3>
+          </details>
+
+          <details>
+            <summary>What data is sent when I use AI features?</summary>
             <p>
-              Set app language, text size, learning level (A2, B1-B2, C1), and appearance mode.
+              Only the text required for the user-triggered action is sent to the configured AI
+              provider. There are no background AI requests by default.
             </p>
-          </article>
-          <article class="feature-item">
-            <h3>Local-first storage</h3>
-            <p>
-              Data is persisted locally on-device with a primary snapshot, backup snapshot,
-              and defaults fallback.
-            </p>
-          </article>
-        </div>
-      </section>
+          </details>
+        </section>
 
-      <section id="quick-start" class="section" aria-labelledby="quick-title">
-        <h2 id="quick-title">Quick Start</h2>
-        <ol class="steps">
-          <li>Open Echoknot and choose your learning language and level.</li>
-          <li>Tap the + action to capture your first knot.</li>
-          <li>Add meaning, usage, and a memory anchor tied to a real moment.</li>
-          <li>Open Echo chamber and select at least 3 knots from one language.</li>
-          <li>Create an echo story and favorite the best echoes for repeat review.</li>
-        </ol>
-      </section>
-
-      <section id="support" class="section" aria-labelledby="support-title">
-        <h2 id="support-title">Support / Help Center</h2>
-
-        <details>
-          <summary>How do I edit or delete a knot?</summary>
+        <section id="privacy" class="section" aria-labelledby="privacy-title">
+          <h2 id="privacy-title">Echoknot App Privacy Policy (EU and US)</h2>
           <p>
-            Open a knot from the dashboard list, then use the edit action in knot details.
-            Delete is available in knot details as a destructive action.
+            <strong>
+              Echoknot v1.1 is local-first. TangSpark does not collect, store, sell, or share personal
+              data or personally identifiable information (PII) on TangSpark servers through normal app use.
+            </strong>
           </p>
-        </details>
+          <p class="meta">Last updated: March 4, 2026</p>
 
-        <details>
-          <summary>Why can&apos;t I generate an echo story?</summary>
+          <h3>What Echoknot stores</h3>
+          <ul class="list">
+            <li>No account sign-up is required.</li>
+            <li>Knots, echoes, and preferences are stored on your device by default.</li>
+            <li>Always-on cloud sync is not enabled in v1.1.</li>
+            <li>Data export is available as JSON or PDF.</li>
+          </ul>
+
+          <h3>AI processing note</h3>
+          <ul class="list">
+            <li>AI actions run only when you trigger them.</li>
+            <li>Only required text for that action is sent to the configured AI provider.</li>
+            <li>TangSpark does not use this flow to build personal identity profiles.</li>
+          </ul>
+
+          <h3>For users in EU, EEA, and UK</h3>
           <p>
-            Echo generation is disabled when fewer than 3 knots are selected, when selected knots
-            are from mixed languages, when quota is exhausted, or when network/provider access fails.
+            Under GDPR and UK GDPR, users generally have rights such as access, correction, deletion,
+            restriction, portability, objection, and complaint rights. Because normal usage is local-first
+            and not centrally collected by TangSpark, many controls are available directly in-app via edit,
+            export, and reset actions.
           </p>
-        </details>
 
-        <details>
-          <summary>How do favorites work?</summary>
+          <h3>For users in the United States</h3>
           <p>
-            You can favorite saved echoes. Favorites are capped at 5. Unfavorite any item to free space.
+            US state privacy laws (including California) may grant rights to know, correct, delete, and
+            opt out of sale/share of personal information. Echoknot does not sell personal information
+            and is not designed for targeted advertising data sharing in normal app usage.
           </p>
-        </details>
 
-        <details>
-          <summary>Where can I export JSON or PDF?</summary>
+          <h3>Privacy requests</h3>
           <p>
-            Use Settings &gt; Data export buttons, or open the Dashboard export menu in the all-knots area.
-            Both JSON and PDF formats are supported.
+            Contact <a href="mailto:support@tang-spark.no">support@tang-spark.no</a> and include
+            your region (EU/EEA/UK or US), device model, iOS version, and app version.
           </p>
-        </details>
+        </section>
 
-        <details>
-          <summary>What does reset remove?</summary>
+        <section id="troubleshooting" class="section" aria-labelledby="troubleshooting-title">
+          <h2 id="troubleshooting-title">Troubleshooting</h2>
+          <div class="grid-2">
+            <article class="soft-card">
+              <h3>AI unavailable</h3>
+              <ul class="list">
+                <li>Confirm internet access, then retry.</li>
+                <li>Check whether quota has been reached.</li>
+                <li>Try a smaller knot selection and regenerate.</li>
+              </ul>
+            </article>
+            <article class="soft-card">
+              <h3>Export failed</h3>
+              <ul class="list">
+                <li>Retry export in the same format.</li>
+                <li>Confirm iOS share sheet appears correctly.</li>
+                <li>Reopen the app and retry.</li>
+              </ul>
+            </article>
+            <article class="soft-card">
+              <h3>Echo button disabled</h3>
+              <ul class="list">
+                <li>Select at least 3 knots.</li>
+                <li>Use knots from one language only.</li>
+                <li>Verify quota is not paused.</li>
+              </ul>
+            </article>
+            <article class="soft-card">
+              <h3>Unexpected reset after reinstall</h3>
+              <ul class="list">
+                <li>Data is local to the device and app installation.</li>
+                <li>Use JSON/PDF export regularly if backup is needed.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section id="pricing-roadmap" class="section" aria-labelledby="pricing-title">
+          <h2 id="pricing-title">Pricing and Roadmap</h2>
+          <p class="notice">
+            Echoknot is free until <strong>April 30, 2026</strong>.
+          </p>
+          <ul class="list">
+            <li>The current free period runs through April 30, 2026.</li>
+            <li>Any future paid change will be announced before rollout.</li>
+          </ul>
+
+          <h3>Future functionality notes</h3>
+          <ul class="list">
+            <li>Cloud storage is not available in v1.1.</li>
+            <li>User account system is not available in v1.1.</li>
+            <li>Both are planned as optional extra functionality in future releases.</li>
+          </ul>
+        </section>
+
+        <section id="contact" class="section" aria-labelledby="contact-title">
+          <h2 id="contact-title">Contact and Feedback</h2>
           <p>
-            Reset deletes knots, recent echoes, favorite echoes, and preferences, then restores first-run defaults.
+            Support email:
+            <a href="mailto:support@tang-spark.no">support@tang-spark.no</a>
           </p>
-        </details>
+          <p>For faster triage, include the template below.</p>
 
-        <details>
-          <summary>Where do I change theme and language?</summary>
-          <p>
-            In Settings, open Appearance to set theme (Light, Dark, System), app language,
-            and text size.
-          </p>
-        </details>
-
-        <details>
-          <summary>Does Echoknot sync across devices?</summary>
-          <p>
-            Not in v1.1. The app is local-first in this build. Cloud sync/sign-in is planned as a
-            future optional capability.
-          </p>
-        </details>
-
-        <details>
-          <summary>What data is sent when I use AI features?</summary>
-          <p>
-            Only the text needed for the action you trigger is sent to the configured AI provider.
-            There are no background AI calls by default.
-          </p>
-        </details>
-      </section>
-
-      <section id="privacy" class="section" aria-labelledby="privacy-title">
-        <h2 id="privacy-title">Privacy &amp; Data Handling</h2>
-        <ul class="list">
-          <li>No account is required in the current build.</li>
-          <li>Knots, settings, and echoes are stored locally on-device by default.</li>
-          <li>AI actions are user-triggered only and send minimal required text.</li>
-          <li>Export is available as JSON or PDF for backup/migration.</li>
-          <li>Always-on cloud sync is not enabled in v1.1.</li>
-        </ul>
-      </section>
-
-      <section id="troubleshooting" class="section" aria-labelledby="trouble-title">
-        <h2 id="trouble-title">Troubleshooting</h2>
-        <div class="troubleshoot-grid">
-          <article class="issue">
-            <h3>AI unavailable</h3>
-            <ul class="list">
-              <li>Confirm internet access, then retry.</li>
-              <li>Check if AI quota has been reached.</li>
-              <li>Try a smaller selection and regenerate.</li>
-            </ul>
-          </article>
-          <article class="issue">
-            <h3>Export failed</h3>
-            <ul class="list">
-              <li>Retry export in the same format.</li>
-              <li>Confirm the iOS share sheet appears correctly.</li>
-              <li>Reopen the app and try again.</li>
-            </ul>
-          </article>
-          <article class="issue">
-            <h3>Echo button disabled</h3>
-            <ul class="list">
-              <li>Select at least 3 knots.</li>
-              <li>Select knots from one language only.</li>
-              <li>Verify quota is not paused.</li>
-            </ul>
-          </article>
-          <article class="issue">
-            <h3>Unexpected reset after reinstall</h3>
-            <ul class="list">
-              <li>Data is local to the device and app installation.</li>
-              <li>Use JSON/PDF export regularly if you need backups.</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section id="contact" class="section" aria-labelledby="contact-title">
-        <h2 id="contact-title">Contact &amp; Feedback</h2>
-        <p>
-          Support email:
-          <a href="mailto:support@tang-spark.no">support@tang-spark.no</a>
-        </p>
-        <p>For faster help, include the template below.</p>
-
-        <div class="bug-box">
-          <h3>Bug report template</h3>
-          <pre id="bug-template">Subject: Echoknot bug report
+          <div class="bug-box">
+            <h3>Bug report template</h3>
+            <pre id="bug-template">Subject: Echoknot bug report
 
 Device: [e.g., iPhone 14]
 iOS version: [e.g., iOS 18.3]
@@ -694,32 +1023,31 @@ Steps to reproduce:
 
 Screenshots/screen recording:
 [Attached / Not attached]</pre>
-          <div class="copy-row">
-            <button type="button" id="copy-template">Copy template</button>
-            <span id="copy-status" class="status" aria-live="polite"></span>
+            <div class="copy-row">
+              <button type="button" id="copy-template">Copy template</button>
+              <span id="copy-status" class="status" aria-live="polite"></span>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="release-notes" class="section" aria-labelledby="release-title">
-        <h2 id="release-title">Release Notes</h2>
-        <div class="release-grid">
-          <article class="release-card">
+        <section id="release-notes" class="section" aria-labelledby="release-title">
+          <h2 id="release-title">Release Notes</h2>
+          <article class="soft-card">
             <h3>Version 1.1 (current)</h3>
             <ul class="list">
-              <li>Expanded settings for appearance, app language, text size, and learning level.</li>
+              <li>Expanded settings: appearance, app language, text size, and learning level.</li>
               <li>Echo workflow updates with favorites (max 5), saved lists, and delete actions.</li>
               <li>JSON/PDF export from Settings and Dashboard plus full-data reset flow.</li>
               <li>Local-first persistence with backup and recovery-safe save ordering.</li>
             </ul>
           </article>
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
+    </div>
 
     <footer>
       <div class="footer-inner">
-        <p>© 2026 TangSpark. Echoknot support for iOS build 1.1.</p>
+        <p>© 2026 TangSpark. Echoknot support documentation for iOS build 1.1.</p>
         <div class="footer-links">
           <a href="./echoknot.html">Product</a>
           <a href="mailto:support@tang-spark.no">Support Email</a>
@@ -727,7 +1055,7 @@ Screenshots/screen recording:
       </div>
     </footer>
 
-    <p id="lang-status" class="visually-hidden" aria-live="polite"></p>
+    <p id="live-status" class="visually-hidden" aria-live="polite"></p>
 
     <script>
       (function () {
@@ -735,22 +1063,54 @@ Screenshots/screen recording:
         const copyStatus = document.getElementById("copy-status");
         const bugTemplate = document.getElementById("bug-template");
 
-        copyButton.addEventListener("click", async () => {
-          const text = bugTemplate.textContent || "";
-          try {
-            await navigator.clipboard.writeText(text);
-            copyStatus.textContent = "Template copied.";
-          } catch (_) {
-            const range = document.createRange();
-            range.selectNodeContents(bugTemplate);
-            const selection = window.getSelection();
-            if (selection) {
-              selection.removeAllRanges();
-              selection.addRange(range);
+        if (copyButton && copyStatus && bugTemplate) {
+          copyButton.addEventListener("click", async () => {
+            const text = bugTemplate.textContent || "";
+            try {
+              await navigator.clipboard.writeText(text);
+              copyStatus.textContent = "Template copied.";
+            } catch (_) {
+              const range = document.createRange();
+              range.selectNodeContents(bugTemplate);
+              const selection = window.getSelection();
+              if (selection) {
+                selection.removeAllRanges();
+                selection.addRange(range);
+              }
+              copyStatus.textContent = "Select text manually and copy.";
             }
-            copyStatus.textContent = "Select text manually and copy.";
-          }
-        });
+          });
+        }
+
+        const links = Array.from(document.querySelectorAll(".side-nav a, .mobile-nav a"));
+        const targets = links
+          .map((link) => link.getAttribute("href"))
+          .filter((href) => href && href.startsWith("#"))
+          .map((href) => document.querySelector(href))
+          .filter(Boolean);
+
+        if (links.length && targets.length) {
+          const setActive = (id) => {
+            links.forEach((link) => {
+              const active = link.getAttribute("href") === "#" + id;
+              link.classList.toggle("is-active", active);
+            });
+          };
+
+          const observer = new IntersectionObserver(
+            (entries) => {
+              const visible = entries
+                .filter((entry) => entry.isIntersecting)
+                .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+              if (visible.length > 0) {
+                setActive(visible[0].target.id);
+              }
+            },
+            { rootMargin: "-20% 0px -65% 0px", threshold: [0.15, 0.3, 0.6] }
+          );
+
+          targets.forEach((el) => observer.observe(el));
+        }
       })();
     </script>
   </body>
