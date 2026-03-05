@@ -730,6 +730,7 @@
           <ul>
             <li>Current maintained build: v1.1</li>
             <li>No cloud sync or account system in current release</li>
+            <li>Daily free AI limits: 20 auto-fills, 6 echo generates</li>
             <li>Primary support channel: support@tang-spark.no</li>
           </ul>
         </section>
@@ -811,8 +812,9 @@
             <li>Open Echoknot and set your learning language and level.</li>
             <li>Use the plus action to create your first knot.</li>
             <li>Add translation, optional usage sentence, and a memory anchor.</li>
+            <li>Use AI auto-fill when needed (up to 20 free auto-fills per day).</li>
             <li>Open Echo chamber and select at least 3 knots in one language.</li>
-            <li>Generate a story, then save/favorite high-value echoes.</li>
+            <li>Generate a story (up to 6 free echo generations per day), then save/favorite high-value echoes.</li>
             <li>Use export (JSON/PDF) for backup or migration when needed.</li>
           </ol>
         </section>
@@ -840,9 +842,14 @@
                   <td>Requires minimum 3 and maximum 8 selected knots from one language.</td>
                 </tr>
                 <tr>
+                  <td>Daily AI usage limits (free plan)</td>
+                  <td><span class="pill ok">Available</span></td>
+                  <td>20 auto-fills/day and 6 echo generations/day. Counters reset at local midnight.</td>
+                </tr>
+                <tr>
                   <td>Favorites and recents</td>
                   <td><span class="pill ok">Available</span></td>
-                  <td>Favorites are capped at 5 in the current build.</td>
+                  <td>Favorites are capped at 5, and recent echoes are normalized to the latest 5.</td>
                 </tr>
                 <tr>
                   <td>Data export</td>
@@ -879,7 +886,16 @@
             <summary>Why cannot I generate an echo story?</summary>
             <p>
               Echo generation is disabled when fewer than 3 knots are selected, when selected knots
-              use mixed languages, when quota is exhausted, or when network/provider access fails.
+              use mixed languages, when your daily free echo limit is reached, when provider quota is
+              exhausted, or when network/provider access fails.
+            </p>
+          </details>
+
+          <details>
+            <summary>What are the current free daily AI limits?</summary>
+            <p>
+              In v1.1, Echoknot allows 20 AI auto-fills per day and 6 echo generations per day.
+              Both counters reset automatically at local midnight.
             </p>
           </details>
 
@@ -977,7 +993,9 @@
               <h3>AI unavailable</h3>
               <ul class="list">
                 <li>Confirm internet access, then retry.</li>
-                <li>Check whether quota has been reached.</li>
+                <li>Check whether the daily free limit has been reached.</li>
+                <li>If daily limit is reached, wait until local midnight reset.</li>
+                <li>Check whether provider quota has been reached.</li>
                 <li>Try a smaller knot selection and regenerate.</li>
               </ul>
             </article>
@@ -994,7 +1012,8 @@
               <ul class="list">
                 <li>Select at least 3 knots.</li>
                 <li>Use knots from one language only.</li>
-                <li>Verify quota is not paused.</li>
+                <li>Verify daily echo credits are still available.</li>
+                <li>Verify provider quota is not paused.</li>
               </ul>
             </article>
             <article class="soft-card">
@@ -1010,11 +1029,12 @@
         <section id="pricing-roadmap" class="section" aria-labelledby="pricing-title">
           <h2 id="pricing-title">Pricing and Roadmap</h2>
           <p class="notice">
-            Echoknot is free until <strong>April 30, 2026</strong>.
+            Echoknot is currently <strong>free</strong>, with daily AI limits to keep service sustainable.
           </p>
           <ul class="list">
-            <li>The current free period runs through April 30, 2026.</li>
-            <li>Any future paid change will be announced before rollout.</li>
+            <li>Daily free AI limits: 20 auto-fills and 6 echo generations.</li>
+            <li>Both limits reset at local midnight.</li>
+            <li>Any future pricing changes will be announced before rollout.</li>
           </ul>
 
           <h3>Future functionality notes</h3>
@@ -1067,6 +1087,7 @@ Screenshots/screen recording:
             <h3>Version 1.1 (current)</h3>
             <ul class="list">
               <li>Expanded settings: appearance, app language, text size, and learning level.</li>
+              <li>Added daily free AI usage limits with midnight reset (20 auto-fills, 6 echo generations).</li>
               <li>Echo workflow updates with favorites (max 5), saved lists, and delete actions.</li>
               <li>JSON/PDF export from Settings and Dashboard plus full-data reset flow.</li>
               <li>Local-first persistence with backup and recovery-safe save ordering.</li>

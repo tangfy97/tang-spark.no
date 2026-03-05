@@ -723,6 +723,7 @@
           <ul>
             <li>当前维护版本：v1.1</li>
             <li>当前版本不含云同步与账号体系</li>
+            <li>免费版每日 AI 限额：自动补全 20 次，Echo 生成 6 次</li>
             <li>主要支持邮箱：support@tang-spark.no</li>
           </ul>
         </section>
@@ -801,9 +802,10 @@
             <li>首次打开后先设置学习语言和学习级别。</li>
             <li>通过“+”创建第一个 knot。</li>
             <li>填写释义、可选例句、记忆锚点等信息。</li>
+            <li>按需使用 AI 自动补全（免费版每天最多 20 次）。</li>
             <li>进入 Echo 区域，选择同一语言下至少 3 个 knot。</li>
-            <li>生成回声故事，收藏高价值内容用于反复复习。</li>
-            <li>需要备份时，可导出 JSON/PDF。</li>
+            <li>生成回声故事（免费版每天最多 6 次），再保存/收藏高价值内容。</li>
+            <li>需要备份或迁移时，可导出 JSON/PDF。</li>
           </ol>
         </section>
 
@@ -830,9 +832,14 @@
                   <td>需选择同语言 knot，最少 3 个，最多 8 个。</td>
                 </tr>
                 <tr>
+                  <td>每日 AI 使用限额（免费版）</td>
+                  <td><span class="pill ok">可用</span></td>
+                  <td>自动补全 20 次/天，Echo 生成 6 次/天；计数在设备本地时间午夜重置。</td>
+                </tr>
+                <tr>
                   <td>收藏与最近记录</td>
                   <td><span class="pill ok">可用</span></td>
-                  <td>收藏上限为 5 条，可取消收藏后释放名额。</td>
+                  <td>收藏上限为 5 条，最近回声列表会规范为仅保留最新 5 条。</td>
                 </tr>
                 <tr>
                   <td>数据导出</td>
@@ -865,7 +872,15 @@
           <details>
             <summary>为什么我不能生成 Echo 故事？</summary>
             <p>
-              常见原因包括：选中的 knot 少于 3 条、混选了不同语言、配额已用尽，或网络/模型服务暂时不可用。
+              常见原因包括：选中的 knot 少于 3 条、混选了不同语言、当日免费 Echo 次数已用完、模型提供方配额已耗尽，或网络/服务暂时不可用。
+            </p>
+          </details>
+
+          <details>
+            <summary>当前免费版每日 AI 限额是多少？</summary>
+            <p>
+              在 v1.1 中，免费版每天可使用 20 次 AI 自动补全和 6 次 Echo 生成。
+              两项计数都会在设备本地时间午夜自动重置。
             </p>
           </details>
 
@@ -950,7 +965,9 @@
               <h3>AI 不可用</h3>
               <ul class="list">
                 <li>先确认网络可用后重试。</li>
-                <li>检查配额是否已达上限。</li>
+                <li>检查当日免费额度是否已用完。</li>
+                <li>如果当天额度已用完，请等到设备本地时间午夜后自动重置。</li>
+                <li>检查模型提供方配额是否已耗尽。</li>
                 <li>减少 knot 数量后再次生成。</li>
               </ul>
             </article>
@@ -967,7 +984,8 @@
               <ul class="list">
                 <li>至少选择 3 个 knot。</li>
                 <li>确保所选 knot 来自同一学习语言。</li>
-                <li>确认配额未被暂停或耗尽。</li>
+                <li>确认当日 Echo 次数仍有剩余。</li>
+                <li>确认模型提供方配额未暂停。</li>
               </ul>
             </article>
             <article class="soft-card">
@@ -983,11 +1001,12 @@
         <section id="pricing-roadmap" class="section" aria-labelledby="pricing-title">
           <h2 id="pricing-title">价格与路线图</h2>
           <p class="notice">
-            Echoknot 可免费使用至 <strong>2026 年 4 月 30 日</strong>。
+            Echoknot 当前版本可<strong>免费使用</strong>，并设置了每日 AI 限额以保障服务稳定。
           </p>
           <ul class="list">
-            <li>当前免费期截止到 2026 年 4 月 30 日。</li>
-            <li>若未来有付费策略调整，将在上线前提前公告。</li>
+            <li>免费版每日 AI 限额：自动补全 20 次、Echo 生成 6 次。</li>
+            <li>两项限额都在设备本地时间午夜重置。</li>
+            <li>若未来价格策略调整，将在上线前提前公告。</li>
           </ul>
 
           <h3>后续功能说明</h3>
@@ -1040,6 +1059,7 @@ iOS 版本：[例如 iOS 18.3]
             <h3>版本 1.1（当前）</h3>
             <ul class="list">
               <li>设置项扩展：主题、应用语言、字体大小、学习级别。</li>
+              <li>新增免费版每日 AI 限额并在午夜重置（自动补全 20 次、Echo 生成 6 次）。</li>
               <li>Echo 流程增强：收藏（上限 5）、保存列表与删除操作。</li>
               <li>设置页与仪表盘支持 JSON/PDF 导出，并提供完整重置流程。</li>
               <li>本地优先持久化，包含备份与恢复安全顺序。</li>
