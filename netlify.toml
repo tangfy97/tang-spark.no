@@ -1,0 +1,9 @@
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/echoknot/api/ai/chat"
+  to = "/.netlify/functions/echoknot-ai-chat"
+  status = 200
+  force = true
