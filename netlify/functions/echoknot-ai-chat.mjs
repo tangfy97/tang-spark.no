@@ -7,6 +7,15 @@ const jsonResponse = (statusCode, body) => ({
   body: JSON.stringify(body),
 });
 
+const parseJSONOrUndefined = (text) => {
+  if (!text) return undefined;
+  try {
+    return JSON.parse(text);
+  } catch {
+    return undefined;
+  }
+};
+
 const configuredValue = (...keys) => {
   for (const key of keys) {
     const value = process.env[key]?.trim();
@@ -26,6 +35,7 @@ const validatedHTTPURL = (raw) => {
 };
 
 const resolveQwenEndpoint = () => {
+  const defaultEndpoint = "https://ws-55tuc4alo2zjtslm.eu-central-1.maas.aliyuncs.com/compatible-mode/v1/chat/completions";
   const fullOverride = configuredValue("QWEN_CHAT_COMPLETIONS_URL");
   if (fullOverride) {
     const url = validatedHTTPURL(fullOverride);
@@ -33,7 +43,9 @@ const resolveQwenEndpoint = () => {
     return url;
   }
 
-  const baseURL = configuredValue("QWEN_BASE_URL") ?? "https://dashscope.aliyuncs.com/compatible-mode/v1";
+  const baseURL = configuredValue("QWEN_BASE_URL");
+  if (!baseURL) return defaultEndpoint;
+
   const normalizedBase = baseURL.endsWith("/") ? baseURL.slice(0, -1) : baseURL;
   const endpoint = normalizedBase.endsWith("/chat/completions")
     ? normalizedBase
@@ -137,14 +149,24 @@ export const handler = async (event) => {
     });
 
     const text = await upstream.text();
-    const payload = text ? JSON.parse(text) : {};
-    return jsonResponse(upstream.status, payload);
+    const payload = parseJSONOrUndefined(text);
+    if (payload) {
+      return jsonResponse(upstream.status, payload);
+    }
+
+    return jsonResponse(upstream.ok ? 502 : upstream.status, {
+      error: {
+        type: "upstream_non_json",
+        message: "AI provider returned a non-JSON response.",
+        upstreamStatus: upstream.status,
+      },
+    });
   } catch (error) {
     console.error("Echoknot AI proxy failed", error);
     return jsonResponse(502, {
       error: {
         type: "upstream",
-        message: "AI provider request failed.",
+        message: error instanceof Error ? `AI provider request failed: ${error.message}` : "AI provider request failed.",
       },
     });
   }
