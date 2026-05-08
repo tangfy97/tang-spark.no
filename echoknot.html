@@ -4,120 +4,77 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Echoknot | TangSpark</title>
-    <meta
-      name="description"
-      content="Echoknot is a local-first iOS language memory app with user-triggered Qwen AI, scalable Wordbook navigation, JSON/PDF export, and optional Premium sync."
-    />
+    <meta name="description" content="Echoknot is a local-first iOS language memory app with optional Qwen AI, scalable Wordbook navigation, and Premium cloud backup only if you choose it." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body id="top" class="product-page">
-    <div class="site-shell">
-      <header class="site-header">
-        <a class="brand" href="./index.html" aria-label="TangSpark home">
-          <span class="brand-mark" aria-hidden="true">EK</span>
-          <span class="brand-text">Echoknot</span>
-        </a>
-        <nav class="site-nav" aria-label="Primary">
-          <a href="#wordbook">Wordbook</a>
-          <a href="#premium">Premium</a>
-          <a href="#architecture">Architecture</a>
+  <body class="echoknot-launch">
+    <div class="launch-shell">
+      <header class="launch-header">
+        <a class="launch-brand" href="./index.html" aria-label="TangSpark home"><span class="launch-mark" aria-hidden="true"></span><span>TangSpark</span></a>
+        <nav class="launch-nav" aria-label="Primary">
+          <a href="./index.html"><svg viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10.5V20h13v-9.5"/><path d="M9.5 20v-6h5v6"/></svg>Home</a>
+          <a class="active" href="./echoknot.html" aria-current="page"><svg viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M10 5h4M10.5 18.5h3"/></svg>Echoknot</a>
+          <a href="./echoknot-support.html"><svg viewBox="0 0 24 24"><path d="M5 13v-2a7 7 0 0 1 14 0v2"/><path d="M5 13h3v5H6a1 1 0 0 1-1-1v-4ZM19 13h-3v5h2a1 1 0 0 0 1-1v-4Z"/><path d="M16 18c0 1.5-1.4 2.5-4 2.5"/></svg>Support</a>
         </nav>
-        <div class="header-actions">
-          <div class="lang-toggle" role="group" aria-label="Language switcher">
-            <a class="active" href="./echoknot.html" aria-current="page">EN</a>
-            <a href="./echoknot-zh-cn.html" lang="zh-CN">中文</a>
-          </div>
-          <a href="./echoknot-support.html">Support</a>
-        </div>
+        <div class="launch-header-action"><a class="launch-cta" href="./echoknot-support.html"><svg viewBox="0 0 24 24"><path d="M16 8c-1.7.1-3 1.6-3 3.3 0 2 1.6 3.5 3.4 3.4-.5 1.5-1.9 4.1-3.7 4.1-1 0-1.4-.6-2.6-.6-1.1 0-1.7.6-2.6.6-1.8 0-4-4-4-7.2C3.5 8.8 5.2 7 7.3 7c1.1 0 2 .7 2.7.7.7 0 1.8-.8 3.2-.8.8 0 1.9.2 2.8 1.1Z"/><path d="M13.5 3.2c.2 1.4-.9 2.9-2.4 3.3-.2-1.5.9-2.9 2.4-3.3Z"/></svg>Get Echoknot</a></div>
       </header>
 
       <main>
-        <section class="hero">
-          <div class="hero-copy">
-            <h1>Language memories, tied to real moments.</h1>
-            <p class="lead">
-              Echoknot is a native iOS app for building a personal wordbook from the words you actually meet. Add a knot, let optional AI fill the tedious details, then review selected words through short Echo stories.
-            </p>
-            <div class="hero-actions">
-              <a class="button button-primary" href="./echoknot-support.html">Support, privacy, terms</a>
-              <a class="button button-secondary" href="mailto:support@tang-spark.no">Contact support</a>
+        <section class="launch-hero">
+          <div class="launch-copy">
+            <p class="launch-kicker">Echoknot for iOS</p>
+            <h1>Language memories, tied to <span class="orange">real</span> moments.</h1>
+            <p class="launch-lead">Echoknot is a local-first iOS app that helps you capture vocabulary from real life, then turn it into short Echo stories you will actually remember. Free to learn locally. Premium adds optional cloud backup, sync, and higher AI quota.</p>
+            <div class="launch-actions">
+              <a class="launch-button primary" href="#features">Explore Echoknot <span aria-hidden="true">→</span></a>
+              <a class="launch-button secondary" href="./echoknot-support.html">Read privacy &amp; support</a>
             </div>
-            <div class="trust-strip" aria-label="Echoknot trust summary">
-              <div class="trust-item"><strong>No account by default</strong><span>Core capture, review, and export work locally.</span></div>
-              <div class="trust-item"><strong>30 free word assists</strong><span>Plus 10 Echo generations per local day.</span></div>
-              <div class="trust-item"><strong>Premium: 200 + 30</strong><span>Higher AI quota and optional cloud backup.</span></div>
+            <div class="launch-proof-row">
+              <div class="launch-proof"><span class="launch-proof-icon"><svg viewBox="0 0 24 24"><rect x="6" y="10" width="12" height="10" rx="2"/><path d="M9 10V7a3 3 0 0 1 6 0v3"/><path d="M12 14v2"/></svg></span><span><strong>Local-first</strong><span>Your data stays on your device</span></span></div>
+              <div class="launch-proof"><span class="launch-proof-icon"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.5 3 7.8 7 10 4-2.2 7-5.5 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-5"/></svg></span><span><strong>Encrypted</strong><span>Local snapshots encrypted at rest</span></span></div>
+              <div class="launch-proof"><span class="launch-proof-icon"><svg viewBox="0 0 24 24"><path d="M9 6a3 3 0 0 0-3 3 3 3 0 0 0 0 6 3 3 0 0 0 3 3"/><path d="M15 6a3 3 0 0 1 3 3 3 3 0 0 1 0 6 3 3 0 0 1-3 3"/><path d="M9 6c1.2-2 4.8-2 6 0v12c-1.2 2-4.8 2-6 0V6Z"/><path d="M9 10h6M9 14h6"/></svg></span><span><strong>AI on demand</strong><span>You choose when AI is used</span></span></div>
+              <div class="launch-proof"><span class="launch-proof-icon"><svg viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 0 0 .5-8 5.5 5.5 0 0 0-10.4-1.8A4.8 4.8 0 0 0 7 18Z"/></svg></span><span><strong>Optional cloud</strong><span>Premium backup and sync</span></span></div>
             </div>
           </div>
 
-          <div class="product-visual" aria-label="Echoknot Wordbook preview">
-            <div class="device" aria-hidden="true">
-              <div class="device-screen">
-                <div class="status-line"><span>9:41</span><span>Local-first</span></div>
-                <div class="screen-title"><strong>Wordbook</strong><span>Recent week</span></div>
-                <div class="mode-tabs"><span class="active">Explore</span><span>Search</span><span>All</span></div>
-                <div class="filter-row"><span>3 days</span><span>Month</span><span>Verb</span><span>A-Z</span></div>
-                <div class="knot-list">
-                  <div class="knot-card"><strong>gezellig <em>Dutch</em></strong><p>Warm, cozy, social; saved from a cafe conversation.</p></div>
-                  <div class="knot-card"><strong>resilience <em>English</em></strong><p>Review-ready with level-aware usage and context.</p></div>
-                  <div class="knot-card"><strong>lagom <em>Swedish</em></strong><p>A balanced amount; useful for daily descriptions.</p></div>
+          <div class="launch-device-wrap" aria-label="Echoknot app preview">
+            <div class="launch-phone" aria-hidden="true">
+              <div class="launch-screen">
+                <div class="phone-status"><span>9:41</span><span>●●●</span></div>
+                <div class="phone-title"><strong>Wordbook</strong><span>⌕ ⚙</span></div>
+                <div class="phone-tabs"><span class="active">All 238</span><span>Recent</span><span>Favorites</span><span>Tags</span></div>
+                <div class="phone-word-list">
+                  <div class="phone-word"><strong>gezellig <span class="level">N5</span></strong><small>cozy, warm, social · Coffee shop with friends</small></div>
+                  <div class="phone-word"><strong>uitwaaien <span class="level green">N4</span></strong><small>to clear your mind with fresh air · Walk by the sea</small></div>
+                  <div class="phone-word"><strong>vertrouwen <span class="level green">N4</span></strong><small>to trust · Team collaboration</small></div>
                 </div>
-                <div class="glass-nav"><span><b>⌂</b>Today</span><span class="active"><b>≡</b>Words</span><span><b>＋</b>Add</span><span><b>”</b>Echo</span></div>
+                <div class="phone-echo-head"><strong>Echo</strong><span>See all</span></div>
+                <div class="phone-echo-card"><div><strong>Morning walk by the sea</strong><p>We gingen vroeg uitwaaien aan zee. De frisse lucht maakte...</p></div><div class="echo-thumb"></div></div>
               </div>
+              <div class="phone-bottom-nav"><span class="active"><b>▣</b>Wordbook</span><span><b>⊕</b>Capture</span><span><b>⌁</b>Echo</span><span><b>⚙</b>Settings</span></div>
             </div>
-            <div class="float-card" aria-hidden="true"><strong>Qwen through proxy</strong><span>AI calls go to the Echoknot backend. Provider keys are not embedded in the iOS app.</span></div>
           </div>
         </section>
 
-        <section id="wordbook" class="band">
-          <div class="section-head">
-            <h2>Built for thousands of knots.</h2>
-            <p>The latest Wordbook design avoids endless scrolling by separating browsing, lookup, and full-library management.</p>
+        <section id="features" class="launch-feature-panel">
+          <div class="launch-feature-grid">
+            <article class="launch-feature"><div class="launch-feature-icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></div><div><h2>Capture from real life</h2><p>Save words as knots with translation, context, and a memory anchor. Use AI auto-fill to speed things up when you need it.</p></div></article>
+            <article class="launch-feature"><div class="launch-feature-icon"><svg viewBox="0 0 24 24"><path d="M5 5.5A2.5 2.5 0 0 1 7.5 3H19v16H7.5A2.5 2.5 0 0 0 5 21.5v-16Z"/><path d="M5 18.5A2.5 2.5 0 0 1 7.5 16H19"/></svg></div><div><h2>Review with Echo stories</h2><p>Select 3-8 knots and create short, personalized stories. Read, favorite, and revisit recent echoes to make words unforgettable.</p></div></article>
+            <article class="launch-feature"><div class="launch-feature-icon"><svg viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 0 0 .5-8 5.5 5.5 0 0 0-10.4-1.8A4.8 4.8 0 0 0 7 18Z"/></svg></div><div><h2>Sync only if you choose</h2><p>Premium lets you sign in with Apple and enable encrypted cloud backup across your devices. Your learning, your control.</p></div></article>
           </div>
-          <div class="feature-grid">
-            <article class="feature-card"><h3>Explore, Search, All</h3><p>Three modes let users browse recent learning, jump directly to a word, or manage the full collection.</p></article>
-            <article class="feature-card"><h3>Better filters</h3><p>Date filters include Today, Recent 3 days, Recent week, and Recent month, plus part-of-speech and first-letter filters.</p></article>
-            <article class="feature-card"><h3>Floating navigation</h3><p>The iOS app uses a Liquid Glass-style bottom island with content padding so lower controls stay reachable.</p></article>
-          </div>
-        </section>
-
-        <section id="premium" class="band">
-          <div class="section-head">
-            <h2>Most features stay free.</h2>
-            <p>Premium is designed for heavier learners who want more AI usage and cloud backup. It is not required for normal local learning.</p>
-          </div>
-          <div class="metrics-grid">
-            <div class="metric"><strong>Free: 30</strong><span>AI auto-fill/detail refresh credits per day.</span></div>
-            <div class="metric"><strong>Free: 10</strong><span>Echo story generations per day.</span></div>
-            <div class="metric"><strong>Premium: 200 + 30</strong><span>200 word assists and 30 Echo generations per day.</span></div>
-          </div>
-          <div class="route-line">
-            <div class="route-step"><strong>Purchase</strong><p>Premium uses App Store auto-renewable subscription product <code>com.tangspark.echoknot.premium.monthly</code>.</p></div>
-            <div class="route-step"><strong>Voucher</strong><p>Free Premium trials should use App Store subscription Offer Codes for the same product.</p></div>
-            <div class="route-step"><strong>Sync</strong><p>Only Premium users see Sign in with Apple for optional Firebase backup/sync. Free users remain local-only by default.</p></div>
-          </div>
-        </section>
-
-        <section id="architecture" class="band">
-          <div class="section-head">
-            <h2>Production-safe service boundaries.</h2>
-            <p>The app does not ship provider secrets. Production AI and cloud sync are isolated behind platform-native controls.</p>
-          </div>
-          <div class="feature-grid">
-            <article class="feature-card"><h3>AI proxy</h3><p>iOS posts to <code>https://tang-spark.no/echoknot/api/ai/chat</code>. The Netlify function calls Qwen's compatible chat-completions endpoint.</p></article>
-            <article class="feature-card"><h3>Firebase only when needed</h3><p>Firestore is used only after Premium entitlement, user choice, and Sign in with Apple.</p></article>
-            <article class="feature-card"><h3>Local export</h3><p>Users can export JSON/PDF from Settings and Dashboard, even without Premium.</p></article>
+          <div class="launch-trust-strip">
+            <article class="launch-trust"><div class="launch-trust-icon"><svg viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M10 5h4M10.5 18.5h3"/></svg></div><div><strong>No account required</strong><span>Use everything locally. Sign in only for Premium sync.</span></div></article>
+            <article class="launch-trust"><div class="launch-trust-icon"><svg viewBox="0 0 24 24"><path d="M9 6a3 3 0 0 0-3 3 3 3 0 0 0 0 6 3 3 0 0 0 3 3"/><path d="M15 6a3 3 0 0 1 3 3 3 3 0 0 1 0 6 3 3 0 0 1-3 3"/><path d="M9 6c1.2-2 4.8-2 6 0v12c-1.2 2-4.8 2-6 0V6Z"/><path d="M9 10h6M9 14h6"/></svg></div><div><strong>30 free word AI / day</strong><span>AI auto-fill for new words. Free every day.</span></div></article>
+            <article class="launch-trust"><div class="launch-trust-icon"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.5 3 7.8 7 10 4-2.2 7-5.5 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-5"/></svg></div><div><strong>Premium 200 word AI / day</strong><span>More AI for deeper learning and richer Echo stories.</span></div></article>
+            <article class="launch-trust"><div class="launch-trust-icon"><svg viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 0 0 .5-8 5.5 5.5 0 0 0-10.4-1.8A4.8 4.8 0 0 0 7 18Z"/></svg></div><div><strong>Optional cloud backup</strong><span>Encrypted sync your data when it fits your workflow.</span></div></article>
           </div>
         </section>
       </main>
-
-      <footer class="site-footer">
-        <p>© 2026 TangSpark. Echoknot is local-first by default.</p>
-        <a href="mailto:support@tang-spark.no">support@tang-spark.no</a>
-      </footer>
     </div>
+    <footer class="launch-footer"><p>© 2026 TangSpark. Echoknot is local-first by default.</p><a href="mailto:support@tang-spark.no">support@tang-spark.no</a></footer>
   </body>
 </html>
