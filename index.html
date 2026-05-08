@@ -3,199 +3,113 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TangSpark | Small Apps from Norway</title>
+    <title>TangSpark | Practical Small Apps from Norway</title>
     <meta
       name="description"
-      content="TangSpark builds inspiring little apps from Norway for moments when people need a spark, even offline."
+      content="TangSpark builds focused iOS products from Norway, starting with Echoknot, a local-first language memory app with optional Premium sync and higher AI quotas."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Newsreader:opsz,wght@6..72,600;6..72,700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body id="top">
-    <div class="background-glow" aria-hidden="true"></div>
-
-    <header class="site-header">
-      <a class="brand" href="#top" aria-label="TangSpark home">
-        <span class="brand-mark" aria-hidden="true">
-          <span class="brand-star"></span>
-        </span>
-        <span class="brand-text">TangSpark</span>
-      </a>
-
-      <nav class="site-nav" aria-label="Primary">
-        <a class="nav-link" href="#top">Home</a>
-        <div class="nav-dropdown" data-open="false">
-          <button
-            class="nav-link nav-trigger"
-            type="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-            aria-controls="product-menu"
-          >
-            Products
-          </button>
-          <div id="product-menu" class="dropdown-menu" role="menu" aria-label="Product links">
-            <a role="menuitem" href="./echoknot.html">
-              <span class="dropdown-title">Echoknot</span>
-              <span class="dropdown-meta">Language memory app for iOS</span>
-            </a>
-          </div>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="#top" aria-label="TangSpark home">
+          <span class="brand-mark" aria-hidden="true">TS</span>
+          <span class="brand-text">TangSpark</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="#products">Products</a>
+          <a href="#principles">Principles</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <a class="cta-link" href="./echoknot.html">Echoknot</a>
         </div>
-        <a class="nav-link" href="#contact">Contact</a>
-      </nav>
-    </header>
+      </header>
 
-    <main>
-      <section class="hero">
-        <p class="eyebrow">Built with love from Norway</p>
-        <h1>Simple little apps that make everyday life feel lighter and a bit magical.</h1>
-        <p class="lead">
-          TangSpark creates small, inspiring apps for moments when you need a
-          spark, like being offline on an airplane, waiting between meetings, or
-          sitting with a blank mind. We are a young team working across IT
-          domains in Europe, rooted in Norway and connected with people in
-          Sweden, the Netherlands, Belgium, and beyond.
-        </p>
-        <div class="hero-actions">
-          <a
-            class="button button-primary"
-            href="mailto:hello@tang-spark.no?subject=Let's%20build%20something%20with%20TangSpark"
-            >Start Something</a
-          >
-          <a class="button button-ghost" href="#products">Explore Products</a>
-        </div>
-      </section>
-
-      <section id="products" class="product-spotlight" aria-labelledby="product-title">
-        <article class="product-card">
-          <p class="eyebrow">Product 01</p>
-          <h2 id="product-title">Echoknot</h2>
-          <p>
-            Echoknot helps language learners capture real words from real moments,
-            then revisit them through short AI-assisted echo stories. It is local-first,
-            calm by design, export-friendly, and offers optional Premium backup without
-            making accounts mandatory for core learning.
-          </p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="./echoknot.html">Open Echoknot</a>
-            <a class="button button-ghost" href="./echoknot-support.html">Support, Privacy & Terms</a>
+      <main>
+        <section class="hero">
+          <div class="hero-copy">
+            <h1>TangSpark builds small apps with real utility.</h1>
+            <p class="lead">
+              We make focused software from Norway for personal workflows that deserve care: language memory, offline-friendly tools, and calm interfaces that stay useful after the first week.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="./echoknot.html">Explore Echoknot</a>
+              <a class="button button-secondary" href="mailto:hello@tang-spark.no">Contact TangSpark</a>
+            </div>
+            <div class="trust-strip" aria-label="TangSpark product principles">
+              <div class="trust-item"><strong>Local first</strong><span>Core workflows should work without mandatory accounts.</span></div>
+              <div class="trust-item"><strong>Useful AI</strong><span>AI appears where it saves effort, not as decoration.</span></div>
+              <div class="trust-item"><strong>Clear upgrades</strong><span>Paid plans add scale and sync, not basic access.</span></div>
+            </div>
           </div>
-        </article>
-      </section>
 
-      <section id="apps" class="cards">
-        <article class="card">
-          <h2>Simple First</h2>
-          <p>Clear interfaces inspired by Scandinavian functional design.</p>
-        </article>
-        <article class="card">
-          <h2>Joy by Detail</h2>
-          <p>Thoughtful interactions that make repeated tasks feel rewarding.</p>
-        </article>
-        <article class="card">
-          <h2>Surprise Included</h2>
-          <p>Small moments of delight exactly where users least expect them.</p>
-        </article>
-      </section>
+          <div class="product-visual" aria-label="Echoknot app preview">
+            <div class="device" aria-hidden="true">
+              <div class="device-screen">
+                <div class="status-line"><span>9:41</span><span>Echoknot</span></div>
+                <div class="screen-title"><strong>Wordbook</strong><span>1,248 knots</span></div>
+                <div class="mode-tabs"><span>Explore</span><span class="active">Search</span><span>All</span></div>
+                <div class="filter-row"><span>Recent week</span><span>Verb</span><span>S</span></div>
+                <div class="knot-list">
+                  <div class="knot-card"><strong>uitwaaien <em>Dutch</em></strong><p>To walk in fresh air to clear your head after a long day.</p></div>
+                  <div class="knot-card"><strong>sisu <em>Finnish</em></strong><p>Quiet determination when a task keeps resisting you.</p></div>
+                  <div class="knot-card"><strong>lagom <em>Swedish</em></strong><p>Balanced, enough, not too much and not too little.</p></div>
+                </div>
+                <div class="glass-nav"><span><b>⌂</b>Today</span><span class="active"><b>≡</b>Words</span><span><b>＋</b>Add</span><span><b>”</b>Echo</span></div>
+              </div>
+            </div>
+            <div class="float-card" aria-hidden="true"><strong>Premium is optional</strong><span>More AI quota and cloud backup after App Store entitlement plus Sign in with Apple.</span></div>
+          </div>
+        </section>
 
-      <section id="vision" class="vision">
-        <h2>We believe tiny products can make a huge emotional difference.</h2>
-        <p>
-          Our products are intentionally lightweight and deeply useful, crafted
-          to help people spend less energy on routine and more energy on what
-          matters.
-        </p>
-      </section>
+        <section id="products" class="band">
+          <div class="section-head">
+            <h2>First product, launch ready.</h2>
+            <p>Echoknot is the current TangSpark focus: a native iOS language-memory app with a free local baseline and a production subscription path.</p>
+          </div>
+          <div class="product-grid">
+            <article class="product-panel">
+              <div>
+                <h3>Echoknot for iOS</h3>
+                <p>Capture words from real life, enrich them with user-triggered AI, and review them through short Echo stories. The app stays local by default; Premium adds higher AI quota and optional cloud backup.</p>
+              </div>
+              <div class="action-row">
+                <a class="button button-primary" href="./echoknot.html">Open product page</a>
+                <a class="button button-secondary" href="./echoknot-support.html">Support, privacy, terms</a>
+              </div>
+            </article>
+            <article class="product-panel secondary">
+              <div>
+                <h3>Production architecture</h3>
+                <p>StoreKit subscription, Firebase only for opted-in Premium sync, and a Netlify Qwen proxy so AI provider keys never ship in the app bundle.</p>
+              </div>
+            </article>
+          </div>
+        </section>
 
-      <section id="story" class="story">
-        <h2>Norwegian roots, European energy.</h2>
-        <p>
-          The people behind TangSpark are young builders from different parts
-          of Europe. We combine Norwegian calm and Scandinavian simplicity with
-          ideas shaped across countries like Sweden, the Netherlands, and
-          Belgium to build software that feels clear, warm, and useful.
-        </p>
-      </section>
-    </main>
+        <section id="principles" class="band">
+          <div class="section-head">
+            <h2>Design principles that survive scale.</h2>
+            <p>Our apps should stay readable when data grows, explain paid features plainly, and avoid forcing accounts where local storage is enough.</p>
+          </div>
+          <div class="feature-grid">
+            <article class="feature-card"><h3>Dense, not heavy</h3><p>Interfaces are built for repeated use with compact controls, stable spacing, and fast scanning.</p></article>
+            <article class="feature-card"><h3>Privacy by default</h3><p>Local-first storage remains the baseline. Cloud features are opt-in and tied to clear user value.</p></article>
+            <article class="feature-card"><h3>Transparent AI limits</h3><p>Free usage is generous enough to learn; Premium quota supports heavier daily workflows.</p></article>
+          </div>
+        </section>
+      </main>
 
-    <footer id="contact" class="site-footer">
-      <p>
-        Built with ❤️ from 🇳🇴, by a young European team. TangSpark crafts
-        joyful utility, one app at a time.
-      </p>
-      <a href="mailto:hello@tang-spark.no">hello@tang-spark.no</a>
-    </footer>
-
-    <script>
-      (() => {
-        const navDropdown = document.querySelector(".nav-dropdown");
-        const trigger = navDropdown?.querySelector(".nav-trigger");
-        const menu = navDropdown?.querySelector(".dropdown-menu");
-        const supportsHover = window.matchMedia("(hover: hover)").matches;
-
-        if (!navDropdown || !trigger || !menu) {
-          return;
-        }
-
-        const setOpen = (isOpen) => {
-          navDropdown.dataset.open = String(isOpen);
-          trigger.setAttribute("aria-expanded", String(isOpen));
-        };
-
-        setOpen(false);
-
-        trigger.addEventListener("click", (event) => {
-          event.stopPropagation();
-          const isOpen = navDropdown.dataset.open === "true";
-          setOpen(!isOpen);
-        });
-
-        trigger.addEventListener("keydown", (event) => {
-          if (event.key === "ArrowDown") {
-            event.preventDefault();
-            setOpen(true);
-            menu.querySelector('[role="menuitem"]')?.focus();
-          }
-
-          if (event.key === "Escape") {
-            setOpen(false);
-            trigger.focus();
-          }
-        });
-
-        menu.addEventListener("keydown", (event) => {
-          if (event.key === "Escape") {
-            event.preventDefault();
-            setOpen(false);
-            trigger.focus();
-          }
-        });
-
-        navDropdown.addEventListener("focusout", () => {
-          requestAnimationFrame(() => {
-            if (!navDropdown.contains(document.activeElement)) {
-              setOpen(false);
-            }
-          });
-        });
-
-        document.addEventListener("click", (event) => {
-          if (!navDropdown.contains(event.target)) {
-            setOpen(false);
-          }
-        });
-
-        if (supportsHover) {
-          navDropdown.addEventListener("mouseenter", () => setOpen(true));
-          navDropdown.addEventListener("mouseleave", () => setOpen(false));
-        }
-      })();
-    </script>
+      <footer id="contact" class="site-footer">
+        <p>© 2026 TangSpark. Built from Norway for focused everyday tools.</p>
+        <a href="mailto:hello@tang-spark.no">hello@tang-spark.no</a>
+      </footer>
+    </div>
   </body>
 </html>

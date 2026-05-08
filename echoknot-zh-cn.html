@@ -6,464 +6,116 @@
     <title>Echoknot | TangSpark</title>
     <meta
       name="description"
-      content="Echoknot 是 TangSpark 推出的本地优先 iOS 语言学习应用，提供 AI 辅助复习、JSON/PDF 导出，以及可选 Premium 云备份。"
+      content="Echoknot 是本地优先的 iOS 语言记忆应用，支持 Qwen AI 辅助、可扩展 Wordbook、JSON/PDF 导出和可选 Premium 云同步。"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <style>
-      :root {
-        --bg: #edf2f4;
-        --text: #15222b;
-        --muted: #4f5f6a;
-        --line: rgba(21, 34, 43, 0.14);
-        --blue: #0f5f8f;
-        --blue-deep: #0a466b;
-        --panel: rgba(255, 255, 255, 0.8);
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        margin: 0;
-        color: var(--text);
-        font-family: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-        background: radial-gradient(circle at 10% 0%, #c9dbe6 0%, transparent 42%),
-          radial-gradient(circle at 90% 4%, #e4edf2 0%, transparent 44%),
-          linear-gradient(180deg, #edf2f4 0%, #e7edef 100%);
-      }
-
-      .page {
-        width: min(1100px, 92vw);
-        margin: 0 auto;
-      }
-
-      .topbar {
-        padding: 1.4rem 0;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 0.9rem;
-        flex-wrap: wrap;
-      }
-
-      .brand {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.7rem;
-        text-decoration: none;
-        color: var(--text);
-      }
-
-      .brand-mark {
-        width: 2.1rem;
-        height: 2.1rem;
-        border-radius: 0.75rem;
-        background: linear-gradient(145deg, #0f5f8f, #6fb5da);
-        position: relative;
-        box-shadow: 0 8px 16px rgba(15, 95, 143, 0.25);
-      }
-
-      .brand-mark::before {
-        content: "";
-        position: absolute;
-        inset: 0.38rem;
-        border-radius: 0.5rem;
-        border: 2px solid rgba(255, 255, 255, 0.78);
-      }
-
-      .brand-star {
-        position: absolute;
-        width: 0.55rem;
-        height: 0.55rem;
-        background: #fff8f0;
-        border-radius: 0.2rem;
-        right: 0.28rem;
-        top: 0.28rem;
-        transform: rotate(45deg);
-      }
-
-      .brand-text {
-        font-weight: 800;
-        font-size: 1.06rem;
-      }
-
-      .top-links {
-        display: inline-flex;
-        gap: 0.55rem;
-        flex-wrap: wrap;
-        align-items: center;
-      }
-
-      .top-links > a {
-        text-decoration: none;
-        font-size: 0.9rem;
-        font-weight: 600;
-        border-radius: 999px;
-        padding: 0.48rem 0.85rem;
-        border: 1px solid var(--line);
-        color: var(--text);
-        background: rgba(255, 255, 255, 0.68);
-      }
-
-      .top-links > a:hover {
-        background: rgba(255, 255, 255, 0.88);
-      }
-
-      .lang-toggle {
-        display: inline-flex;
-        align-items: center;
-        border: 1px solid var(--line);
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.68);
-        padding: 0.16rem;
-        gap: 0.15rem;
-      }
-
-      .lang-toggle a {
-        text-decoration: none;
-        color: var(--text);
-        font-size: 0.82rem;
-        font-weight: 700;
-        border-radius: 999px;
-        padding: 0.34rem 0.62rem;
-        line-height: 1;
-      }
-
-      .lang-toggle a.active {
-        background: #ffffff;
-        border: 1px solid var(--line);
-      }
-
-      .hero {
-        padding: 2.2rem 0 2.8rem;
-        display: grid;
-        grid-template-columns: 1.05fr 0.95fr;
-        gap: 1.2rem;
-        align-items: center;
-      }
-
-      .eyebrow {
-        margin: 0;
-        font-size: 0.78rem;
-        letter-spacing: 0.08em;
-        opacity: 0.75;
-      }
-
-      h1,
-      h2,
-      h3 {
-        margin: 0;
-        line-height: 1.28;
-      }
-
-      h1 {
-        margin-top: 0.8rem;
-        font-size: clamp(2rem, 4.8vw, 3.3rem);
-        max-width: 13ch;
-      }
-
-      .hero p {
-        line-height: 1.75;
-      }
-
-      .lead {
-        margin-top: 1rem;
-        font-size: clamp(1rem, 2.1vw, 1.16rem);
-        max-width: 52ch;
-      }
-
-      .cta-row {
-        margin-top: 1.4rem;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.7rem;
-      }
-
-      .btn {
-        text-decoration: none;
-        border-radius: 12px;
-        padding: 0.74rem 1.1rem;
-        border: 1px solid transparent;
-        font-weight: 700;
-        transition: transform 170ms ease, background-color 170ms ease;
-      }
-
-      .btn:hover {
-        transform: translateY(-2px);
-      }
-
-      .btn-primary {
-        color: #fff;
-        background: var(--blue);
-      }
-
-      .btn-primary:hover {
-        background: var(--blue-deep);
-      }
-
-      .btn-secondary {
-        color: var(--text);
-        background: rgba(255, 255, 255, 0.64);
-        border-color: var(--line);
-      }
-
-      .hero-visual {
-        background: var(--panel);
-        border: 1px solid var(--line);
-        border-radius: 26px;
-        padding: 1rem;
-        min-height: 360px;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .hero-visual::before {
-        content: "";
-        position: absolute;
-        width: 220px;
-        height: 220px;
-        border-radius: 50%;
-        right: -70px;
-        top: -60px;
-        background: radial-gradient(circle at center, rgba(15, 95, 143, 0.18) 0%, transparent 74%);
-      }
-
-      .phone {
-        position: relative;
-        z-index: 1;
-        width: min(350px, 100%);
-        margin: 0 auto;
-        border-radius: 28px;
-        border: 1px solid rgba(21, 34, 43, 0.12);
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(250, 252, 253, 0.9));
-        padding: 0.9rem;
-        box-shadow: 0 20px 35px rgba(20, 34, 45, 0.16);
-      }
-
-      .phone-head {
-        display: flex;
-        justify-content: space-between;
-        font-size: 0.78rem;
-        color: var(--muted);
-      }
-
-      .word-card {
-        margin-top: 0.8rem;
-        border-radius: 16px;
-        padding: 0.72rem;
-        border: 1px solid rgba(21, 34, 43, 0.12);
-        background: rgba(255, 255, 255, 0.85);
-      }
-
-      .word-card strong {
-        display: block;
-      }
-
-      .word-card small {
-        color: var(--muted);
-      }
-
-      .echo-chip {
-        margin-top: 0.65rem;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.45rem;
-        padding: 0.4rem 0.64rem;
-        border-radius: 999px;
-        background: rgba(15, 95, 143, 0.12);
-        color: var(--blue-deep);
-        font-size: 0.78rem;
-        font-weight: 700;
-      }
-
-      .section {
-        margin: 0 0 1rem;
-        border: 1px solid var(--line);
-        border-radius: 22px;
-        background: var(--panel);
-        padding: 1.25rem;
-      }
-
-      .section h2 {
-        font-size: clamp(1.35rem, 3.2vw, 2.2rem);
-        margin-bottom: 0.8rem;
-      }
-
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 0.7rem;
-      }
-
-      .item {
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        background: rgba(255, 255, 255, 0.9);
-        padding: 0.9rem;
-      }
-
-      .item h3 {
-        font-size: 1.06rem;
-        margin-bottom: 0.38rem;
-      }
-
-      .item p {
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.72;
-      }
-
-      .steps {
-        margin: 0;
-        padding-left: 1.2rem;
-        display: grid;
-        gap: 0.55rem;
-        color: var(--muted);
-      }
-
-      .trust-list {
-        margin: 0;
-        padding-left: 1.2rem;
-        display: grid;
-        gap: 0.5rem;
-      }
-
-      .footer {
-        padding: 1rem 0 1.8rem;
-        display: flex;
-        gap: 0.7rem;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        color: var(--muted);
-        border-top: 1px solid var(--line);
-      }
-
-      .footer a {
-        color: var(--blue);
-        font-weight: 700;
-      }
-
-      @media (max-width: 980px) {
-        .hero {
-          grid-template-columns: 1fr;
-        }
-
-        .grid {
-          grid-template-columns: 1fr;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body>
-    <div class="page">
-      <header class="topbar">
+  <body id="top" class="product-page zh">
+    <div class="site-shell">
+      <header class="site-header">
         <a class="brand" href="./index.html" aria-label="TangSpark 首页">
-          <span class="brand-mark" aria-hidden="true">
-            <span class="brand-star"></span>
-          </span>
-          <span class="brand-text">TangSpark</span>
+          <span class="brand-mark" aria-hidden="true">EK</span>
+          <span class="brand-text">Echoknot</span>
         </a>
-        <div class="top-links">
-          <a href="./index.html">首页</a>
-          <a href="./echoknot-support-zh-cn.html">支持页</a>
+        <nav class="site-nav" aria-label="主导航">
+          <a href="#wordbook">词库</a>
+          <a href="#premium">Premium</a>
+          <a href="#architecture">架构</a>
+        </nav>
+        <div class="header-actions">
           <div class="lang-toggle" role="group" aria-label="语言切换">
             <a href="./echoknot.html">EN</a>
-            <a class="active" href="./echoknot-zh-cn.html" aria-current="page">简体中文</a>
+            <a class="active" href="./echoknot-zh-cn.html" aria-current="page">中文</a>
           </div>
+          <a href="./echoknot-support-zh-cn.html">支持</a>
         </div>
       </header>
 
       <main>
-        <section class="hero" aria-labelledby="hero-title">
-          <div>
-            <p class="eyebrow">产品亮点</p>
-            <h1 id="hero-title">Echoknot 把零碎语言瞬间，变成真正记得住的表达。</h1>
+        <section class="hero">
+          <div class="hero-copy">
+            <h1>把语言记忆，系回真实瞬间。</h1>
             <p class="lead">
-              Echoknot 是一款本地优先的 iOS 语言学习应用，强调“场景记忆”。
-              你可以把真实生活里遇到的词先记录成 knot，再把选中的词自动编织成
-              短小的 Echo 故事，用更自然的方式反复复习。核心学习流程不需要账号；
-              Premium 仅用于解锁可选云备份与同步。
+              Echoknot 是一款原生 iOS 语言记忆应用。你可以记录真实生活里遇到的词，让可选 AI 补全繁琐细节，再用 Echo 故事把选中的词放回语境中复习。
             </p>
-            <div class="cta-row">
-              <a class="btn btn-primary" href="./echoknot-support-zh-cn.html">打开支持、隐私与条款</a>
-              <a class="btn btn-secondary" href="./echoknot-support-zh-cn.html#privacy">隐私与条款</a>
+            <div class="hero-actions">
+              <a class="button button-primary" href="./echoknot-support-zh-cn.html">支持、隐私与条款</a>
+              <a class="button button-secondary" href="mailto:support@tang-spark.no">联系支持</a>
+            </div>
+            <div class="trust-strip" aria-label="Echoknot 信任摘要">
+              <div class="trust-item"><strong>默认无需账号</strong><span>记录、复习、导出都可以本地完成。</span></div>
+              <div class="trust-item"><strong>免费 30 次补全</strong><span>另含每日 10 次 Echo 生成。</span></div>
+              <div class="trust-item"><strong>Premium：200 + 30</strong><span>更高 AI 配额，加可选云备份。</span></div>
             </div>
           </div>
-          <div class="hero-visual" aria-hidden="true">
-            <div class="phone">
-              <div class="phone-head">
-                <span>Echoknot</span>
-                <span>本地优先</span>
-              </div>
-              <div class="word-card">
-                <strong>gezellig</strong>
-                <small>温馨、惬意、有人情味</small>
-              </div>
-              <div class="word-card">
-                <strong>uitwaaien</strong>
-                <small>去户外吹风散心，让大脑“清空”一下</small>
-              </div>
-              <div class="echo-chip">回声故事：已选 3 个 knot</div>
-              <div class="word-card">
-                <small>故事预览：“开完会后，我们去海边吹了会儿风……”</small>
+
+          <div class="product-visual" aria-label="Echoknot 词库预览">
+            <div class="device" aria-hidden="true">
+              <div class="device-screen">
+                <div class="status-line"><span>9:41</span><span>本地优先</span></div>
+                <div class="screen-title"><strong>Wordbook</strong><span>最近一周</span></div>
+                <div class="mode-tabs"><span class="active">Explore</span><span>Search</span><span>All</span></div>
+                <div class="filter-row"><span>3 天</span><span>1 个月</span><span>动词</span><span>A-Z</span></div>
+                <div class="knot-list">
+                  <div class="knot-card"><strong>gezellig <em>荷兰语</em></strong><p>温暖、惬意、有社交氛围，来自一次咖啡馆对话。</p></div>
+                  <div class="knot-card"><strong>resilience <em>英语</em></strong><p>按学习级别生成用法和场景，方便复习。</p></div>
+                  <div class="knot-card"><strong>lagom <em>瑞典语</em></strong><p>刚刚好，不过量也不太少。</p></div>
+                </div>
+                <div class="glass-nav"><span><b>⌂</b>Today</span><span class="active"><b>≡</b>Words</span><span><b>＋</b>Add</span><span><b>”</b>Echo</span></div>
               </div>
             </div>
+            <div class="float-card" aria-hidden="true"><strong>Qwen 走代理</strong><span>AI 请求发往 Echoknot 后端，供应商密钥不会进入 iOS 安装包。</span></div>
           </div>
         </section>
 
-        <section class="section" aria-labelledby="why-title">
-          <h2 id="why-title">为什么好用</h2>
-          <div class="grid">
-            <article class="item">
-              <h3>记忆优先</h3>
-              <p>每个 knot 都可以绑定真实场景锚点，复习时更容易联想回忆，不靠死记硬背。</p>
-            </article>
-            <article class="item">
-              <h3>节奏轻量</h3>
-              <p>记录快、复习短、干扰少。你可以在通勤、排队、间隙时间完成有效学习。</p>
-            </article>
-            <article class="item">
-              <h3>语境复习</h3>
-              <p>回声故事会把你选的词放回语境，帮助你从“认识单词”走向“会用表达”。</p>
-            </article>
+        <section id="wordbook" class="band">
+          <div class="section-head">
+            <h2>面向上千词条设计。</h2>
+            <p>新版 Wordbook 不再依赖无尽滚动，而是把浏览、搜索和完整管理拆成更清晰的路径。</p>
+          </div>
+          <div class="feature-grid">
+            <article class="feature-card"><h3>Explore、Search、All</h3><p>浏览近期学习、直接搜索词条、管理完整词库，各自有清晰入口。</p></article>
+            <article class="feature-card"><h3>更实用的筛选</h3><p>支持今天、最近 3 天、最近一周、最近一月，以及词性和首字母筛选。</p></article>
+            <article class="feature-card"><h3>悬浮导航</h3><p>iOS 端采用 Liquid Glass 风格底部导航，并为内容预留空间，避免挡住页面底部操作。</p></article>
           </div>
         </section>
 
-        <section class="section" aria-labelledby="flow-title">
-          <h2 id="flow-title">使用流程</h2>
-          <ol class="steps">
-            <li>先选择学习语言和学习级别。</li>
-            <li>记录 knot：词、释义、用法、记忆锚点。</li>
-            <li>按需使用 AI 自动补全，再选择 3 到 8 个同语言 knot 生成回声故事。</li>
-            <li>收藏优质故事、回看最近记录、按需导出 JSON/PDF；如果你需要云备份，再开通 Premium。</li>
-          </ol>
+        <section id="premium" class="band">
+          <div class="section-head">
+            <h2>大多数能力保持免费。</h2>
+            <p>Premium 面向高频学习者：更高 AI 配额和可选云备份；普通本地学习不需要订阅。</p>
+          </div>
+          <div class="metrics-grid">
+            <div class="metric"><strong>免费：30</strong><span>每日 AI 自动补全/详情刷新额度。</span></div>
+            <div class="metric"><strong>免费：10</strong><span>每日 Echo 故事生成额度。</span></div>
+            <div class="metric"><strong>Premium：200 + 30</strong><span>每日 200 次词条辅助和 30 次 Echo 生成。</span></div>
+          </div>
+          <div class="route-line">
+            <div class="route-step"><strong>购买</strong><p>Premium 使用 App Store 自动续期订阅商品 <code>com.tangspark.echoknot.premium.monthly</code>。</p></div>
+            <div class="route-step"><strong>兑换</strong><p>免费体验 Premium 应通过同一订阅商品的 App Store Offer Code 发放。</p></div>
+            <div class="route-step"><strong>同步</strong><p>只有 Premium 用户会看到 Apple 登录与可选 Firebase 云备份/同步入口；免费用户默认保持本地模式。</p></div>
+          </div>
         </section>
 
-        <section class="section" aria-labelledby="trust-title">
-          <h2 id="trust-title">隐私与信任设计</h2>
-          <ul class="trust-list">
-            <li>核心学习流程无需注册账号。</li>
-            <li>数据默认仅保存在本机，可导出 JSON 或 PDF。</li>
-            <li>AI 相关功能只有在你主动触发时才会执行，免费版采用每日限额。</li>
-            <li>Premium 解锁的是可选云备份与 Apple 登录，不会影响基础记录与复习。</li>
-          </ul>
-          <div class="cta-row">
-            <a class="btn btn-primary" href="./echoknot-support-zh-cn.html">查看完整支持文档</a>
-            <a class="btn btn-secondary" href="./echoknot-support-zh-cn.html#terms">查看服务条款</a>
+        <section id="architecture" class="band">
+          <div class="section-head">
+            <h2>生产安全的服务边界。</h2>
+            <p>应用不会携带供应商密钥。AI 与云同步分别由后端代理、StoreKit 权益和 Apple 登录控制。</p>
+          </div>
+          <div class="feature-grid">
+            <article class="feature-card"><h3>AI 代理</h3><p>iOS 请求 <code>https://tang-spark.no/echoknot/api/ai/chat</code>，Netlify 函数再调用 Qwen compatible chat-completions 端点。</p></article>
+            <article class="feature-card"><h3>Firebase 按需使用</h3><p>只有 Premium 权益有效、用户主动选择、并完成 Apple 登录后，才会使用 Firestore 同步。</p></article>
+            <article class="feature-card"><h3>本地导出</h3><p>即使不订阅 Premium，也可以从 Settings 和 Dashboard 导出 JSON/PDF。</p></article>
           </div>
         </section>
       </main>
 
-      <footer class="footer">
-        <p>© 2026 TangSpark。来自挪威，服务全球语言学习者。</p>
+      <footer class="site-footer">
+        <p>© 2026 TangSpark。Echoknot 默认本地优先。</p>
         <a href="mailto:support@tang-spark.no">support@tang-spark.no</a>
       </footer>
     </div>

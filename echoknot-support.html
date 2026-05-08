@@ -6,7 +6,7 @@
     <title>Echoknot Support, Privacy & Terms | TangSpark</title>
     <meta
       name="description"
-      content="Technical support, privacy policy, and terms for Echoknot iOS v1.1: local-first storage, AI limits, optional Premium backup, troubleshooting, and release notes."
+      content="Technical support, privacy policy, and terms for Echoknot iOS v1.3 release-candidate support: local-first storage, AI limits, optional Premium backup, troubleshooting, and release notes."
     />
     <meta property="og:title" content="Echoknot Support, Privacy & Terms | TangSpark" />
     <meta
@@ -693,7 +693,7 @@
 
         <div class="header-meta" aria-label="Build metadata">
           <span class="chip">Platform <strong>iOS</strong></span>
-          <span class="chip">Current Build <strong>1.1</strong></span>
+          <span class="chip">Release Candidate <strong>1.3</strong></span>
           <span class="chip">Storage <strong>Encrypted Local-First</strong></span>
         </div>
 
@@ -729,10 +729,10 @@
         <section class="side-box" aria-label="Support scope">
           <h3>Support Scope</h3>
           <ul>
-            <li>Current maintained build: v1.1</li>
+            <li>Current documented release candidate: v1.3 (build 17)</li>
             <li>Encrypted local-first storage is the default</li>
-            <li>Daily free AI limits: 30 auto-fills, 10 echo generations</li>
-            <li>Premium unlocks optional cloud backup and Sign in with Apple</li>
+            <li>AI limits: Free 30/10 daily, Premium 200/30 daily</li>
+            <li>Premium unlocks higher AI quota, optional cloud backup, and Sign in with Apple for sync</li>
             <li>Primary support channel: support@tang-spark.no</li>
           </ul>
         </section>
@@ -757,9 +757,9 @@
           <p class="eyebrow">Echoknot for iOS</p>
           <h1 id="hero-title">Support, privacy, and terms for the current Echoknot build</h1>
           <p class="lead">
-            This page documents behavior that is live in the shipped app today: local-first storage,
+            This page documents the v1.3 release-candidate behavior: local-first storage,
             AI-triggered features and limits, optional Premium backup, troubleshooting, privacy handling,
-            and the terms that govern normal use.
+            and the terms that govern normal use. Public App Store availability can lag until Apple review completes.
           </p>
           <div class="cta-row">
             <a class="btn btn-primary" href="mailto:support@tang-spark.no">Open Support Ticket</a>
@@ -767,10 +767,10 @@
           </div>
           <div class="hero-grid">
             <article class="meta-card">
-              <p><strong>Build:</strong> 1.1</p>
+              <p><strong>Build:</strong> 1.3 release candidate / build 17</p>
             </article>
             <article class="meta-card">
-              <p><strong>AI Limits:</strong> 30 auto-fills / 10 echoes per day</p>
+              <p><strong>AI Limits:</strong> Free 30/10 daily; Premium 200/30 daily</p>
             </article>
             <article class="meta-card">
               <p><strong>Backup:</strong> Local by default, Premium cloud backup optional</p>
@@ -785,9 +785,9 @@
             <li>Echo generation: Operational (user-triggered)</li>
             <li>JSON/PDF export: Operational</li>
             <li>Appearance and localization: Operational</li>
-            <li>Premium entitlement and backup path: Supported</li>
+            <li>Premium quota, entitlement, and backup path: Supported</li>
           </ul>
-          <p class="meta">Status reflects the latest shipped iOS build documentation (v1.1).</p>
+          <p class="meta">Status reflects the v1.3 release-candidate documentation and should be rechecked after App Store approval.</p>
         </section>
 
         <section id="compatibility" class="section" aria-labelledby="compatibility-title">
@@ -818,10 +818,10 @@
             <li>Open Echoknot and set your learning language, level, and appearance mode.</li>
             <li>Use the plus action to create your first knot.</li>
             <li>Add translation, optional usage sentence, memory anchor, and tags.</li>
-            <li>Use AI auto-fill or detail refresh when needed (up to 30 free auto-fill credits per day).</li>
+            <li>Use AI auto-fill or detail refresh when needed (30 free credits per day; 200 per day with Premium).</li>
             <li>Open Echo and select 3 to 8 knots in the same language.</li>
-            <li>Generate a story (up to 10 free echo generations per day), then save or favorite useful echoes.</li>
-            <li>Export JSON or PDF any time, or activate Premium and sign in with Apple if you want optional cloud backup.</li>
+            <li>Generate a story (10 free Echo generations per day; 30 per day with Premium), then save or favorite useful echoes.</li>
+            <li>Export JSON or PDF any time, or activate Premium for higher AI quota and optional cloud backup through Sign in with Apple.</li>
           </ol>
         </section>
 
@@ -853,9 +853,9 @@
                   <td>Requires minimum 3 and maximum 8 selected knots from one language.</td>
                 </tr>
                 <tr>
-                  <td>Daily AI usage limits (free plan)</td>
+                  <td>Daily AI usage limits</td>
                   <td><span class="pill ok">Available</span></td>
-                  <td>30 auto-fills/day and 10 echo generations/day. Counters reset on the device's local calendar day.</td>
+                  <td>Free: 30 auto-fills/day and 10 echo generations/day. Premium: 200 auto-fills/day and 30 echo generations/day. Counters reset on the device's local calendar day.</td>
                 </tr>
                 <tr>
                   <td>Appearance, language, and text size</td>
@@ -875,7 +875,7 @@
                 <tr>
                   <td>Premium entitlement</td>
                   <td><span class="pill ok">Available</span></td>
-                  <td>Premium can be unlocked through an App Store subscription, eligible offer code, or build-configured invite path.</td>
+                  <td>Premium can be unlocked through an App Store subscription or an eligible App Store subscription Offer Code.</td>
                 </tr>
                 <tr>
                   <td>Optional cloud backup and sync</td>
@@ -902,16 +902,16 @@
             <summary>Why cannot I generate an echo story?</summary>
             <p>
               Echo generation is disabled when fewer than 3 knots are selected, when selected knots
-              use mixed languages, when your daily free echo limit is reached, when provider quota is
+              use mixed languages, when your daily Echo limit is reached, when provider quota is
               exhausted, or when network/provider access fails.
             </p>
           </details>
 
           <details>
-            <summary>What are the current free daily AI limits?</summary>
+            <summary>What are the current daily AI limits?</summary>
             <p>
-              In v1.1, Echoknot allows 30 AI auto-fills/detail refreshes per day and 10 echo
-              generations per day on the free tier.
+              In v1.3, the free tier allows 30 AI auto-fills/detail refreshes and 10 Echo
+              generations per local day. Premium raises this to 200 auto-fills/detail refreshes and 30 Echo generations per local day.
             </p>
           </details>
 
@@ -962,25 +962,25 @@
             <summary>Do I need an account to use Echoknot?</summary>
             <p>
               No. Core knot capture, review, echo generation, and export work without an account.
-              Premium only adds an optional backup and sync path.
+              Premium adds higher AI quota plus an optional backup and sync path.
             </p>
           </details>
 
           <details>
             <summary>How does Premium work?</summary>
             <p>
-              Premium unlocks optional cloud backup and sync. After Premium is active, you can choose
-              to Sign in with Apple. Eligible App Store offer codes or build-configured invite codes
-              may unlock the same Premium backup entitlement.
+              Premium unlocks higher daily AI quota and optional cloud backup/sync. After Premium is active, you can choose
+              to Sign in with Apple for sync. Eligible App Store subscription Offer Codes
+              unlock the same Premium entitlement for the offer duration.
             </p>
           </details>
 
           <details>
             <summary>What data is sent when I use AI features?</summary>
             <p>
-              Only the text required for the user-triggered action is sent to the configured AI
-              provider. There are no background AI requests by default. Third-party AI providers may
-              process requests under their own service terms.
+              Only the text required for the user-triggered action is sent to the Echoknot AI
+              backend over HTTPS. The backend uses Alibaba Cloud DashScope/Qwen and keeps provider
+              API keys out of the iOS app bundle.
             </p>
           </details>
         </section>
@@ -989,11 +989,11 @@
           <h2 id="privacy-title">Echoknot Privacy Policy</h2>
           <p>
             <strong>
-              Echoknot v1.1 is local-first by default. TangSpark does not run a general-purpose
+              Echoknot v1.3 is local-first by default. TangSpark does not run a general-purpose
               advertising profile, and core app use does not require you to create an account.
             </strong>
           </p>
-          <p class="meta">Last updated: April 23, 2026</p>
+          <p class="meta">Last updated: May 8, 2026</p>
 
           <h3>What Echoknot stores on device</h3>
           <ul class="list">
@@ -1006,7 +1006,7 @@
           <h3>When data leaves your device</h3>
           <ul class="list">
             <li>AI actions run only when you trigger them.</li>
-            <li>Only the text required for the requested auto-fill, refresh, or echo action is sent to the configured AI provider over network.</li>
+            <li>Only the text required for the requested auto-fill, refresh, or echo action is sent to the Echoknot AI backend over HTTPS; the backend uses Alibaba Cloud DashScope/Qwen.</li>
             <li>Provider routing may involve a lightweight country-resolution request in some configurations.</li>
             <li>TangSpark does not use these requests to build a targeted advertising profile about you.</li>
           </ul>
@@ -1050,7 +1050,7 @@
 
         <section id="terms" class="section" aria-labelledby="terms-title">
           <h2 id="terms-title">Echoknot Terms and Conditions</h2>
-          <p class="meta">Effective date: April 23, 2026</p>
+          <p class="meta">Effective date: May 8, 2026</p>
 
           <h3>1. Scope of the service</h3>
           <p>
@@ -1074,10 +1074,9 @@
 
           <h3>4. Premium, offer codes, and backup access</h3>
           <p>
-            Premium unlocks optional cloud backup and sync. Core local learning flows are not gated behind
-            Premium. App Store subscriptions, renewals, billing, and offer-code handling are governed by
-            Apple’s platform terms. Build-configured invite or access codes may be limited, withdrawn, or
-            expire according to their release conditions.
+            Premium unlocks higher daily AI quota plus optional cloud backup and sync. Core local learning flows are not gated behind
+            Premium. App Store subscriptions, renewals, billing, and Offer Code handling are governed by
+            Apple’s platform terms.
           </p>
 
           <h3>5. Your data and backups</h3>
@@ -1167,15 +1166,15 @@
             limits on the free tier to keep the service sustainable.
           </p>
           <ul class="list">
-            <li>Free tier daily AI limits: 30 auto-fills/detail refreshes and 10 echo generations.</li>
-            <li>Premium unlocks optional cloud backup and sync. It does not gate basic capture, review, or export.</li>
+            <li>Free tier daily AI limits: 30 auto-fills/detail refreshes and 10 Echo generations.</li>
+            <li>Premium raises daily AI limits to 200 auto-fills/detail refreshes and 30 Echo generations, and unlocks optional cloud backup/sync. It does not gate basic capture, review, or export.</li>
             <li>Build-specific Premium availability can vary if a subscription product is not configured yet.</li>
             <li>Any future pricing changes will be announced before rollout.</li>
           </ul>
 
           <h3>Future functionality notes</h3>
           <ul class="list">
-            <li>Improve backup clarity and recovery messaging across more edge cases.</li>
+            <li>Validate subscription, restore, Offer Code, and backup recovery messaging across more edge cases.</li>
             <li>Continue refining AI limits and quota handling for accuracy and abuse prevention.</li>
             <li>Expand supported learning flows without making accounts mandatory for core use.</li>
           </ul>
@@ -1195,7 +1194,7 @@
 
 Device: [e.g., iPhone 14]
 iOS version: [e.g., iOS 18.3]
-App version: [1.1]
+App version: [1.3 build 17, or App Store version shown on your device]
 
 What happened:
 [Describe the issue]
@@ -1220,13 +1219,13 @@ Screenshots/screen recording:
         <section id="release-notes" class="section" aria-labelledby="release-title">
           <h2 id="release-title">Release Notes</h2>
           <article class="soft-card">
-            <h3>Version 1.1 (current)</h3>
+            <h3>Version 1.3 release candidate</h3>
             <ul class="list">
-              <li>Expanded settings for appearance, app language, text size, and learning level.</li>
-              <li>Daily free AI limits set to 30 auto-fill/detail refresh credits and 10 echo generations, with local-day rollover.</li>
-              <li>Optional Premium backup flow with Sign in with Apple, purchase/restore support, and code-based access paths.</li>
-              <li>JSON/PDF export from Settings and Dashboard plus full-data reset flow.</li>
-              <li>Encrypted local-first persistence with layered recovery storage and ordered saves.</li>
+              <li>Redesigned Wordbook for large libraries with Explore/Search/All modes, richer date filters, and alphabet/metadata navigation.</li>
+              <li>Floating Liquid Glass-style bottom navigation with safe content spacing.</li>
+              <li>Premium positioning updated: higher AI quota plus optional cloud backup/sync.</li>
+              <li>Production AI path uses the Echoknot backend proxy for Alibaba Cloud DashScope/Qwen.</li>
+              <li>JSON/PDF export from Settings and Dashboard plus encrypted local-first persistence remain supported.</li>
             </ul>
           </article>
         </section>
@@ -1235,7 +1234,7 @@ Screenshots/screen recording:
 
     <footer>
       <div class="footer-inner">
-        <p>© 2026 TangSpark. Echoknot support documentation for iOS build 1.1.</p>
+        <p>© 2026 TangSpark. Echoknot support documentation for iOS v1.3 release candidate.</p>
         <div class="footer-links">
           <a href="./echoknot.html">Product</a>
           <a href="#privacy">Privacy</a>
