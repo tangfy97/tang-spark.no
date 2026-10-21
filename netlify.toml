@@ -7,3 +7,11 @@
   to = "/.netlify/functions/echoknot-ai-chat"
   status = 200
   force = true
+
+# kvikkshot-download (managed by Kvikkshot's scripts/publish-website.sh)
+[[redirects]]
+  from = "/kvikkshot/download"
+  to = "/downloads/Kvikkshot-1.0.0.dmg"
+  status = 302
+  force = true
+# end kvikkshot-download
