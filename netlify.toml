@@ -15,3 +15,11 @@
   status = 302
   force = true
 # end kvikkshot-download
+
+# rydd-download (managed by Rydd's scripts/publish-website.sh)
+[[redirects]]
+  from = "/rydd/download"
+  to = "/downloads/Rydd-1.0.0.dmg"
+  status = 302
+  force = true
+# end rydd-download
