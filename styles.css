@@ -24,7 +24,8 @@ header nav a:hover, header nav a[aria-current] { color: var(--red); }
 .facts div { display: flex; justify-content: space-between; gap: 16px; border-top: 1px solid var(--ink); padding: 9px 0; }
 
 section.part { margin-top: 112px; padding-top: 16px; }
-.apps { grid-template-columns: repeat(3, 1fr); }
+.apps { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 1280px) { .apps { grid-template-columns: repeat(2, 1fr); row-gap: 64px; } }
 .app .n { font-size: 96px; font-weight: 800; font-stretch: 62%; line-height: 1; }
 .app h3 { font-size: 40px; font-weight: 700; margin-top: 12px; display: flex; align-items: center; gap: 14px; }
 .app h3 img, .title img { width: 40px; height: 40px; border-radius: 9px; }
