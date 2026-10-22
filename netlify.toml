@@ -27,7 +27,7 @@
 # spolo-download (managed by Spolo's scripts/publish-website.sh)
 [[redirects]]
   from = "/spolo/download"
-  to = "/downloads/Spolo-1.0.0.dmg"
+  to = "/downloads/Spolo-1.0.1.dmg"
   status = 302
   force = true
 # end spolo-download
