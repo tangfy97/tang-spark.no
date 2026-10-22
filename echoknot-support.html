@@ -1,801 +1,25 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Echoknot Support, Privacy & Terms | TangSpark</title>
-    <meta
-      name="description"
-      content="Technical support, privacy policy, and terms for Echoknot iOS v1.3 release-candidate support: local-first storage, AI limits, optional Premium backup, troubleshooting, and release notes."
-    />
-    <meta property="og:title" content="Echoknot Support, Privacy & Terms | TangSpark" />
-    <meta
-      property="og:description"
-      content="Support, privacy, and terms for the current Echoknot iOS release."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.tang-spark.no/echoknot-support.html" />
-    <meta name="theme-color" content="#6f8997" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <style>
-      :root {
-        --bg: #eef2f0;
-        --surface: #ffffff;
-        --surface-soft: #f7f8f6;
-        --ink: #20282f;
-        --ink-muted: #667581;
-        --line: #d8dfdc;
-        --line-strong: #bdc8c7;
-        --accent: #6f8997;
-        --accent-dark: #546b77;
-        --good: #607781;
-        --warn: #7f929d;
-        --radius: 14px;
-        --radius-sm: 10px;
-        --max: 1220px;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        margin: 0;
-        font-family: "Manrope", sans-serif;
-        color: var(--ink);
-        background: radial-gradient(circle at 8% 0%, #dde6e3 0%, transparent 40%),
-          radial-gradient(circle at 92% 4%, #e8eeeb 0%, transparent 38%), var(--bg);
-        line-height: 1.58;
-      }
-
-      a {
-        color: var(--accent);
-      }
-
-      .skip-link {
-        position: absolute;
-        top: -48px;
-        left: 10px;
-        z-index: 999;
-        background: #ffffff;
-        color: var(--ink);
-        padding: 8px 12px;
-        border: 1px solid var(--line-strong);
-        border-radius: 8px;
-      }
-
-      .skip-link:focus {
-        top: 10px;
-      }
-
-      .topbar {
-        position: sticky;
-        top: 0;
-        z-index: 50;
-        backdrop-filter: blur(8px);
-        background: rgba(238, 242, 240, 0.92);
-        border-bottom: 1px solid var(--line);
-      }
-
-      .topbar-inner {
-        width: min(var(--max), 96vw);
-        margin: 0 auto;
-        padding: 10px 0;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-        flex-wrap: wrap;
-      }
-
-      .brand {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.7rem;
-        color: var(--ink);
-        text-decoration: none;
-      }
-
-      .brand-mark {
-        width: 1.9rem;
-        height: 1.9rem;
-        border-radius: 0.66rem;
-        background: linear-gradient(145deg, #5d7480, #9aaeb4);
-        position: relative;
-      }
-
-      .brand-mark::before {
-        content: "";
-        position: absolute;
-        inset: 0.35rem;
-        border-radius: 0.42rem;
-        border: 2px solid rgba(255, 255, 255, 0.8);
-      }
-
-      .brand-star {
-        position: absolute;
-        width: 0.5rem;
-        height: 0.5rem;
-        border-radius: 0.16rem;
-        background: #eef2f0;
-        right: 0.24rem;
-        top: 0.24rem;
-        transform: rotate(45deg);
-      }
-
-      .brand-text {
-        display: grid;
-        gap: 2px;
-      }
-
-      .brand-text strong {
-        font-weight: 800;
-        line-height: 1;
-      }
-
-      .brand-text span {
-        font-size: 0.78rem;
-        color: var(--ink-muted);
-        line-height: 1;
-      }
-
-      .header-meta {
-        display: inline-flex;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 8px;
-      }
-
-      .chip {
-        display: inline-flex;
-        align-items: center;
-        gap: 5px;
-        padding: 5px 9px;
-        border-radius: 999px;
-        font-size: 0.74rem;
-        font-weight: 700;
-        border: 1px solid var(--line-strong);
-        background: #ffffff;
-        color: #27343b;
-      }
-
-      .chip strong {
-        font-weight: 800;
-      }
-
-      .top-links {
-        display: inline-flex;
-        flex-wrap: wrap;
-        gap: 7px;
-        align-items: center;
-      }
-
-      .top-links > a {
-        text-decoration: none;
-        border-radius: 999px;
-        border: 1px solid var(--line-strong);
-        background: #ffffff;
-        color: #27343b;
-        font-size: 0.83rem;
-        font-weight: 700;
-        padding: 7px 11px;
-      }
-
-      .top-links a:hover {
-        border-color: #aebcbd;
-      }
-
-      .lang-toggle {
-        display: inline-flex;
-        align-items: center;
-        border: 1px solid var(--line-strong);
-        border-radius: 999px;
-        background: #ffffff;
-        padding: 2px;
-        gap: 2px;
-      }
-
-      .lang-toggle a {
-        text-decoration: none;
-        color: #27343b;
-        font-size: 0.78rem;
-        font-weight: 800;
-        border-radius: 999px;
-        padding: 6px 9px;
-        line-height: 1;
-      }
-
-      .lang-toggle a.active {
-        border: 1px solid var(--line-strong);
-        background: #eef4f2;
-        color: #546b77;
-      }
-
-      .page {
-        width: min(var(--max), 96vw);
-        margin: 18px auto 34px;
-        display: grid;
-        grid-template-columns: 265px minmax(0, 1fr);
-        gap: 18px;
-      }
-
-      .sidebar {
-        position: sticky;
-        top: 82px;
-        height: fit-content;
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        background: rgba(255, 255, 255, 0.87);
-        box-shadow: 0 16px 42px rgba(40, 54, 62, 0.08);
-        padding: 14px;
-      }
-
-      .side-title {
-        margin: 0;
-        font-size: 0.8rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: var(--ink-muted);
-        font-weight: 700;
-      }
-
-      .side-nav {
-        margin-top: 10px;
-        display: grid;
-        gap: 5px;
-      }
-
-      .side-nav a {
-        text-decoration: none;
-        color: #2f3f47;
-        border: 1px solid transparent;
-        border-radius: 8px;
-        padding: 7px 9px;
-        font-size: 0.88rem;
-        font-weight: 600;
-      }
-
-      .side-nav a:hover {
-        border-color: var(--line);
-        background: #f7f8f6;
-      }
-
-      .side-nav a.is-active {
-        border-color: #aebcbd;
-        background: #eef4f2;
-        color: #546b77;
-      }
-
-      .side-box {
-        margin-top: 12px;
-        border: 1px solid var(--line);
-        border-radius: 10px;
-        background: #f7f8f6;
-        padding: 10px;
-      }
-
-      .side-box h3 {
-        margin: 0 0 8px;
-        font-size: 0.86rem;
-        font-weight: 800;
-        font-family: "Manrope", sans-serif;
-      }
-
-      .side-box ul {
-        margin: 0;
-        padding-left: 18px;
-        display: grid;
-        gap: 6px;
-        font-size: 0.82rem;
-        color: #586a73;
-      }
-
-      .mobile-nav {
-        display: none;
-      }
-
-      .content {
-        display: grid;
-        gap: 14px;
-      }
-
-      .section {
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        background: rgba(255, 255, 255, 0.9);
-        box-shadow: 0 18px 46px rgba(40, 54, 62, 0.08);
-        padding: 18px;
-        scroll-margin-top: 90px;
-      }
-
-      .hero {
-        position: relative;
-        overflow: hidden;
-      }
-
-      .hero::after {
-        content: "";
-        position: absolute;
-        right: -95px;
-        bottom: -120px;
-        width: 230px;
-        height: 230px;
-        border-radius: 50%;
-        background: radial-gradient(circle at center, rgba(111, 137, 151, 0.16) 0%, transparent 68%);
-      }
-
-      h1,
-      h2,
-      h3 {
-        margin: 0 0 10px;
-      }
-
-      h1,
-      h2 {
-        font-family: "Newsreader", serif;
-        line-height: 1.12;
-      }
-
-      h1 {
-        font-size: clamp(1.75rem, 3.8vw, 2.7rem);
-      }
-
-      h2 {
-        font-size: clamp(1.2rem, 3vw, 1.85rem);
-      }
-
-      h3 {
-        font-size: 1.02rem;
-        font-family: "Manrope", sans-serif;
-        font-weight: 800;
-      }
-
-      .eyebrow {
-        margin: 0 0 10px;
-        font-size: 0.79rem;
-        font-weight: 800;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: #546b77;
-      }
-
-      .lead {
-        margin: 0;
-        color: var(--ink-muted);
-        max-width: 70ch;
-      }
-
-      .hero-grid {
-        margin-top: 12px;
-        display: grid;
-        gap: 10px;
-      }
-
-      .meta-card {
-        border: 1px solid var(--line);
-        border-radius: var(--radius-sm);
-        background: #f7f8f6;
-        padding: 11px;
-      }
-
-      .meta-card p {
-        margin: 0;
-        font-size: 0.88rem;
-      }
-
-      .cta-row {
-        margin-top: 14px;
-        display: flex;
-        gap: 9px;
-        flex-wrap: wrap;
-      }
-
-      .btn {
-        text-decoration: none;
-        border: 1px solid transparent;
-        border-radius: 10px;
-        font-weight: 700;
-        padding: 10px 13px;
-        min-height: 42px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .btn-primary {
-        background: var(--accent);
-        color: #ffffff;
-      }
-
-      .btn-primary:hover {
-        background: var(--accent-dark);
-      }
-
-      .btn-secondary {
-        background: #ffffff;
-        border-color: var(--line-strong);
-        color: #2f3f47;
-      }
-
-      .inline-list {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-      }
-
-      .inline-list li {
-        border: 1px solid var(--line);
-        border-radius: 999px;
-        background: var(--surface-soft);
-        font-size: 0.8rem;
-        font-weight: 700;
-        color: #586a73;
-        padding: 6px 10px;
-      }
-
-      .grid-2 {
-        display: grid;
-        gap: 10px;
-      }
-
-      .soft-card {
-        border: 1px solid var(--line);
-        border-radius: 10px;
-        background: #fbfcfb;
-        padding: 11px;
-      }
-
-      .soft-card p {
-        margin: 0;
-        color: #586a73;
-        font-size: 0.9rem;
-      }
-
-      .list,
-      .steps {
-        margin: 0;
-        padding-left: 20px;
-        display: grid;
-        gap: 8px;
-      }
-
-      .table-wrap {
-        overflow-x: auto;
-      }
-
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        min-width: 680px;
-      }
-
-      th,
-      td {
-        border-bottom: 1px solid var(--line);
-        text-align: left;
-        padding: 10px 8px;
-        font-size: 0.9rem;
-        vertical-align: top;
-      }
-
-      th {
-        color: #546b77;
-        font-size: 0.82rem;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-      }
-
-      .pill {
-        display: inline-flex;
-        border-radius: 999px;
-        border: 1px solid;
-        padding: 4px 8px;
-        font-size: 0.73rem;
-        font-weight: 800;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-      }
-
-      .pill.ok {
-        color: var(--good);
-        border-color: rgba(96, 119, 129, 0.32);
-        background: rgba(96, 119, 129, 0.1);
-      }
-
-      .pill.plan {
-        color: var(--warn);
-        border-color: rgba(127, 146, 157, 0.3);
-        background: rgba(127, 146, 157, 0.12);
-      }
-
-      details {
-        border: 1px solid var(--line);
-        border-radius: 10px;
-        background: #fbfcfb;
-        padding: 10px 12px;
-      }
-
-      details + details {
-        margin-top: 10px;
-      }
-
-      summary {
-        cursor: pointer;
-        font-weight: 700;
-      }
-
-      .notice {
-        border: 1px solid rgba(111, 137, 151, 0.24);
-        background: rgba(111, 137, 151, 0.08);
-        border-radius: 10px;
-        padding: 10px 12px;
-        font-weight: 600;
-        color: #546b77;
-      }
-
-      .bug-box {
-        margin-top: 12px;
-        border: 1px dashed var(--line-strong);
-        border-radius: 10px;
-        background: #fbfcfb;
-        padding: 10px;
-      }
-
-      pre {
-        margin: 0;
-        overflow-x: auto;
-        white-space: pre-wrap;
-        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-        font-size: 0.85rem;
-      }
-
-      .copy-row {
-        margin-top: 10px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .copy-row button {
-        border: 1px solid var(--line-strong);
-        background: #ffffff;
-        border-radius: 10px;
-        min-height: 40px;
-        padding: 8px 12px;
-        font-weight: 700;
-        cursor: pointer;
-      }
-
-      .status {
-        font-size: 0.88rem;
-        color: var(--ink-muted);
-      }
-
-      .meta {
-        color: var(--ink-muted);
-        font-size: 0.88rem;
-        margin: 4px 0 0;
-      }
-
-      footer {
-        border-top: 1px solid var(--line);
-        margin-top: 18px;
-        padding: 16px;
-        color: var(--ink-muted);
-      }
-
-      .footer-inner {
-        width: min(var(--max), 96vw);
-        margin: 0 auto;
-        display: flex;
-        gap: 12px;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-      }
-
-      .footer-links {
-        display: inline-flex;
-        gap: 12px;
-        flex-wrap: wrap;
-      }
-
-      .footer-links a {
-        color: var(--accent);
-        font-weight: 700;
-      }
-
-      .visually-hidden {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border: 0;
-      }
-
-      @media (min-width: 900px) {
-        .hero-grid {
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-        }
-
-        .grid-2 {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-      }
-
-      @media (max-width: 980px) {
-        .page {
-          grid-template-columns: 1fr;
-        }
-
-        .sidebar {
-          display: none;
-        }
-
-        .mobile-nav {
-          display: flex;
-          gap: 7px;
-          overflow-x: auto;
-          padding-bottom: 3px;
-          scrollbar-width: thin;
-          margin-bottom: 4px;
-        }
-
-        .mobile-nav a {
-          text-decoration: none;
-          white-space: nowrap;
-          border: 1px solid var(--line);
-          background: rgba(255, 255, 255, 0.9);
-          color: #1d3442;
-          border-radius: 999px;
-          padding: 7px 10px;
-          font-size: 0.82rem;
-          font-weight: 700;
-        }
-
-        .mobile-nav a.is-active {
-          border-color: #aebcbd;
-          background: #eef4f2;
-          color: #546b77;
-        }
-      }
-    </style>
-    <link rel="stylesheet" href="./legacy.css" />
-  </head>
-  <body class="support-page">
-    <a class="skip-link" href="#main-content">Skip to content</a>
-
-    <header class="topbar" role="banner">
-      <div class="topbar-inner">
-        <a class="brand" href="./index.html" aria-label="TangSpark home">
-          <span class="brand-mark" aria-hidden="true">
-            <span class="brand-star"></span>
-          </span>
-          <span class="brand-text">
-            <strong>TangSpark</strong>
-            <span>Echoknot Docs, Privacy & Terms</span>
-          </span>
-        </a>
-
-        <div class="header-meta" aria-label="Build metadata">
-          <span class="chip">Platform <strong>iOS</strong></span>
-          <span class="chip">Release Candidate <strong>1.3</strong></span>
-          <span class="chip">Storage <strong>Encrypted Local-First</strong></span>
-        </div>
-
-        <div class="top-links">
-          <a href="./echoknot.html">Product Page</a>
-          <a href="mailto:support@tang-spark.no">Contact Support</a>
-          <div class="lang-toggle" role="group" aria-label="Language switcher">
-            <a class="active" href="./echoknot-support.html" aria-current="page">EN</a>
-            <a href="./echoknot-support-zh-cn.html" lang="zh-CN">简体中文</a>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <div class="page">
-      <aside class="sidebar" aria-label="Section navigation">
-        <p class="side-title">On This Page</p>
-        <nav class="side-nav">
-          <a href="#overview">Overview</a>
-          <a href="#status">System Status</a>
-          <a href="#compatibility">Compatibility</a>
-          <a href="#quick-start">Quick Start</a>
-          <a href="#feature-matrix">Feature Matrix</a>
-          <a href="#faq">FAQ</a>
-          <a href="#privacy">Privacy</a>
-          <a href="#terms">Terms</a>
-          <a href="#troubleshooting">Troubleshooting</a>
-          <a href="#pricing-roadmap">Pricing &amp; Roadmap</a>
-          <a href="#contact">Contact</a>
-          <a href="#release-notes">Release Notes</a>
-        </nav>
-
-        <section class="side-box" aria-label="Support scope">
-          <h3>Support Scope</h3>
-          <ul>
-            <li>Current documented release candidate: v1.3 (build 17)</li>
-            <li>Encrypted local-first storage is the default</li>
-            <li>AI limits: Free 30/10 daily, Premium 200/30 daily</li>
-            <li>Premium unlocks higher AI quota, optional cloud backup, and Sign in with Apple for sync</li>
-            <li>Primary support channel: support@tang-spark.no</li>
-          </ul>
-        </section>
-      </aside>
-
-      <main id="main-content" class="content">
-        <nav class="mobile-nav" aria-label="Quick navigation">
-          <a href="#overview">Overview</a>
-          <a href="#status">Status</a>
-          <a href="#compatibility">Compatibility</a>
-          <a href="#quick-start">Quick Start</a>
-          <a href="#feature-matrix">Features</a>
-          <a href="#faq">FAQ</a>
-          <a href="#privacy">Privacy</a>
-          <a href="#terms">Terms</a>
-          <a href="#troubleshooting">Troubleshooting</a>
-          <a href="#pricing-roadmap">Roadmap</a>
-          <a href="#contact">Contact</a>
-        </nav>
-
-        <section id="overview" class="section hero" aria-labelledby="hero-title">
-          <p class="eyebrow">Echoknot for iOS</p>
-          <h1 id="hero-title">Support, privacy, and terms for the current Echoknot build</h1>
-          <p class="lead">
-            This page documents the v1.3 release-candidate behavior: local-first storage,
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Echoknot Support, Privacy &amp; Terms | TangSpark</title>
+<meta name="description" content="Support, privacy policy and terms for Echoknot for iOS.">
+<link rel="icon" type="image/svg+xml" href="./favicon.svg"><link rel="stylesheet" href="./styles.css"></head>
+<body><div class="wrap">
+<header><a class="mark" href="./index.html">TangSpark</a><nav><a href="./echoknot.html">Echoknot</a><a href="#privacy">Privacy</a><a href="#terms">Terms</a><a href="./echoknot-support-zh-cn.html">中文</a></nav></header>
+<div class="title"><img src="img/echoknot-icon.jpg" alt=""><span class="label">Echoknot for iOS</span></div>
+<div class="hero-name">Support</div>
+<section class="grid poster"><div class="block"><h1 class="cond">Support, privacy and terms.</h1><p>This page documents the v1.3 release-candidate behavior: local-first storage,
             AI-triggered features and limits, optional Premium backup, troubleshooting, privacy handling,
-            and the terms that govern normal use. Public App Store availability can lag until Apple review completes.
-          </p>
-          <div class="cta-row">
-            <a class="btn btn-primary" href="mailto:support@tang-spark.no">Open Support Ticket</a>
-            <a class="btn btn-secondary" href="./echoknot.html">Back to Product Intro</a>
-          </div>
-          <div class="hero-grid">
-            <article class="meta-card">
-              <p><strong>Build:</strong> 1.3 release candidate / build 17</p>
-            </article>
-            <article class="meta-card">
-              <p><strong>AI Limits:</strong> Free 30/10 daily; Premium 200/30 daily</p>
-            </article>
-            <article class="meta-card">
-              <p><strong>Backup:</strong> Local by default, Premium cloud backup optional</p>
-            </article>
-          </div>
-        </section>
-
-        <section id="status" class="section" aria-labelledby="status-title">
-          <h2 id="status-title">System Status</h2>
-          <ul class="inline-list">
+            and the terms that govern normal use. Public App Store availability can lag until Apple review completes.</p></div><div class="facts"><div><span>Build</span><span>1.3 release candidate / build 17</span></div><div><span>AI Limits</span><span>Free 30/10 daily; Premium 200/30 daily</span></div><div><span>Backup</span><span>Local by default, Premium cloud backup optional</span></div></div></section>
+<nav class="toc"><a href="#status">System Status</a><a href="#compatibility">Compatibility</a><a href="#quick-start">Quick Start</a><a href="#feature-matrix">Feature Matrix</a><a href="#faq">FAQ</a><a href="#privacy">Echoknot Privacy Policy</a><a href="#terms">Echoknot Terms and Conditions</a><a href="#troubleshooting">Troubleshooting</a><a href="#pricing-roadmap">Pricing and Roadmap</a><a href="#contact">Contact and Feedback</a><a href="#release-notes">Release Notes</a></nav>
+<section id="status" class="part rule grid cols"><h2 class="cond">System Status</h2><div class="doc"><ul class="inline-list">
             <li>Capture workflow: Operational</li>
             <li>Echo generation: Operational (user-triggered)</li>
             <li>JSON/PDF export: Operational</li>
             <li>Appearance and localization: Operational</li>
             <li>Premium quota, entitlement, and backup path: Supported</li>
           </ul>
-          <p class="meta">Status reflects the v1.3 release-candidate documentation and should be rechecked after App Store approval.</p>
-        </section>
-
-        <section id="compatibility" class="section" aria-labelledby="compatibility-title">
-          <h2 id="compatibility-title">Compatibility</h2>
-          <div class="grid-2">
+          <p class="meta">Status reflects the v1.3 release-candidate documentation and should be rechecked after App Store approval.</p></div></section>
+<section id="compatibility" class="part rule grid cols"><h2 class="cond">Compatibility</h2><div class="doc"><div class="grid-2">
             <article class="soft-card">
               <h3>Supported environment</h3>
               <p>
@@ -812,12 +36,8 @@
                 active Premium entitlement, and Sign in with Apple.
               </p>
             </article>
-          </div>
-        </section>
-
-        <section id="quick-start" class="section" aria-labelledby="quick-title">
-          <h2 id="quick-title">Quick Start</h2>
-          <ol class="steps">
+          </div></div></section>
+<section id="quick-start" class="part rule grid cols"><h2 class="cond">Quick Start</h2><div class="doc"><ol class="steps">
             <li>Open Echoknot and set your learning language, level, and appearance mode.</li>
             <li>Use the plus action to create your first knot.</li>
             <li>Add translation, optional usage sentence, memory anchor, and tags.</li>
@@ -825,12 +45,8 @@
             <li>Open Echo and select 3 to 8 knots in the same language.</li>
             <li>Generate a story (10 free Echo generations per day; 30 per day with Premium), then save or favorite useful echoes.</li>
             <li>Export JSON or PDF any time, or activate Premium for higher AI quota and optional cloud backup through Sign in with Apple.</li>
-          </ol>
-        </section>
-
-        <section id="feature-matrix" class="section" aria-labelledby="matrix-title">
-          <h2 id="matrix-title">Feature Matrix</h2>
-          <div class="table-wrap">
+          </ol></div></section>
+<section id="feature-matrix" class="part rule grid cols"><h2 class="cond">Feature Matrix</h2><div class="doc"><div class="table-wrap">
             <table>
               <thead>
                 <tr>
@@ -887,13 +103,8 @@
                 </tr>
               </tbody>
             </table>
-          </div>
-        </section>
-
-        <section id="faq" class="section" aria-labelledby="faq-title">
-          <h2 id="faq-title">FAQ</h2>
-
-          <details>
+          </div></div></section>
+<section id="faq" class="part rule grid cols"><h2 class="cond">FAQ</h2><div class="doc"><details>
             <summary>How do I edit or delete a knot?</summary>
             <p>
               Open a knot from the dashboard list, then use the edit action in knot details.
@@ -985,12 +196,8 @@
               backend over HTTPS. The backend uses Alibaba Cloud DashScope/Qwen and keeps provider
               API keys out of the iOS app bundle.
             </p>
-          </details>
-        </section>
-
-        <section id="privacy" class="section" aria-labelledby="privacy-title">
-          <h2 id="privacy-title">Echoknot Privacy Policy</h2>
-          <p>
+          </details></div></section>
+<section id="privacy" class="part rule grid cols"><h2 class="cond">Echoknot Privacy Policy</h2><div class="doc"><p>
             <strong>
               Echoknot v1.3 is local-first by default. TangSpark does not run a general-purpose
               advertising profile, and core app use does not require you to create an account.
@@ -1048,12 +255,8 @@
           <p>
             Contact <a href="mailto:support@tang-spark.no">support@tang-spark.no</a> and include
             your region (EU/EEA/UK or US), device model, iOS version, and app version.
-          </p>
-        </section>
-
-        <section id="terms" class="section" aria-labelledby="terms-title">
-          <h2 id="terms-title">Echoknot Terms and Conditions</h2>
-          <p class="meta">Effective date: May 8, 2026</p>
+          </p></div></section>
+<section id="terms" class="part rule grid cols"><h2 class="cond">Echoknot Terms and Conditions</h2><div class="doc"><p class="meta">Effective date: May 8, 2026</p>
 
           <h3>1. Scope of the service</h3>
           <p>
@@ -1101,12 +304,8 @@
             TangSpark may revise these terms as the product evolves. Continued use after a published update
             means you accept the revised terms. Questions can be sent to
             <a href="mailto:support@tang-spark.no">support@tang-spark.no</a>.
-          </p>
-        </section>
-
-        <section id="troubleshooting" class="section" aria-labelledby="troubleshooting-title">
-          <h2 id="troubleshooting-title">Troubleshooting</h2>
-          <div class="grid-2">
+          </p></div></section>
+<section id="troubleshooting" class="part rule grid cols"><h2 class="cond">Troubleshooting</h2><div class="doc"><div class="grid-2">
             <article class="soft-card">
               <h3>AI unavailable</h3>
               <ul class="list">
@@ -1159,12 +358,8 @@
                 <li>Use JSON/PDF export regularly if you need an extra manual backup.</li>
               </ul>
             </article>
-          </div>
-        </section>
-
-        <section id="pricing-roadmap" class="section" aria-labelledby="pricing-title">
-          <h2 id="pricing-title">Pricing and Roadmap</h2>
-          <p class="notice">
+          </div></div></section>
+<section id="pricing-roadmap" class="part rule grid cols"><h2 class="cond">Pricing and Roadmap</h2><div class="doc"><p class="notice">
             Echoknot's core experience remains <strong>fully usable without login</strong>, with daily AI
             limits on the free tier to keep the service sustainable.
           </p>
@@ -1180,12 +375,8 @@
             <li>Validate subscription, restore, Offer Code, and backup recovery messaging across more edge cases.</li>
             <li>Continue refining AI limits and quota handling for accuracy and abuse prevention.</li>
             <li>Expand supported learning flows without making accounts mandatory for core use.</li>
-          </ul>
-        </section>
-
-        <section id="contact" class="section" aria-labelledby="contact-title">
-          <h2 id="contact-title">Contact and Feedback</h2>
-          <p>
+          </ul></div></section>
+<section id="contact" class="part rule grid cols"><h2 class="cond">Contact and Feedback</h2><div class="doc"><p>
             Support email:
             <a href="mailto:support@tang-spark.no">support@tang-spark.no</a>
           </p>
@@ -1216,12 +407,8 @@ Screenshots/screen recording:
               <button type="button" id="copy-template">Copy template</button>
               <span id="copy-status" class="status" aria-live="polite"></span>
             </div>
-          </div>
-        </section>
-
-        <section id="release-notes" class="section" aria-labelledby="release-title">
-          <h2 id="release-title">Release Notes</h2>
-          <article class="soft-card">
+          </div></div></section>
+<section id="release-notes" class="part rule grid cols"><h2 class="cond">Release Notes</h2><div class="doc"><article class="soft-card">
             <h3>Version 1.3 release candidate</h3>
             <ul class="list">
               <li>Redesigned Wordbook for large libraries with Explore/Search/All modes, richer date filters, and alphabet/metadata navigation.</li>
@@ -1230,26 +417,11 @@ Screenshots/screen recording:
               <li>Production AI path uses the Echoknot backend proxy for Alibaba Cloud DashScope/Qwen.</li>
               <li>JSON/PDF export from Settings and Dashboard plus encrypted local-first persistence remain supported.</li>
             </ul>
-          </article>
-        </section>
-      </main>
-    </div>
+          </article></div></section>
 
-    <footer>
-      <div class="footer-inner">
-        <p>© 2026 TangSpark. Echoknot support documentation for iOS v1.3 release candidate.</p>
-        <div class="footer-links">
-          <a href="./echoknot.html">Product</a>
-          <a href="#privacy">Privacy</a>
-          <a href="#terms">Terms</a>
-          <a href="mailto:support@tang-spark.no">Support Email</a>
-        </div>
-      </div>
-    </footer>
-
-    <p id="live-status" class="visually-hidden" aria-live="polite"></p>
-
-    <script>
+<footer><span>© 2026 TangSpark</span><a href="mailto:support@tang-spark.no">support@tang-spark.no</a></footer>
+</div>
+<script>
       (function () {
         const copyButton = document.getElementById("copy-template");
         const copyStatus = document.getElementById("copy-status");
@@ -1274,36 +446,6 @@ Screenshots/screen recording:
           });
         }
 
-        const links = Array.from(document.querySelectorAll(".side-nav a, .mobile-nav a"));
-        const targets = links
-          .map((link) => link.getAttribute("href"))
-          .filter((href) => href && href.startsWith("#"))
-          .map((href) => document.querySelector(href))
-          .filter(Boolean);
-
-        if (links.length && targets.length) {
-          const setActive = (id) => {
-            links.forEach((link) => {
-              const active = link.getAttribute("href") === "#" + id;
-              link.classList.toggle("is-active", active);
-            });
-          };
-
-          const observer = new IntersectionObserver(
-            (entries) => {
-              const visible = entries
-                .filter((entry) => entry.isIntersecting)
-                .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-              if (visible.length > 0) {
-                setActive(visible[0].target.id);
-              }
-            },
-            { rootMargin: "-20% 0px -65% 0px", threshold: [0.15, 0.3, 0.6] }
-          );
-
-          targets.forEach((el) => observer.observe(el));
-        }
-      })();
+        })();
     </script>
-  </body>
-</html>
+</body></html>
