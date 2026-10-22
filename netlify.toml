@@ -23,3 +23,11 @@
   status = 302
   force = true
 # end rydd-download
+
+# spolo-download (managed by Spolo's scripts/publish-website.sh)
+[[redirects]]
+  from = "/spolo/download"
+  to = "/downloads/Spolo-1.0.0.dmg"
+  status = 302
+  force = true
+# end spolo-download
