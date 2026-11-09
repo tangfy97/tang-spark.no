@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+  <rect width="1600" height="1000" fill="#2a1e19"/>
+  <g fill="none" stroke-linecap="round" stroke-width="3" stroke="#d9693a">
+    <circle cx="560" cy="500" r="300"/>
+    <path d="M774.8 359.8 A300 300 0 0 1 831.1 284.7" stroke="#2a1e19" stroke-width="22"/>
+    <circle cx="1040" cy="500" r="300"/>
+    <path d="M825.2 640.2 A300 300 0 0 1 768.9 715.3" stroke="#2a1e19" stroke-width="22"/>
+    <path d="M825.2 640.2 A300 300 0 0 1 768.9 715.3"/>
+    <path d="M1366.7 326.3 A370 370 0 0 1 1366.7 673.7" stroke-opacity=".55"/>
+    <path d="M1428.5 293.4 A440 440 0 0 1 1428.5 706.6" stroke-opacity=".32"/>
+    <path d="M1490.3 260.6 A510 510 0 0 1 1490.3 739.4" stroke-opacity=".16"/>
+  </g>
+  <radialGradient id="glow" cx="50%" cy="55%" r="55%"><stop offset="0" stop-color="#d9693a" stop-opacity=".2"/><stop offset="1" stop-color="#d9693a" stop-opacity="0"/></radialGradient>
+  <rect width="1600" height="1000" fill="url(#glow)"/>
+</svg>

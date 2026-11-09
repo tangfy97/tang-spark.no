@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMax slice">
+  <rect width="1600" height="1000" fill="#17313b"/>
+  <radialGradient id="glow" cx="62%" cy="30%" r="60%"><stop offset="0" stop-color="#3f7a8e" stop-opacity=".35"/><stop offset="1" stop-color="#3f7a8e" stop-opacity="0"/></radialGradient>
+  <rect width="1600" height="1000" fill="url(#glow)"/>
+  <line x1="0" y1="760" x2="1600" y2="760" stroke="#ffffff" stroke-opacity=".14" stroke-width="2"/>
+  <g font-family="OCR-B, 'OCR B', ui-monospace, Menlo, Consolas, monospace" font-size="50" fill="#ffffff" fill-opacity=".13">
+    <text x="74" y="836" textLength="1452" lengthAdjust="spacing">I&lt;NORFH12345678&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</text>
+    <text x="74" y="898" textLength="1452" lengthAdjust="spacing">5604238M2606115NOR&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;4</text>
+    <text x="74" y="960" textLength="1452" lengthAdjust="spacing">SPECIMEN&lt;&lt;EXAMPLE&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</text>
+  </g>
+  <g fill="#0c1b21">
+    <rect x="310" y="794" width="490" height="54"/>
+    <rect x="68" y="856" width="345" height="54"/>
+    <rect x="455" y="856" width="345" height="54"/>
+  </g>
+</svg>
