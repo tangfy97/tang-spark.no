@@ -99,7 +99,7 @@ footer a { font-weight: 700; }
 .doc details p { margin-top: 8px; }
 .doc .notice { background: var(--red); color: #fff; padding: 16px 20px; }
 .doc .bug-box { background: var(--soft); padding: 20px; }
-.doc pre { font: 14px/1.5 ui-monospace, Menlo, monospace; white-space: pre-wrap; }
+.doc pre { font: 14px/1.5 ui-monospace, Menlo, monospace; white-space: pre-wrap; overflow-wrap: anywhere; }
 .doc .copy-row { display: flex; gap: 12px; align-items: center; }
 .doc .copy-row button { font: 700 14px "Archivo", sans-serif; text-transform: uppercase; letter-spacing: .04em; padding: 10px 18px; border: 2px solid var(--ink); background: none; cursor: pointer; }
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
