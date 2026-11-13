@@ -8,26 +8,26 @@
   status = 200
   force = true
 
-# kvikkshot-download (managed by Kvikkshot's scripts/publish-website.sh)
+# kvikkshot-download: old download links go to the GitHub release; the site hosts no installers
 [[redirects]]
   from = "/kvikkshot/download"
-  to = "/downloads/Kvikkshot-1.0.0.dmg"
+  to = "https://github.com/tangfy97/Kvikkshot/releases/latest"
   status = 302
   force = true
 # end kvikkshot-download
 
-# rydd-download (managed by Rydd's scripts/publish-website.sh)
+# rydd-download: old download links go to the GitHub release; the site hosts no installers
 [[redirects]]
   from = "/rydd/download"
-  to = "/downloads/Rydd-1.0.0.dmg"
+  to = "https://github.com/tangfy97/Rydd/releases/latest"
   status = 302
   force = true
 # end rydd-download
 
-# spolo-download (managed by Spolo's scripts/publish-website.sh)
+# spolo-download: old download links go to the GitHub release; the site hosts no installers
 [[redirects]]
   from = "/spolo/download"
-  to = "/downloads/Spolo-1.0.1.dmg"
+  to = "https://github.com/tangfy97/Spolo/releases/latest"
   status = 302
   force = true
 # end spolo-download
