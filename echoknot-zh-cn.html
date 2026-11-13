@@ -1,131 +1,16 @@
 <!doctype html>
-<html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Echoknot | TangSpark</title>
-    <meta
-      name="description"
-      content="Echoknot 是本地优先的 iOS 语言记忆应用，支持 Qwen AI 辅助、可扩展 Wordbook、JSON/PDF 导出和可选 Premium 云同步。"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <link rel="stylesheet" href="./legacy.css" />
-  </head>
-  <body id="top" class="product-page zh">
-    <div class="site-shell">
-      <header class="site-header">
-        <a class="brand" href="./index.html" aria-label="TangSpark 首页">
-          <span class="brand-mark" aria-hidden="true">TS</span>
-          <span class="brand-text">TangSpark</span>
-        </a>
-        <nav class="site-nav" aria-label="主导航">
-          <a href="./index.html">首页</a>
-          <details class="product-menu">
-            <summary>产品</summary>
-            <div class="product-menu-panel">
-              <a href="./echoknot-zh-cn.html" aria-current="page">
-                <strong>Echoknot</strong>
-                <span>iOS 语言记忆应用</span>
-              </a>
-            </div>
-          </details>
-          <a href="#premium">Premium</a>
-          <a href="./echoknot-support-zh-cn.html">支持</a>
-        </nav>
-        <div class="header-actions">
-          <div class="lang-toggle" role="group" aria-label="语言切换">
-            <a href="./echoknot.html">EN</a>
-            <a class="active" href="./echoknot-zh-cn.html" aria-current="page">中文</a>
-          </div>
-        </div>
-      </header>
-
-      <main>
-        <section class="hero">
-          <div class="hero-copy">
-            <h1>把语言记忆，<br />系回真实瞬间。</h1>
-            <p class="lead">
-              Echoknot 是 TangSpark 以北欧克制风格打造的原生 iOS 语言记忆应用。你可以记录真实生活里遇到的词，让可选 AI 补全繁琐细节，再用 Echo 故事把选中的词放回语境中复习。
-            </p>
-            <div class="hero-actions">
-              <a class="button button-primary" href="./echoknot-support-zh-cn.html">支持、隐私与条款</a>
-              <a class="button button-secondary" href="mailto:support@tang-spark.no">联系支持</a>
-            </div>
-            <div class="trust-strip" aria-label="Echoknot 信任摘要">
-              <div class="trust-item"><strong>默认无需账号</strong><span>记录、复习、导出都可以本地完成。</span></div>
-              <div class="trust-item"><strong>免费 30 次补全</strong><span>另含每日 10 次 Echo 生成。</span></div>
-              <div class="trust-item"><strong>Premium：200 + 30</strong><span>更高 AI 配额，加可选云备份。</span></div>
-            </div>
-          </div>
-
-          <div class="product-visual" aria-label="Echoknot 词库预览">
-            <div class="device" aria-hidden="true">
-              <div class="device-screen">
-                <div class="status-line"><span>9:41</span><span>本地优先</span></div>
-                <div class="screen-title"><strong>Wordbook</strong><span>最近一周</span></div>
-                <div class="mode-tabs"><span class="active">Explore</span><span>Search</span><span>All</span></div>
-                <div class="filter-row"><span>3 天</span><span>1 个月</span><span>动词</span><span>A-Z</span></div>
-                <div class="knot-list">
-                  <div class="knot-card"><strong>gezellig <em>荷兰语</em></strong><p>温暖、惬意、有社交氛围，来自一次咖啡馆对话。</p></div>
-                  <div class="knot-card"><strong>resilience <em>英语</em></strong><p>按学习级别生成用法和场景，方便复习。</p></div>
-                  <div class="knot-card"><strong>lagom <em>瑞典语</em></strong><p>刚刚好，不过量也不太少。</p></div>
-                </div>
-                <div class="glass-nav"><span><b>⌂</b>Today</span><span class="active"><b>≡</b>Words</span><span><b>＋</b>Add</span><span><b>”</b>Echo</span></div>
-              </div>
-            </div>
-            <div class="float-card" aria-hidden="true"><strong>Qwen 走代理</strong><span>AI 请求发往 Echoknot 后端，供应商密钥不会进入 iOS 安装包。</span></div>
-          </div>
-        </section>
-
-        <section id="wordbook" class="band">
-          <div class="section-head">
-            <h2>面向上千词条设计。</h2>
-            <p>新版 Wordbook 不再依赖无尽滚动，而是把浏览、搜索和完整管理拆成更清晰的路径。</p>
-          </div>
-          <div class="feature-grid">
-            <article class="feature-card"><h3>Explore、Search、All</h3><p>浏览近期学习、直接搜索词条、管理完整词库，各自有清晰入口。</p></article>
-            <article class="feature-card"><h3>更实用的筛选</h3><p>支持今天、最近 3 天、最近一周、最近一月，以及词性和首字母筛选。</p></article>
-            <article class="feature-card"><h3>悬浮导航</h3><p>iOS 端采用 Liquid Glass 风格底部导航，并为内容预留空间，避免挡住页面底部操作。</p></article>
-          </div>
-        </section>
-
-        <section id="premium" class="band">
-          <div class="section-head">
-            <h2>大多数能力保持免费。</h2>
-            <p>Premium 面向高频学习者：更高 AI 配额和可选云备份；普通本地学习不需要订阅。</p>
-          </div>
-          <div class="metrics-grid">
-            <div class="metric"><strong>免费：30</strong><span>每日 AI 自动补全/详情刷新额度。</span></div>
-            <div class="metric"><strong>免费：10</strong><span>每日 Echo 故事生成额度。</span></div>
-            <div class="metric"><strong>Premium：200 + 30</strong><span>每日 200 次词条辅助和 30 次 Echo 生成。</span></div>
-          </div>
-          <div class="route-line">
-            <div class="route-step"><strong>购买</strong><p>Premium 使用 App Store 自动续期订阅商品 <code>com.tangspark.echoknot.premium.monthly</code>。</p></div>
-            <div class="route-step"><strong>兑换</strong><p>免费体验 Premium 应通过同一订阅商品的 App Store Offer Code 发放。</p></div>
-            <div class="route-step"><strong>同步</strong><p>只有 Premium 用户会看到 Apple 登录与可选 Firebase 云备份/同步入口；免费用户默认保持本地模式。</p></div>
-          </div>
-        </section>
-
-        <section id="architecture" class="band">
-          <div class="section-head">
-            <h2>生产安全的服务边界。</h2>
-            <p>应用不会携带供应商密钥。AI 与云同步分别由后端代理、StoreKit 权益和 Apple 登录控制。</p>
-          </div>
-          <div class="feature-grid">
-            <article class="feature-card"><h3>AI 代理</h3><p>iOS 请求 <code>https://tang-spark.no/echoknot/api/ai/chat</code>，Netlify 函数再调用 Qwen compatible chat-completions 端点。</p></article>
-            <article class="feature-card"><h3>Firebase 按需使用</h3><p>只有 Premium 权益有效、用户主动选择、并完成 Apple 登录后，才会使用 Firestore 同步。</p></article>
-            <article class="feature-card"><h3>本地导出</h3><p>即使不订阅 Premium，也可以从 Settings 和 Dashboard 导出 JSON/PDF。</p></article>
-          </div>
-        </section>
-      </main>
-
-      <footer class="site-footer">
-        <p>© 2026 TangSpark。Echoknot 默认本地优先。</p>
-        <a href="mailto:support@tang-spark.no">support@tang-spark.no</a>
-      </footer>
-    </div>
-  </body>
-</html>
+<html lang="zh-Hans"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Echoknot — 把语言记忆，系回真实瞬间。 | TangSpark</title><meta name="description" content="在遇到单词的地方记下它，连同翻译、语境和记忆锚点。再把其中三到八个系成一个简短的 Echo 故事，让你真正记住。">
+<link rel="alternate" hreflang="en" href="https://tang-spark.no/echoknot.html"><link rel="alternate" hreflang="zh-Hans" href="https://tang-spark.no/echoknot-zh-cn.html">
+<link rel="icon" type="image/svg+xml" href="./favicon.svg"><link rel="stylesheet" href="./styles.css"></head>
+<body><div class="wrap">
+<header><a class="mark" href="./index.html">TangSpark</a><nav><a href="./index.html#apps">Apps</a><a href="./echoknot-support-zh-cn.html">支持</a><a href="./echoknot.html" hreflang="en">EN</a></nav></header>
+<div class="title"><img src="img/echoknot-icon.jpg" alt=""><span class="label">iPhone · 免费 · Premium</span></div>
+<div class="hero-name">Echoknot</div>
+<section class="grid poster"><div class="block"><h1 class="cond">把语言记忆，系回真实瞬间。</h1><p>在遇到单词的地方记下它，连同翻译、语境和记忆锚点。再把其中三到八个系成一个简短的 Echo 故事，让你真正记住。</p></div>
+<div class="facts"><div><span>平台</span><span>iPhone</span></div><div><span>价格</span><span>免费，可选 Premium</span></div><div><span>存储</span><span>本地优先，加密</span></div><div><span>账号</span><span>不需要</span></div></div></section>
+<section class="grid"><div class="big stage echo"><ol class="caps"><li><b>01</b><strong>所有 knot</strong><span>按日期、锚点或语言浏览，附带你遇到它时的那句话。</span></li><li><b>02</b><strong>系一个 knot</strong><span>一个词、它的意思，以及你遇到它的那一刻。</span></li></ol><div class="devs"><figure class="dev"><img src="img/echoknot-device-knots.webp" alt="Echoknot 的 knot 列表"></figure><figure class="dev"><img src="img/echoknot-device-tie.webp" alt="系一个新的 knot"></figure></div></div></section>
+<section class="part rule grid cols"><h2 class="cond">它能做什么</h2><ul class="list"><li><b>记录</b><span>把单词存成 knot，附上翻译、用法、锚点和标签；需要时让 AI 自动补全。</span></li><li><b>Echo 故事</b><span>选 3–8 个 knot，得到一个属于你的短故事。可以保存、收藏、随时回看。</span></li><li><b>每日 AI</b><span>免费版每天 30 次自动补全、10 次 Echo；Premium 为 200 次和 30 次。</span></li><li><b>导出</b><span>随时导出 JSON 或 PDF。</span></li><li><b>可选同步</b><span>Premium 提供加密云备份，使用 Apple 登录。</span></li></ul></section>
+<section id="download" class="part rule grid cols"><h2 class="cond">获取 Echoknot</h2><div style="grid-column: 5 / span 8"><p>iPhone 版可在 App Store 获取。</p><div class="cta"><a class="btn red" href="https://apps.apple.com/app/echoknot/id6759283356">App Store</a><a class="btn" href="./echoknot-support-zh-cn.html">支持、隐私与条款</a></div></div></section>
+<footer><span>© 2026 TangSpark</span><a href="./echoknot-support-zh-cn.html">支持与隐私</a></footer>
+</div></body></html>
